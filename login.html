@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#12100e">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <meta name="description" content="Acesse o portal do Sócio Torcedor do SENAI F.C. com e-mail ou número de matrícula.">
+  <title>Entrar — Portal do Sócio Torcedor | SENAI F.C.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/senai-torcedor-web.css">
+</head>
+<body class="login-body" data-page="login">
+  <a class="skip-link" href="#login-conteudo">Ir para o conteúdo</a>
+
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true">
+    <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></symbol>
+    <symbol id="icon-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="icon-eye-off" viewBox="0 0 24 24"><path d="M3 3l18 18"/><path d="M10.6 6.2A9.8 9.8 0 0 1 12 6c6.4 0 10 6 10 6a17.6 17.6 0 0 1-3.3 3.9M6.4 7.6A17.4 17.4 0 0 0 2 12s3.6 6 10 6a9.7 9.7 0 0 0 4-.9"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></symbol>
+    <symbol id="icon-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M10 7l-5 5 5 5"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v5c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-5"/></symbol>
+    <symbol id="icon-scan" viewBox="0 0 24 24"><path d="M4 8V5a1 1 0 0 1 1-1h3M20 8V5a1 1 0 0 0-1-1h-3M4 16v3a1 1 0 0 0 1 1h3M20 16v3a1 1 0 0 1-1 1h-3M4 12h16"/></symbol>
+    <symbol id="icon-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 6H4v2a4 4 0 0 0 4 4M16 6h4v2a4 4 0 0 1-4 4M12 13v4M8 21h8M9 17h6"/></symbol>
+    <symbol id="icon-ticket" viewBox="0 0 24 24"><path d="M3 8a2 2 0 0 0 0 8v4h18v-4a2 2 0 0 0 0-8V4H3Z"/><path d="M13 7v2M13 11v2M13 15v2"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  </svg>
+
+  <main class="login-shell">
+    <section class="login-brand" aria-labelledby="login-brand-title">
+      <div class="login-brand-inner">
+        <img class="login-logo" src="assets/images/senai_logo_light.png" alt="SENAI" width="1728" height="383">
+        <p class="login-brand-kicker">SENAI F.C.</p>
+        <h1 class="login-brand-title" id="login-brand-title">Portal do Sócio Torcedor</h1>
+        <p class="login-brand-text">Jogos, ingressos, acesso por Face ID e todos os benefícios Master em um só lugar.</p>
+      </div>
+
+      <ul class="login-perks">
+        <li><span class="login-perk-icon"><svg class="icon" aria-hidden="true"><use href="#icon-ticket"></use></svg></span>Entrada gratuita nas rodadas</li>
+        <li><span class="login-perk-icon"><svg class="icon" aria-hidden="true"><use href="#icon-scan"></use></svg></span>Acesso rápido pelo Face ID</li>
+        <li><span class="login-perk-icon"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></span>Camarote no Setor Leste</li>
+      </ul>
+
+      <p class="login-brand-foot">© 2026 SENAI F.C. &bull; Feito com paixão</p>
+    </section>
+
+    <section class="login-panel" id="login-conteudo" aria-label="Acesso do sócio torcedor">
+      <div class="login-card-stack">
+
+        <form class="login-card" id="login-form" novalidate>
+          <header class="login-card-head">
+            <span class="login-card-badge"><svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg></span>
+            <h2>Entrar</h2>
+            <p>Use seu e-mail ou número de matrícula para acessar o portal.</p>
+          </header>
+
+          <div class="login-field">
+            <label for="login-usuario">E-mail ou matrícula</label>
+            <div class="login-control">
+              <svg class="icon" aria-hidden="true"><use href="#icon-user"></use></svg>
+              <input id="login-usuario" name="usuario" type="text" inputmode="email" autocomplete="username" placeholder="voce@senai.com" required aria-describedby="login-usuario-erro">
+            </div>
+            <p class="login-error" id="login-usuario-erro" role="alert"></p>
+          </div>
+
+          <div class="login-field">
+            <label for="login-senha">Senha</label>
+            <div class="login-control">
+              <svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg>
+              <input id="login-senha" name="senha" type="password" autocomplete="current-password" placeholder="Sua senha" required minlength="6" aria-describedby="login-senha-erro">
+              <button class="login-toggle" id="login-ver-senha" type="button" aria-label="Mostrar senha" aria-pressed="false">
+                <svg class="icon" aria-hidden="true"><use href="#icon-eye"></use></svg>
+              </button>
+            </div>
+            <p class="login-error" id="login-senha-erro" role="alert"></p>
+          </div>
+
+          <div class="login-row">
+            <label class="login-check">
+              <input type="checkbox" id="login-lembrar">
+              <span aria-hidden="true"></span>
+              Manter conectado
+            </label>
+            <button class="login-link" id="login-esqueci" type="button">Esqueci minha senha</button>
+          </div>
+
+          <button class="primary-button login-submit" id="login-enviar" type="submit">
+            <span class="login-submit-text">Entrar</span>
+            <span class="login-spinner" aria-hidden="true"></span>
+          </button>
+        </form>
+
+        <form class="login-card" id="login-recuperar" novalidate hidden>
+          <header class="login-card-head">
+            <span class="login-card-badge"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg></span>
+            <h2>Recuperar senha</h2>
+            <p>Informe seu e-mail ou matrícula e enviaremos o link de redefinição.</p>
+          </header>
+
+          <div class="login-field">
+            <label for="recuperar-usuario">E-mail ou matrícula</label>
+            <div class="login-control">
+              <svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
+              <input id="recuperar-usuario" name="usuario" type="text" inputmode="email" autocomplete="username" placeholder="voce@senai.com" required aria-describedby="recuperar-usuario-erro">
+            </div>
+            <p class="login-error" id="recuperar-usuario-erro" role="alert"></p>
+          </div>
+
+          <button class="primary-button login-submit" type="submit">
+            <span class="login-submit-text">Enviar link de recuperação</span>
+            <span class="login-spinner" aria-hidden="true"></span>
+          </button>
+
+          <button class="login-link login-back" id="login-voltar" type="button">
+            <svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"></use></svg>
+            Voltar para o login
+          </button>
+        </form>
+
+        <div class="login-card" id="login-sessao" hidden>
+          <span class="login-card-badge ok"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg></span>
+          <h2>Bem-vindo de volta</h2>
+          <p class="login-session-name" id="login-sessao-nome">Operário</p>
+          <p class="login-session-mail" id="login-sessao-email"></p>
+
+          <a class="primary-button login-submit" href="senai-torcedor-web.html">
+            <span class="login-submit-text">Continuar como <span id="login-sessao-primeiro">Operário</span></span>
+          </a>
+
+          <button class="login-link" id="login-sair" type="button">Sair da conta</button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span id="toast-message"></span></div>
+  <script src="assets/js/senai-torcedor-web.js" defer></script>
+</body>
+</html>

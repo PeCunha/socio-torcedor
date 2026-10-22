@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0d">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <meta name="description" content="Gerenciamento de categorias e planos de Sócio Torcedor do SENAI F.C.">
+  <title>Planos de Sócio — SENAI F.C.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/senai-torcedor-web.css">
+</head>
+<body data-page="planos">
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true">
+    <symbol id="icon-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></symbol>
+    <symbol id="icon-ticket" viewBox="0 0 24 24"><path d="M3 8a2 2 0 0 0 0 8v4h18v-4a2 2 0 0 0 0-8V4H3Z"/><path d="M13 7v2M13 11v2M13 15v2"/></symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="icon-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 6H4v2a4 4 0 0 0 4 4M16 6h4v2a4 4 0 0 1-4 4M12 13v4M8 21h8M9 17h6"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v5c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-5"/></symbol>
+    <symbol id="icon-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14a2 2 0 0 1 2-2h1v7H6a2 2 0 0 1-2-2v-3ZM20 14a2 2 0 0 0-2-2h-1v7h1a2 2 0 0 0 2-2v-3ZM17 19c0 2-2 3-5 3"/></symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24"><path d="M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2Z"/><path d="M8 2v4M16 2v4M3 9h18M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01"/></symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="icon-map" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="icon-stadium" viewBox="0 0 24 24"><path d="M3 9c3-3 15-3 18 0v7H3V9Z"/><path d="M7 12h10M8 16v3M16 16v3M3 9V6h18v3"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    
+    <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></symbol>
+  </svg>
+
+  <aside class="sidebar" id="sidebar" aria-label="Navegação principal">
+    <div class="sidebar-header"><a class="brand" href="senai-torcedor-web.html" aria-label="SENAI F.C. — página principal"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-copy"><strong>SENAI F.C.</strong><span>Sócio torcedor</span></span></a><button class="icon-button sidebar-close" id="sidebar-close" type="button" aria-label="Fechar menu"><svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg></button></div>
+    <div class="membership-card" aria-label="Plano Sócio Master"><div class="membership-topline"><span>Seu plano</span><span class="vip-badge"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg>Master</span></div><div class="membership-title" data-user-plan>Sócio Master</div><div class="membership-number" data-user-matricula>Matrícula #9842</div></div>
+    <nav class="sidebar-nav" aria-label="Páginas do portal">
+      <a class="nav-link" href="face-id-acesso.html" data-page-link="face-id"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg><span>Face ID &amp; Acesso</span></a>
+      <a class="nav-link" href="senai-torcedor-web.html" data-page-link="jogos"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg><span>Jogos &amp; calendário</span></a>
+      <a class="nav-link active" href="planos-de-socio.html" data-page-link="planos" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#icon-ticket"></use></svg><span>Planos de sócio</span></a>
+      <a class="nav-link" href="galeria-de-titulos.html" data-page-link="galeria"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg><span>Galeria de títulos</span></a>
+      <a class="nav-link" href="nossa-historia.html" data-page-link="historia"><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg><span>Nossa história</span></a>
+    </nav>
+    <div class="sidebar-footer"><div class="connection-status"><span>Seu acesso</span><strong>Liberado</strong></div></div>
+  </aside>
+  <button class="sidebar-overlay" id="sidebar-overlay" type="button" aria-label="Fechar menu"></button>
+
+  <div class="main-shell">
+    <header class="topbar"><div class="topbar-inner">
+      <button class="icon-button menu-button" id="menu-button" type="button" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="#icon-menu"></use></svg></button>
+      <nav class="topbar-nav" aria-label="Navegação principal"><a class="topbar-link" href="face-id-acesso.html" data-page-link="face-id">Face ID &amp; Acesso</a><a class="topbar-link" href="senai-torcedor-web.html" data-page-link="jogos">Jogos &amp; Calendário</a><a class="topbar-link" href="planos-de-socio.html" data-page-link="planos">Planos de Sócio</a><a class="topbar-link" href="galeria-de-titulos.html" data-page-link="galeria">Galeria de Títulos</a><a class="topbar-link" href="nossa-historia.html" data-page-link="historia">Nossa História</a></nav>
+      <div class="topbar-actions"><button class="profile-button" type="button" data-message="Perfil do Sócio Master #9842 ativo." aria-label="Abrir perfil do torcedor"><span class="avatar avatar-photo" aria-hidden="true"></span><span class="profile-copy"><span>Torcedor</span><strong data-user-name>Operário</strong><small data-user-matricula>Matrícula #9842</small></span></button></div>
+    </div></header>
+
+    <main class="page-container plans-page" id="conteudo">
+      <div class="plans-breadcrumb"><span>Portal do sócio</span><b>//</b><strong>Seus planos</strong><i>● contrato ativo</i><em>válido até: 14/nov/2026</em></div>
+
+      <section class="contract-banner" aria-labelledby="contract-title">
+        <div class="contract-copy">
+          <div class="contract-tag"><span>Seu plano</span><b>Indústria Master VIP</b></div>
+          <h1 id="contract-title">Seja o motor do nosso time</h1>
+          <p>Você tem acesso VIP via Face ID, camarote exclusivo e todos os jogos garantidos na Arena SENAI.</p>
+          <div class="contract-benefits"><span><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg>Biometria facial ativa</span><span><svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg>Renovação automática</span><span><svg class="icon" aria-hidden="true"><use href="#icon-map"></use></svg>Portões 01 &amp; camarote A</span></div>
+        </div>
+        <div class="contract-price"><span>Valor da mensalidade</span><strong>R$ 119,90 <small>/mês</small></strong><b>◷ ciclo recorrente</b></div>
+      </section>
+
+      <section class="plans-section" aria-labelledby="plans-title">
+        <div class="plans-section-kicker"><span>◆</span> Nossos planos</div>
+        <h2 id="plans-title">Escolha seu plano</h2>
+        <p class="plans-section-copy">Todos os planos do SENAI F.C. dão acesso aos jogos e benefícios exclusivos para os torcedores.</p>
+        <div class="reference-plans">
+          <article class="reference-plan">
+            <div class="reference-plan-top"><span class="reference-label">Base torcedora</span><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg></div>
+            <h3>Sócio Aprendiz</h3><p>O primeiro passo na torcida operária</p><div class="reference-price">R$ 29,90 <small>/mês</small></div>
+            <div class="reference-benefits"><span><b>50%</b> de desconto no Setor Superior</span><span>Acesso a treinos no CT</span><span>Carteirinha digital</span><span>Prioridade na compra de ingressos</span><span>Entrada com biometria facial</span><span>Camisa oficial no aniversário do plano</span><span>20% de desconto na Loja Oficial</span><span>Mudança de plano sem taxa</span></div>
+            <button class="ghost-button" type="button" data-message="Solicitação de migração para Apprentiz enviada.">Migrar para aprendiz</button><small>Sem taxa de adesão // cancelamento livre</small>
+          </article>
+          <article class="reference-plan reference-plan-selected">
+            <div class="reference-selected-label">Mais escolhido pela torcida</div>
+            <div class="reference-plan-top"><span class="reference-label">Arquibancada</span><svg class="icon" aria-hidden="true"><use href="#icon-ticket"></use></svg></div>
+            <h3>Sócio Técnico</h3><p>A engenharia fundamental em campo</p><div class="reference-price">R$ 59,90 <small>/mês</small></div>
+            <div class="reference-benefits"><span><b>100%</b> de desconto na arquibancada</span><span>Todos os jogos incluídos</span><span>Prioridade na compra de ingressos</span><span>Carteirinha digital</span><span>Entrada rápida com Face ID</span><span>Acesso ao camarote</span><span>Camisa oficial no aniversário do plano</span><span>15% de desconto na Loja Oficial</span><span>Visita aos bastidores 3× por ano</span></div>
+            <button class="primary-button" type="button" data-message="Plano Técnico selecionado. Economia anual estimada de R$ 48,00.">Mudar para Sócio Técnico</button><small>Economia anual estimada de R$ 48,00</small>
+          </article>
+          <article class="reference-plan">
+            <div class="reference-plan-top"><span class="reference-label">VIP Exclusivo / Plano Atual</span><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></div>
+            <h3>Indústria Master VIP</h3><p>A liderança de fábrica em cada confronto</p><div class="reference-price">R$ 119,90 <small>/mês</small></div>
+            <div class="reference-benefits"><span><b>100%</b> dos jogos incluídos</span><span>Prioridade máxima na compra de ingressos</span><span>Carteirinha VIP com Face ID</span><span>Acesso rápido pelo Portão 01</span><span>Acesso ao camarote Master</span><span>Camisa oficial no aniversário do plano</span><span>Manto do elenco a cada renovação</span><span>20% de desconto na Loja Oficial</span><span>Visita aos bastidores ilimitada</span></div>
+            <button class="secondary-button" type="button" data-message="Plano atual: Indústria Master VIP.">✓ Plano ativo na sua conta</button><small>Próxima cobrança em 15/dez // cartão final 4492</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="plan-insights">
+        <article class="telemetry-card"><div class="insight-kicker"><span>◉</span> Sua economia</div><h3>Quanto você economiza na temporada</h3><p>Veja quanto você economiza com seu plano SENAI F.C.</p><div class="ticket-counter"><span>Ingressos avulsos <b>R$ 2.160</b><small>média R$ 120/jogo</small></span><strong>×</strong><span>Seu plano Master <b>R$ 1.438</b><small>12 meses</small></span><strong>−</strong><span class="economy-value">Sua economia <b>R$ 722</b><small>+ camarote &amp; Face ID</small></span></div><small class="telemetry-note">Valores baseados no calendário oficial do clube.</small></article>
+        <article class="biometric-card"><div class="insight-kicker"><span>▣</span> Acesso rápido</div><h3>Entre com o rosto</h3><p>Catracas inteligentes que reconhecem seu rosto em segundos. Entre sem filas e sem espera.</p><div class="biometric-status"><span>Portão VIP #1 • Arena<br><b>Abertura: 12h00</b></span><b>100%<br>liberado</b></div><button class="ghost-button" type="button" data-message="Validação biométrica solicitada com sucesso.">Validar biometria facial</button></article>
+      </section>
+
+      <section class="comparison-section" aria-labelledby="comparison-title"><div class="plans-section-kicker"><span>◉</span> Compare os planos</div><h2 id="comparison-title">Tabela comparativa de benefícios</h2><p class="plans-section-copy">Veja as diferenças entre os planos e escolha o melhor para você.</p><div class="comparison-card"><div class="table-wrap"><table class="comparison-table"><thead><tr><th>Recursos &amp; cobertura</th><th>Aprendiz<br><small>R$ 29,90/mês</small></th><th class="comparison-focus">Técnico<br><small>R$ 59,90/mês</small></th><th>Indústria Master VIP<br><small>R$ 119,90/mês</small></th></tr></thead><tbody><tr><td>Acesso a jogos do Mandante<small>Todos os confrontos na Arena SENAI</small></td><td>50% desconto</td><td class="comparison-focus">100% grátis (arquibancada)</td><td>100% grátis (qualquer setor)</td></tr><tr><td>Prioridade na Abertura de Ingressos<small>Garantia compra antecipada</small></td><td>Prioridade 3</td><td class="comparison-focus">Prioridade 2</td><td>Prioridade 1 (automática)</td></tr><tr><td>Entrada com Reconhecimento Face ID<small>Dispensa de catraca física no Portão 01</small></td><td>—</td><td class="comparison-focus">✓</td><td>✓</td></tr><tr><td>Carteirinha VIP Express<small>Corredor privilegiado no Portão 01</small></td><td>—</td><td class="comparison-focus">—</td><td>✓</td></tr><tr><td>Acesso ao Camarote Master &amp; Buffet<small>Experiência premium pré e pós-jogo</small></td><td>—</td><td class="comparison-focus">—</td><td>✓</td></tr><tr><td>Camisa Oficial Autografada<small>Manto do elenco oficial enviado na residência</small></td><td>—</td><td class="comparison-focus">—</td><td>✓</td></tr><tr><td>Desconto na Loja Oficial do SENAI F.C.<small>Aplicável na loja física e e-commerce</small></td><td>5% OFF</td><td class="comparison-focus">15% OFF</td><td>20% OFF</td></tr><tr><td>Visita aos Bastidores &amp; Treinos no CT<small>Acesso a padrões e insumos de produção</small></td><td>1× por ano</td><td class="comparison-focus">3× por ano</td><td>Ilimitado (mediante agendamento)</td></tr><tr><td>Dispensa de cartão físico ou QR Code<small>Carteirinha 100% digital no aplicativo</small></td><td>Digital</td><td class="comparison-focus">Digital</td><td>Digital + NFC</td></tr><tr><td>Catraca VIP Express (sem filas)<small>Leitura biométrica instantânea</small></td><td>&mdash;</td><td class="comparison-focus">&mdash;</td><td>✓</td></tr><tr><td>Corredor desimpedido no Portão 01<small>Entrada prioritária até a catraca</small></td><td>&mdash;</td><td class="comparison-focus">&mdash;</td><td>✓</td></tr><tr><td>Experiência gastronômica pré e pós-jogo<small>Buffet e open drinks no camarote</small></td><td>&mdash;</td><td class="comparison-focus">Open drinks</td><td>Buffet completo</td></tr><tr><td>Manto do elenco principal<small>Enviado a cada renovação do plano</small></td><td>&mdash;</td><td class="comparison-focus">&mdash;</td><td>✓</td></tr><tr><td>Acesso à preparação tática da comissão técnica<small>Observação das sessões no CT</small></td><td>&mdash;</td><td class="comparison-focus">1× por ano</td><td>Ilimitado</td></tr><tr><td>Estacionamento prioritário no bloco da Arena<small>Vagas numeradas próximo ao Portão 01</small></td><td>&mdash;</td><td class="comparison-focus">&mdash;</td><td>4 vagas</td></tr><tr><td>Convidados por jogos do SENAI F.C.<small>Meia-entrada para dependentes diretos</small></td><td>&mdash;</td><td class="comparison-focus">1 por jogo</td><td>3 por jogo</td></tr></tbody></table></div></div></section>
+
+      <section class="faq-support" aria-labelledby="faq-title"><div class="faq-column"><div class="plans-section-kicker"><span>?</span> Dúvidas</div><h2 id="faq-title">Perguntas frequentes</h2><p class="plans-section-copy">Entenda como funciona a biometria facial, cancelamento e benefícios dos planos.</p><div class="faq-list"><details><summary>Como funciona a catraca com Face ID na Arena SENAI?</summary><p>A leitura biométrica é feita na chegada. Leve o celular com o aplicativo aberto e um documento com foto para a conferência do primeiro acesso.</p></details><details><summary>Posso transferir meu ingresso para outro torcedor?</summary><p>O titular pode solicitar a alteração até 24 horas antes do jogo, desde que o cadastro do novo torcedor esteja validado.</p></details><details><summary>Existe período de carência ou taxa de fidelidade?</summary><p>Não há fidelidade nos planos associativos. Alterações e cancelamentos podem ser solicitados pelo suporte.</p></details><details><summary>Como recebo a camisa oficial do plano Master?</summary><p>A camisa é enviada para o endereço cadastrado, com rastreio liberado no portal.</p></details><details><summary>Preciso autorizar o uso da minha biometria facial?</summary><p>Sim. O consentimento é coletado no momento da matrícula, pode ser revogado a qualquer momento pelo suporte e os dados são tratados em conformidade com a LGPD.</p></details><details><summary>O reconhecimento facial funciona em qualquer catraca?</summary><p>A leitura está disponível nas catracas biométricas do Portão 01.Nos demais portões, use a carteirinha digital com QR Code.</p></details><details><summary>Posso mudar de plano durante a temporada?</summary><p>Sim. O upgrade é liberado na virada do mês e a diferença é calculada proporcionalmente pelo portal.</p></details></div></div><aside class="support-card"><span class="support-icon"><svg class="icon" aria-hidden="true"><use href="#icon-headset"></use></svg></span><h3>Central do associado</h3><p>Dúvidas sobre pagamento via PIX, cartão e planos? Nosso time está pronto para ajudar.</p><button class="primary-button" type="button" data-message="Redirecionando para o WhatsApp da Central do Associado.">Chamar no WhatsApp</button><a href="mailto:socio@senai.com.br">socio@senai.com.br</a><div class="support-security"><svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg>Seus dados estão protegidos por LGPD e criptografia SHA-256.</div></aside></section>
+      <section class="subpage-section" aria-labelledby="seguranca-title">
+        <div class="subpage-section-header"><div><h2 id="seguranca-title">Segurança de dados</h2><p>Biometria facial tratada em conformidade com a LGPD e o Estatuto do Torcedor Brasileiro.</p></div><span class="match-count">LGPD &amp; criptografia SHA-256</span></div>
+        <p class="pl-security-badge"><svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg>Conformidade verificada</p>
+        <div class="pl-security">
+          <div class="pl-security-item"><span>Base legal</span><strong>LGPD // Lei 13.709</strong><p>Consentimento explícito na matrícula e finalidade restrita à validação de acesso.</p></div>
+          <div class="pl-security-item"><span>Criptografia</span><strong>SHA-256</strong><p>Biometria armazenada na camada criptográfica do dispositivo e em servidores isolados.</p></div>
+          <div class="pl-security-item"><span>Retenção</span><strong>On-device</strong><p>O.template facial nunca sai do terminal. Somente o resultado da comparação é sincronizado.</p></div>
+          <div class="pl-security-item"><span>Anti-spoofing</span><strong>Detecção 3D</strong><p>Sensor ToF e vetor de rede monitoram tentativa de fraude em tempo real.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-inner"><div class="footer-grid"><div class="footer-column"><h3>SENAI F.C.</h3><p>Paixão, tradição e futebol. O portal do sócio torcedor para ingressos, acesso e tudo sobre o clube.</p></div><div class="footer-column"><h3>Institucional</h3><div class="footer-links"><a href="#">Estatuto do Torcedor</a><a href="#">Transparência</a><a href="#">Privacidade</a></div></div><div class="footer-column"><h3>Ajuda</h3><div class="footer-links"><a href="face-id-acesso.html">Acesso à arena</a><a href="#">Fale com a gente</a><a href="#">Ouvidoria</a></div></div><div class="footer-column"><h3>Parceiros</h3><div class="footer-links"><a href="#">Indústria Metallum</a><a href="#">Robótix Energia BR</a></div></div></div><div class="footer-bottom"><span>© 2024 SENAI F.C.</span><span class="footer-highlight">Feito com paixão</span></div></div></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span id="toast-message"></span></div>
+  <script src="assets/js/senai-torcedor-web.js" defer></script>
+</body>
+</html>
