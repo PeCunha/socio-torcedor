@@ -1,0 +1,14 @@
+# Normaliza os terminadores de linha no repositório.
+# O conteúdo é salvo com LF; o Git cuida da conversão na hora de checar.
+* text=auto eol=lf
+
+# Binários: não devem ser convertidos.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.mp4 binary
+*.woff binary
+*.woff2 binary

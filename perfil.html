@@ -1,20 +1,20 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0a0a0d">
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <meta name="description" content="Configuração de perfil do Sócio Torcedor do SENAI F.C.: dados pessoais, notificações, privacidade e segurança.">
-  <title>Meu perfil — SENAI F.C.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/senai-torcedor-web.css">
-</head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0d">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <meta name="description" content="Configuração de perfil do Sócio Torcedor do SENAI F.C.: dados pessoais, notificações, privacidade e segurança.">
+  <title>Meu perfil — SENAI F.C.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/senai-torcedor-web.css">
+</head>
 <body data-page="perfil">
-  <noscript><div class="noscript-banner"><strong>JavaScript desativado.</strong> A agenda da temporada, a contagem regressiva e a área do sócio dependem de JavaScript. Ative-o para usar o portal.</div></noscript>
-  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <noscript><div class="noscript-banner"><strong>JavaScript desativado.</strong> A agenda da temporada, a contagem regressiva e a área do sócio dependem de JavaScript. Ative-o para usar o portal.</div></noscript>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
       <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true">
     <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"/></symbol>
     <symbol id="icon-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M10 7l-5 5 5 5"/></symbol>
@@ -52,357 +52,356 @@
     <symbol id="icon-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 6H4v2a4 4 0 0 0 4 4M16 6h4v2a4 4 0 0 1-4 4M12 13v4M8 21h8M9 17h6"/></symbol>
     <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
     <symbol id="icon-wallet" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2"/><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M16 13h2"/></symbol>
-  </svg>
-
-  <aside class="sidebar" id="sidebar" aria-label="Navegação principal">
-    <div class="sidebar-header"><a class="brand" href="senai-torcedor-web.html" aria-label="SENAI F.C. — página principal"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-copy"><strong>SENAI F.C.</strong><span>Sócio torcedor</span></span></a><button class="icon-button sidebar-close" id="sidebar-close" type="button" aria-label="Fechar menu"><svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg></button></div>
-    <div class="membership-card" aria-label="Plano Sócio Master"><div class="membership-topline"><span>Seu plano</span><span class="vip-badge"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg>Master</span></div><div class="membership-title" data-user-plan>Sócio Master</div><div class="membership-number" data-user-matricula>Matrícula #9842</div></div>
-    <nav class="sidebar-nav" aria-label="Páginas do portal">
-      <a class="nav-link" href="face-id-acesso.html" data-page-link="face-id"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg><span>Face ID &amp; Acesso</span></a>
-      <a class="nav-link" href="senai-torcedor-web.html" data-page-link="jogos"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg><span>Jogos &amp; calendário</span></a>
-      <a class="nav-link" href="planos-de-socio.html" data-page-link="planos"><svg class="icon" aria-hidden="true"><use href="#icon-ticket"></use></svg><span>Planos de sócio</span></a>
-      <a class="nav-link" href="galeria-de-titulos.html" data-page-link="galeria"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg><span>Galeria de títulos</span></a>
-      <a class="nav-link" href="nossa-historia.html" data-page-link="historia"><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg><span>Nossa história</span></a>
+  </svg>
 
- data-page-link="perfil"><svg class="icon" aria-hidden="true"><use href="#icon-user"></use></svg><span>Meu perfil</span></a>
-    </nav>
-    <div class="sidebar-footer"><div class="connection-status"><span>Seu acesso</span><strong>Liberado</strong></div></div>
-  </aside>
-  <button class="sidebar-overlay" id="sidebar-overlay" type="button" aria-label="Fechar menu"></button>
-
-  <div class="main-shell">
-    <header class="topbar"><div class="topbar-inner">
-      <button class="icon-button menu-button" id="menu-button" type="button" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="#icon-menu"></use></svg></button>
-      <div class="topbar-actions"><a class="profile-button" href="perfil.html" data-page-link="perfil" data-page-link="perfil" aria-current="page" aria-label="Abrir configurações do perfil"><span class="avatar avatar-photo" aria-hidden="true"></span><span class="profile-copy"><span>Torcedor</span><strong data-user-name>Operário</strong><small data-user-matricula>Matrícula #9842</small></span></a></div>
-    </div></header>
-
-    <main class="page-container pf-page" id="conteudo">
-      <div class="plans-breadcrumb"><span>Portal do sócio</span><b>//</b><strong>Meu perfil</strong><i>● conta verificada</i><em>último acesso: hoje, 09:12</em></div>
-
-      <section class="pf-hero" aria-labelledby="pf-hero-title">
-        <div class="pf-avatar-wrap">
-          <span class="pf-avatar" id="pf-avatar" aria-hidden="true"><span class="pf-avatar-initials" id="pf-avatar-iniciais">OP</span></span>
-          <button class="pf-avatar-edit" id="pf-avatar-btn" type="button" aria-label="Alterar foto de perfil">
-            <svg class="icon" aria-hidden="true"><use href="#icon-camera"></use></svg>
-          </button>
-          <input class="sr-only" id="pf-avatar-input" type="file" accept="image/*">
-        </div>
-
-        <div class="pf-hero-copy">
-          <h1 id="pf-hero-title" data-user-full-name>Operário</h1>
-          <p class="pf-hero-sub"><span data-user-matricula>Matrícula #9842</span> · <span data-user-plan>Master</span></p>
-          <div class="pf-hero-tags">
-            <span class="pf-tag ok"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>Cadastro completo</span>
-            <span class="pf-tag"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg>Sócio desde mar/2023</span>
-            <span class="pf-tag"><svg class="icon" aria-hidden="true"><use href="#icon-scan"></use></svg>Face ID ativo</span>
-          </div>
-        </div>
-
-        <dl class="pf-hero-stats">
-          <div><dt>Jogos em 2026</dt><dd>9</dd></div>
-          <div><dt>Convites</dt><dd>3</dd></div>
-          <div><dt>Pontos do clube</dt><dd>1.240</dd></div>
-        </dl>
-      </section>
-
-      <div class="pf-layout">
-        <div class="pf-main">
-
-          <section class="pf-card" aria-labelledby="pf-dados-title">
-            <header class="pf-card-head">
-              <span class="pf-card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-user"></use></svg></span>
-              <div>
-                <h2 id="pf-dados-title">Dados pessoais</h2>
-                <p>Essas informações aparecem no seu crachá de sócio torcedor.</p>
-              </div>
-            </header>
-
-            <form class="pf-form" id="pf-form-dados">
-              <div class="pf-grid">
-                <div class="pf-field pf-field-wide">
-                  <label for="pf-nome">Nome completo</label>
-                  <input id="pf-nome" name="nome" type="text" autocomplete="name" required>
-                </div>
-                <div class="pf-field">
-                  <label for="pf-email">E-mail</label>
-                  <input id="pf-email" name="email" type="email" autocomplete="email" inputmode="email" required>
-                </div>
-                <div class="pf-field">
-                  <label for="pf-telefone">Telefone / WhatsApp</label>
-                  <input id="pf-telefone" name="telefone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(11) 90000-0000">
-                </div>
-                <div class="pf-field">
-                  <label for="pf-cpf">CPF</label>
-                  <input id="pf-cpf" name="cpf" type="text" inputmode="numeric" placeholder="000.000.000-00" maxlength="14">
-                </div>
-                <div class="pf-field">
-                  <label for="pf-nascimento">Data de nascimento</label>
-                  <input id="pf-nascimento" name="nascimento" type="date">
-                </div>
-              </div>
-
-              <div class="pf-switch-row">
-                <div class="pf-switch-copy">
-                  <strong>Emitir ingressos em meu CPF</strong>
-                  <p>Os ingressos do seu plano são vinculados ao documento informado.</p>
-                </div>
-                <button class="pf-switch" type="button" role="switch" aria-checked="true" data-setting="cpf"><span class="pf-switch-track" aria-hidden="true"><span class="pf-switch-knob"></span></span><span class="sr-only">Emitir ingressos em meu CPF</span></button>
-              </div>
-            </form>
-          </section>
-
-          <section class="pf-card" aria-labelledby="pf-endereco-title">
-            <header class="pf-card-head">
-              <span class="pf-card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-map"></use></svg></span>
-              <div>
-                <h2 id="pf-endereco-title">Endereço</h2>
-                <p>Usado para envio de brindes, brindes de aniversário e correspondência.</p>
-              </div>
-            </header>
-
-            <form class="pf-form" id="pf-form-endereco">
-              <div class="pf-grid">
-                <div class="pf-field">
-                  <label for="pf-cep">CEP</label>
-                  <input id="pf-cep" name="cep" type="text" inputmode="numeric" placeholder="00000-000" maxlength="9">
-                </div>
-                <div class="pf-field pf-field-wide">
-                  <label for="pf-logradouro">Endereço</label>
-                  <input id="pf-logradouro" name="logradouro" type="text" autocomplete="street-address">
-                </div>
-                <div class="pf-field">
-                  <label for="pf-numero">Número</label>
-                  <input id="pf-numero" name="numero" type="text" inputmode="numeric">
-                </div>
-                <div class="pf-field">
-                  <label for="pf-complemento">Complemento</label>
-                  <input id="pf-complemento" name="complemento" type="text" placeholder="Apto, bloco…">
-                </div>
-                <div class="pf-field">
-                  <label for="pf-cidade">Cidade</label>
-                  <input id="pf-cidade" name="cidade" type="text" autocomplete="address-level2">
-                </div>
-                <div class="pf-field">
-                  <label for="pf-uf">Estado</label>
-                  <select id="pf-uf" name="uf">
-                    <option value="">Selecione</option>
-                    <option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option>
-                    <option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option>
-                    <option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option>
-                    <option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
-                    <option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option>
-                    <option>SE</option><option>TO</option>
-                  </select>
-                </div>
-              </div>
-            </form>
-          </section>
-
-          <section class="pf-card" aria-labelledby="pf-notificacoes-title">
-            <header class="pf-card-head">
-              <span class="pf-card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bell"></use></svg></span>
-              <div>
-                <h2 id="pf-notificacoes-title">Notificações</h2>
-                <p>Escolha como quer receber os avisos do SENAI F.C.</p>
-              </div>
-            </header>
-
-            <div class="pf-switch-list">
-              <div class="pf-switch-row">
-                <div class="pf-switch-copy">
-                  <strong>Confirmação de ingresso</strong>
-                  <p>Código de retirada e comprovante de reserva. Não pode ser desativado.</p>
-                </div>
-                <button class="pf-switch is-locked" type="button" role="switch" aria-checked="true" data-setting="ingresso" disabled><span class="pf-switch-track" aria-hidden="true"><span class="pf-switch-knob"></span></span><span class="sr-only">Confirmação de ingresso</span></button>
-              </div>
-              <div class="pf-switch-row">
-                <div class="pf-switch-copy">
-                  <strong>Lembrete antes do jogo</strong>
-                  <p>Aviso 2 horas antes da partida com portão e setor.</p>
-                </div>
-                <button class="pf-switch" type="button" role="switch" aria-checked="true" data-setting="lembrete"><span class="pf-switch-track" aria-hidden="true"><span class="pf-switch-knob"></span></span><span class="sr-only">Lembrete antes do jogo</span></button>
-              </div>
-              <div class="pf-switch-row">
-                <div class="pf-switch-copy">
-                  <strong>Comunicados oficiais</strong>
-                  <p>Alterações de tabela, portões e comunicados da diretoria.</p>
-                </div>
-                <button class="pf-switch" type="button" role="switch" aria-checked="true" data-setting="comunicados"><span class="pf-switch-track" aria-hidden="true"><span class="pf-switch-knob"></span></span><span class="sr-only">Comunicados oficiais</span></button>
-              </div>
-              <div class="pf-switch-row">
-                <div class="pf-switch-copy">
-                  <strong>Loja e parceiros</strong>
-                  <p>Promoções da loja oficial e convênios do clube.</p>
-                </div>
-                <button class="pf-switch" type="button" role="switch" aria-checked="false" data-setting="marketing"><span class="pf-switch-track" aria-hidden="true"><span class="pf-switch-knob"></span></span><span class="sr-only">Loja e parceiros</span></button>
-              </div>
-            </div>
-          </section>
-
-          <section class="pf-card" aria-labelledby="pf-privacidade-title">
-            <header class="pf-card-head">
-              <span class="pf-card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-palette"></use></svg></span>
-              <div>
-                <h2 id="pf-privacidade-title">Privacidade e acesso</h2>
-                <p>Controle a biometria e o uso dos seus dados dentro do portal.</p>
-              </div>
-            </header>
-
-            <div class="pf-switch-list">
-              <div class="pf-switch-row">
-                <div class="pf-switch-copy">
-                  <strong>Entrada por Face ID</strong>
-                  <p>Liberação automática nas catracas do Portão 01 e camarote.</p>
-                </div>
-                <button class="pf-switch" type="button" role="switch" aria-checked="true" data-setting="faceid"><span class="pf-switch-track" aria-hidden="true"><span class="pf-switch-knob"></span></span><span class="sr-only">Entrada por Face ID</span></button>
-              </div>
-              <div class="pf-switch-row">
-                <div class="pf-switch-copy">
-                  <strong>Localização no estádio</strong>
-                  <p>Usada para avisar sobre filas e portões mais rápidos.</p>
-                </div>
-                <button class="pf-switch" type="button" role="switch" aria-checked="false" data-setting="localizacao"><span class="pf-switch-track" aria-hidden="true"><span class="pf-switch-knob"></span></span><span class="sr-only">Localização no estádio</span></button>
-              </div>
-              <div class="pf-switch-row">
-                <div class="pf-switch-copy">
-                  <strong>Compartilhar dados com o clube</strong>
-                  <p>Permite receber benefícios e convites exclusivos da diretoria.</p>
-                </div>
-                <button class="pf-switch" type="button" role="switch" aria-checked="true" data-setting="beneficios"><span class="pf-switch-track" aria-hidden="true"><span class="pf-switch-knob"></span></span><span class="sr-only">Compartilhar dados com o clube</span></button>
-              </div>
-              <div class="pf-field pf-field-wide pf-field-select">
-                <label for="pf-visibilidade">Visibilidade do perfil</label>
-                <select id="pf-visibilidade" name="visibilidade">
-                  <option value="privado">Somente eu</option>
-                  <option value="torcedores">Outros torcedores</option>
-                  <option value="publico">Público</option>
-                </select>
-              </div>
-            </div>
-          </section>
-
-          <section class="pf-card" aria-labelledby="pf-seguranca-title">
-            <header class="pf-card-head">
-              <span class="pf-card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg></span>
-              <div>
-                <h2 id="pf-seguranca-title">Segurança</h2>
-                <p>Atualize sua senha e confira onde a conta está conectada.</p>
-              </div>
-            </header>
-
-            <form class="pf-form" id="pf-form-senha">
-              <div class="pf-grid">
-                <div class="pf-field pf-field-wide">
-                  <label for="pf-senha-atual">Senha atual</label>
-                  <input id="pf-senha-atual" name="senha-atual" type="password" autocomplete="current-password">
-                </div>
-                <div class="pf-field">
-                  <label for="pf-senha-nova">Nova senha</label>
-                  <input id="pf-senha-nova" name="senha-nova" type="password" autocomplete="new-password" minlength="8">
-                  <p class="pf-strength" id="pf-forca" aria-live="polite"><span class="pf-strength-bar" data-nivel="0"><i></i></span><span class="pf-strength-text" data-nivel="0">Mínimo de 8 caracteres</span></p>
-                </div>
-                <div class="pf-field">
-                  <label for="pf-senha-confirma">Confirmar nova senha</label>
-                  <input id="pf-senha-confirma" name="senha-confirma" type="password" autocomplete="new-password" minlength="8">
-                </div>
-              </div>
-
-              <div class="pf-switch-row">
-                <div class="pf-switch-copy">
-                  <strong>Verificação em duas etapas</strong>
-                  <p>Código por aplicativo autenticador no login.</p>
-                </div>
-                <button class="pf-switch" type="button" role="switch" aria-checked="false" data-setting="dois-fatores"><span class="pf-switch-track" aria-hidden="true"><span class="pf-switch-knob"></span></span><span class="sr-only">Verificação em duas etapas</span></button>
-              </div>
-            </form>
-
-            <div class="pf-sessions">
-              <h3 class="pf-subtitle">Sessões ativas</h3>
-              <ul class="pf-session-list">
-                <li>
-                  <span class="pf-session-icon"><svg class="icon" aria-hidden="true"><use href="#icon-user"></use></svg></span>
-                  <div><strong>Este dispositivo</strong><p>Chrome · São Paulo, BR · agora</p></div>
-                  <span class="pf-badge ok">Atual</span>
-                </li>
-                <li>
-                  <span class="pf-session-icon"><svg class="icon" aria-hidden="true"><use href="#icon-eye"></use></svg></span>
-                  <div><strong>iPhone 14 · Portal do Sócio</strong><p>Safari · São Paulo, BR · há 2 horas</p></div>
-                  <button class="pf-session-end" type="button" data-message="Sessão do iPhone 14 encerrada.">Encerrar</button>
-                </li>
-                <li>
-                  <span class="pf-session-icon"><svg class="icon" aria-hidden="true"><use href="#icon-eye"></use></svg></span>
-                  <div><strong>Totem do Portão 01</strong><p>Kiosk da Arena SENAI · 12 out 2026</p></div>
-                  <button class="pf-session-end" type="button" data-message="Sessão do totem encerrada.">Encerrar</button>
-                </li>
-              </ul>
-            </div>
-          </section>
-
-        </div>
-
-        <aside class="pf-side">
-          <section class="pf-card pf-card-plan" aria-labelledby="pf-plano-title">
-            <header class="pf-card-head">
-              <span class="pf-card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></span>
-              <div>
-                <h2 id="pf-plano-title">Meu plano</h2>
-                <p>Indústria Master VIP</p>
-              </div>
-            </header>
-            <div class="pf-plan-price"><span>Mensalidade</span><strong>R$ 119,90 <small>/mês</small></strong></div>
-            <ul class="pf-plan-list">
-              <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>Todos os jogos garantidos</li>
-              <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>Camarote Master &amp; buffet</li>
-              <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>Face ID sem fila</li>
-            </ul>
-            <p class="pf-plan-renew">Próxima cobrança em <strong>14/nov/2026</strong> · Mastercard •••• 4417</p>
-            <a class="ghost-button pf-button-block" href="planos-de-socio.html">Gerenciar plano</a>
-          </section>
-
-          <section class="pf-card" aria-labelledby="pf-sessao-title">
-            <header class="pf-card-head">
-              <span class="pf-card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg></span>
-              <div>
-                <h2 id="pf-sessao-title">Conta e acesso</h2>
-                <p>Nível de proteção do seu cadastro.</p>
-              </div>
-            </header>
-            <ul class="pf-check-list">
-              <li class="ok"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>E-mail verificado</li>
-              <li class="ok"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>Biometria facial cadastrada</li>
-              <li class="warn"><svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg>Verificação em duas etapas desativada</li>
-              <li class="warn"><svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg>CPF não informado</li>
-            </ul>
-            <button class="ghost-button pf-button-block" id="pf-sair-tudo" type="button" data-message="Todas as outras sessões foram encerradas.">Sair de todas as sessões</button>
-            <a class="pf-logout" href="login.html"><svg class="icon" aria-hidden="true"><use href="#icon-logout"></use></svg>Encerrar sessão e sair da conta</a>
-          </section>
-
-          <section class="pf-card pf-card-danger" aria-labelledby="pf-perigo-title">
-            <header class="pf-card-head">
-              <span class="pf-card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-trash"></use></svg></span>
-              <div>
-                <h2 id="pf-perigo-title">Zona de risco</h2>
-                <p>Ações definitivas no seu cadastro.</p>
-              </div>
-            </header>
-            <button class="pf-danger-button" id="pf-excluir" type="button" data-message="Solicitação de exclusão registrada. Em 7 dias ela pode ser cancelada.">Excluir minha conta</button>
-            <p class="pf-danger-note">Ao excluir, você perde o acesso aos ingressos já emitidos e ao histórico do clube.</p>
-          </section>
-        </aside>
-      </div>
-
-      <div class="pf-actions" id="pf-actions">
-        <p class="pf-actions-status" id="pf-status" role="status" aria-live="polite">Alterações não salvas</p>
-        <div class="pf-actions-buttons">
-          <button class="ghost-button" id="pf-descartar" type="button">Descartar</button>
-          <button class="primary-button" id="pf-salvar" type="button">Salvar alterações</button>
-        </div>
-      </div>
-    </main>
-
-    <footer class="site-footer"><div class="footer-inner"><div class="footer-grid"><div class="footer-column"><h3>SENAI F.C.</h3><p>Paixão, tradição e futebol. O portal do sócio torcedor para ingressos, acesso e tudo sobre o clube.</p></div><div class="footer-column"><h3>Institucional</h3><div class="footer-links"><button class="footer-link" type="button" data-message="O Estatuto do Torcedor do SENAI F.C. entra no ar na próxima atualização do portal.">Estatuto do Torcedor</button><button class="footer-link" type="button" data-message="O relatório de transparência da temporada é publicado após o encerramento da Copa Indústria.">Transparência</button><a href="perfil.html#pf-privacidade-title">Privacidade</a></div></div><div class="footer-column"><h3>Ajuda</h3><div class="footer-links"><a href="face-id-acesso.html">Acesso à arena</a><a href="mailto:socio@senai-fc.com.br">Fale com a gente</a><a href="mailto:ouvidoria@senai-fc.com.br">Ouvidoria</a></div></div><div class="footer-column"><h3>Parceiros</h3><div class="sponsor-grid"><span class="sponsor">Indústria Metallum</span><span class="sponsor">Robôtix Energia BR</span></div></div></div><div class="footer-bottom"><span>© <span data-current-year>2026</span> SENAI F.C.</span><span class="footer-highlight">Feito com paixão</span></div></div></footer>
-  </div>
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span id="toast-message"></span></div>
-  <script src="assets/js/senai-torcedor-web.js" defer></script>
-</body>
-</html>
+  <aside class="sidebar" id="sidebar" aria-label="Navegação principal">
+    <div class="sidebar-header"><a class="brand" href="senai-torcedor-web.html" aria-label="SENAI F.C. — página principal"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-copy"><strong>SENAI F.C.</strong><span>Sócio torcedor</span></span></a><button class="icon-button sidebar-close" id="sidebar-close" type="button" aria-label="Fechar menu"><svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg></button></div>
+    <div class="membership-card" aria-label="Plano Sócio Master"><div class="membership-topline"><span>Seu plano</span><span class="vip-badge"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg>Master</span></div><div class="membership-title" data-user-plan>Sócio Master</div><div class="membership-number" data-user-matricula>Matrícula #9842</div></div>
+    <nav class="sidebar-nav" aria-label="Páginas do portal">
+      <a class="nav-link" href="face-id-acesso.html" data-page-link="face-id"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg><span>Face ID &amp; Acesso</span></a>
+      <a class="nav-link" href="senai-torcedor-web.html" data-page-link="jogos"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg><span>Jogos &amp; calendário</span></a>
+      <a class="nav-link" href="planos-de-socio.html" data-page-link="planos"><svg class="icon" aria-hidden="true"><use href="#icon-ticket"></use></svg><span>Planos de sócio</span></a>
+      <a class="nav-link" href="galeria-de-titulos.html" data-page-link="galeria"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg><span>Galeria de títulos</span></a>
+      <a class="nav-link" href="nossa-historia.html" data-page-link="historia"><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg><span>Nossa história</span></a>
+      <a class="nav-link" href="perfil.html" data-page-link="perfil"><svg class="icon" aria-hidden="true"><use href="#icon-user"></use></svg><span>Meu perfil</span></a>
+    </nav>
+    <div class="sidebar-footer"><div class="connection-status"><span>Seu acesso</span><strong>Liberado</strong></div><p class="demo-badge"><svg class="icon" aria-hidden="true"><use href="#icon-bolt"></use></svg><span>Ambiente de demonstração</span></p></div>
+  </aside>
+  <button class="sidebar-overlay" id="sidebar-overlay" type="button" aria-label="Fechar menu"></button>
+
+  <div class="main-shell">
+    <header class="topbar"><div class="topbar-inner">
+      <button class="icon-button menu-button" id="menu-button" type="button" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="#icon-menu"></use></svg></button>
+      <div class="topbar-actions"><a class="profile-button" href="perfil.html" data-page-link="perfil" aria-current="page" aria-label="Abrir configurações do perfil"><span class="avatar avatar-photo" aria-hidden="true"></span><span class="profile-copy"><span>Torcedor</span><strong data-user-name>Operário</strong><small data-user-matricula>Matrícula #9842</small></span></a></div>
+    </div></header>
+
+    <main class="page-container pf-page" id="conteudo">
+      <div class="plans-breadcrumb"><span>Portal do sócio</span><b>//</b><strong>Meu perfil</strong><i>● conta verificada</i><em>último acesso: hoje, 09:12</em></div>
+
+      <section class="pf-hero" aria-labelledby="pf-hero-title">
+        <div class="pf-avatar-wrap">
+          <span class="pf-avatar" id="pf-avatar" aria-hidden="true"><span class="pf-avatar-initials" id="pf-avatar-iniciais">OP</span></span>
+          <button class="pf-avatar-edit" id="pf-avatar-btn" type="button" aria-label="Alterar foto de perfil">
+            <svg class="icon" aria-hidden="true"><use href="#icon-camera"></use></svg>
+          </button>
+          <input class="sr-only" id="pf-avatar-input" type="file" accept="image/*" aria-label="Escolher nova foto de perfil">
+        </div>
+
+        <div class="pf-hero-copy">
+          <h1 id="pf-hero-title" data-user-full-name>Operário</h1>
+          <p class="pf-hero-sub"><span data-user-matricula>Matrícula #9842</span> · <span data-user-plan>Master</span></p>
+          <div class="pf-hero-tags">
+            <span class="pf-tag ok"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>Cadastro completo</span>
+            <span class="pf-tag"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg>Sócio desde mar/2023</span>
+            <span class="pf-tag"><svg class="icon" aria-hidden="true"><use href="#icon-scan"></use></svg>Face ID ativo</span>
+          </div>
+        </div>
+
+        <dl class="pf-hero-stats">
+          <div><dt>Jogos em 2026</dt><dd>9</dd></div>
+          <div><dt>Convites</dt><dd>3</dd></div>
+          <div><dt>Pontos do clube</dt><dd>1.240</dd></div>
+        </dl>
+      </section>
+
+      <div class="pf-layout">
+        <div class="pf-main">
+
+          <section class="pf-card" aria-labelledby="pf-dados-title">
+            <header class="pf-card-head">
+              <span class="pf-card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-user"></use></svg></span>
+              <div>
+                <h2 id="pf-dados-title">Dados pessoais</h2>
+                <p>Essas informações aparecem no seu crachá de sócio torcedor.</p>
+              </div>
+            </header>
+
+            <form class="pf-form" id="pf-form-dados">
+              <div class="pf-grid">
+                <div class="pf-field pf-field-wide">
+                  <label for="pf-nome">Nome completo</label>
+                  <input id="pf-nome" name="nome" type="text" autocomplete="name" required>
+                </div>
+                <div class="pf-field">
+                  <label for="pf-email">E-mail</label>
+                  <input id="pf-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+                </div>
+                <div class="pf-field">
+                  <label for="pf-telefone">Telefone / WhatsApp</label>
+                  <input id="pf-telefone" name="telefone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(11) 90000-0000">
+                </div>
+                <div class="pf-field">
+                  <label for="pf-cpf">CPF</label>
+                  <input id="pf-cpf" name="cpf" type="text" inputmode="numeric" placeholder="000.000.000-00" maxlength="14">
+                </div>
+                <div class="pf-field">
+                  <label for="pf-nascimento">Data de nascimento</label>
+                  <input id="pf-nascimento" name="nascimento" type="date">
+                </div>
+              </div>
+
+              <div class="pf-switch-row">
+                <div class="pf-switch-copy">
+                  <strong>Emitir ingressos em meu CPF</strong>
+                  <p>Os ingressos do seu plano são vinculados ao documento informado.</p>
+                </div>
+                <button class="pf-switch" type="button" role="switch" aria-checked="true" data-setting="cpf"><span class="pf-switch-track" aria-hidden="true"><span class="pf-switch-knob"></span></span><span class="sr-only">Emitir ingressos em meu CPF</span></button>
+              </div>
+            </form>
+          </section>
+
+          <section class="pf-card" aria-labelledby="pf-endereco-title">
+            <header class="pf-card-head">
+              <span class="pf-card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-map"></use></svg></span>
+              <div>
+                <h2 id="pf-endereco-title">Endereço</h2>
+                <p>Usado para envio de brindes, brindes de aniversário e correspondência.</p>
+              </div>
+            </header>
+
+            <form class="pf-form" id="pf-form-endereco">
+              <div class="pf-grid">
+                <div class="pf-field">
+                  <label for="pf-cep">CEP</label>
+                  <input id="pf-cep" name="cep" type="text" inputmode="numeric" placeholder="00000-000" maxlength="9">
+                </div>
+                <div class="pf-field pf-field-wide">
+                  <label for="pf-logradouro">Endereço</label>
+                  <input id="pf-logradouro" name="logradouro" type="text" autocomplete="street-address">
+                </div>
+                <div class="pf-field">
+                  <label for="pf-numero">Número</label>
+                  <input id="pf-numero" name="numero" type="text" inputmode="numeric">
+                </div>
+                <div class="pf-field">
+                  <label for="pf-complemento">Complemento</label>
+                  <input id="pf-complemento" name="complemento" type="text" placeholder="Apto, bloco…">
+                </div>
+                <div class="pf-field">
+                  <label for="pf-cidade">Cidade</label>
+                  <input id="pf-cidade" name="cidade" type="text" autocomplete="address-level2">
+                </div>
+                <div class="pf-field">
+                  <label for="pf-uf">Estado</label>
+                  <select id="pf-uf" name="uf">
+                    <option value="">Selecione</option>
+                    <option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option>
+                    <option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option>
+                    <option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option>
+                    <option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+                    <option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option>
+                    <option>SE</option><option>TO</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </section>
+
+          <section class="pf-card" aria-labelledby="pf-notificacoes-title">
+            <header class="pf-card-head">
+              <span class="pf-card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bell"></use></svg></span>
+              <div>
+                <h2 id="pf-notificacoes-title">Notificações</h2>
+                <p>Escolha como quer receber os avisos do SENAI F.C.</p>
+              </div>
+            </header>
+
+            <div class="pf-switch-list">
+              <div class="pf-switch-row">
+                <div class="pf-switch-copy">
+                  <strong>Confirmação de ingresso</strong>
+                  <p>Código de retirada e comprovante de reserva. Não pode ser desativado.</p>
+                </div>
+                <button class="pf-switch is-locked" type="button" role="switch" aria-checked="true" data-setting="ingresso" disabled><span class="pf-switch-track" aria-hidden="true"><span class="pf-switch-knob"></span></span><span class="sr-only">Confirmação de ingresso</span></button>
+              </div>
+              <div class="pf-switch-row">
+                <div class="pf-switch-copy">
+                  <strong>Lembrete antes do jogo</strong>
+                  <p>Aviso 2 horas antes da partida com portão e setor.</p>
+                </div>
+                <button class="pf-switch" type="button" role="switch" aria-checked="true" data-setting="lembrete"><span class="pf-switch-track" aria-hidden="true"><span class="pf-switch-knob"></span></span><span class="sr-only">Lembrete antes do jogo</span></button>
+              </div>
+              <div class="pf-switch-row">
+                <div class="pf-switch-copy">
+                  <strong>Comunicados oficiais</strong>
+                  <p>Alterações de tabela, portões e comunicados da diretoria.</p>
+                </div>
+                <button class="pf-switch" type="button" role="switch" aria-checked="true" data-setting="comunicados"><span class="pf-switch-track" aria-hidden="true"><span class="pf-switch-knob"></span></span><span class="sr-only">Comunicados oficiais</span></button>
+              </div>
+              <div class="pf-switch-row">
+                <div class="pf-switch-copy">
+                  <strong>Loja e parceiros</strong>
+                  <p>Promoções da loja oficial e convênios do clube.</p>
+                </div>
+                <button class="pf-switch" type="button" role="switch" aria-checked="false" data-setting="marketing"><span class="pf-switch-track" aria-hidden="true"><span class="pf-switch-knob"></span></span><span class="sr-only">Loja e parceiros</span></button>
+              </div>
+            </div>
+          </section>
+
+          <section class="pf-card" aria-labelledby="pf-privacidade-title">
+            <header class="pf-card-head">
+              <span class="pf-card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-palette"></use></svg></span>
+              <div>
+                <h2 id="pf-privacidade-title">Privacidade e acesso</h2>
+                <p>Controle a biometria e o uso dos seus dados dentro do portal.</p>
+              </div>
+            </header>
+
+            <div class="pf-switch-list">
+              <div class="pf-switch-row">
+                <div class="pf-switch-copy">
+                  <strong>Entrada por Face ID</strong>
+                  <p>Liberação automática nas catracas do Portão 01 e camarote.</p>
+                </div>
+                <button class="pf-switch" type="button" role="switch" aria-checked="true" data-setting="faceid"><span class="pf-switch-track" aria-hidden="true"><span class="pf-switch-knob"></span></span><span class="sr-only">Entrada por Face ID</span></button>
+              </div>
+              <div class="pf-switch-row">
+                <div class="pf-switch-copy">
+                  <strong>Localização no estádio</strong>
+                  <p>Usada para avisar sobre filas e portões mais rápidos.</p>
+                </div>
+                <button class="pf-switch" type="button" role="switch" aria-checked="false" data-setting="localizacao"><span class="pf-switch-track" aria-hidden="true"><span class="pf-switch-knob"></span></span><span class="sr-only">Localização no estádio</span></button>
+              </div>
+              <div class="pf-switch-row">
+                <div class="pf-switch-copy">
+                  <strong>Compartilhar dados com o clube</strong>
+                  <p>Permite receber benefícios e convites exclusivos da diretoria.</p>
+                </div>
+                <button class="pf-switch" type="button" role="switch" aria-checked="true" data-setting="beneficios"><span class="pf-switch-track" aria-hidden="true"><span class="pf-switch-knob"></span></span><span class="sr-only">Compartilhar dados com o clube</span></button>
+              </div>
+              <div class="pf-field pf-field-wide pf-field-select">
+                <label for="pf-visibilidade">Visibilidade do perfil</label>
+                <select id="pf-visibilidade" name="visibilidade">
+                  <option value="privado">Somente eu</option>
+                  <option value="torcedores">Outros torcedores</option>
+                  <option value="publico">Público</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <section class="pf-card" aria-labelledby="pf-seguranca-title">
+            <header class="pf-card-head">
+              <span class="pf-card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg></span>
+              <div>
+                <h2 id="pf-seguranca-title">Segurança</h2>
+                <p>Atualize sua senha e confira onde a conta está conectada.</p>
+              </div>
+            </header>
+
+            <form class="pf-form" id="pf-form-senha">
+              <div class="pf-grid">
+                <div class="pf-field pf-field-wide">
+                  <label for="pf-senha-atual">Senha atual</label>
+                  <input id="pf-senha-atual" name="senha-atual" type="password" autocomplete="current-password">
+                </div>
+                <div class="pf-field">
+                  <label for="pf-senha-nova">Nova senha</label>
+                  <input id="pf-senha-nova" name="senha-nova" type="password" autocomplete="new-password" minlength="8">
+                  <p class="pf-strength" id="pf-forca" aria-live="polite"><span class="pf-strength-bar" data-nivel="0"><i></i></span><span class="pf-strength-text" data-nivel="0">Mínimo de 8 caracteres</span></p>
+                </div>
+                <div class="pf-field">
+                  <label for="pf-senha-confirma">Confirmar nova senha</label>
+                  <input id="pf-senha-confirma" name="senha-confirma" type="password" autocomplete="new-password" minlength="8">
+                </div>
+              </div>
+
+              <div class="pf-switch-row">
+                <div class="pf-switch-copy">
+                  <strong>Verificação em duas etapas</strong>
+                  <p>Código por aplicativo autenticador no login.</p>
+                </div>
+                <button class="pf-switch" type="button" role="switch" aria-checked="false" data-setting="dois-fatores"><span class="pf-switch-track" aria-hidden="true"><span class="pf-switch-knob"></span></span><span class="sr-only">Verificação em duas etapas</span></button>
+              </div>
+            </form>
+
+            <div class="pf-sessions">
+              <h3 class="pf-subtitle">Sessões ativas</h3>
+              <ul class="pf-session-list">
+                <li>
+                  <span class="pf-session-icon"><svg class="icon" aria-hidden="true"><use href="#icon-user"></use></svg></span>
+                  <div><strong>Este dispositivo</strong><p>Chrome · São Paulo, BR · agora</p></div>
+                  <span class="pf-badge ok">Atual</span>
+                </li>
+                <li>
+                  <span class="pf-session-icon"><svg class="icon" aria-hidden="true"><use href="#icon-eye"></use></svg></span>
+                  <div><strong>iPhone 14 · Portal do Sócio</strong><p>Safari · São Paulo, BR · há 2 horas</p></div>
+                  <button class="pf-session-end" type="button" data-message="Sessão do iPhone 14 encerrada.">Encerrar</button>
+                </li>
+                <li>
+                  <span class="pf-session-icon"><svg class="icon" aria-hidden="true"><use href="#icon-eye"></use></svg></span>
+                  <div><strong>Totem do Portão 01</strong><p>Kiosk da Arena SENAI · 12 out 2026</p></div>
+                  <button class="pf-session-end" type="button" data-message="Sessão do totem encerrada.">Encerrar</button>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+        </div>
+
+        <aside class="pf-side">
+          <section class="pf-card pf-card-plan" aria-labelledby="pf-plano-title">
+            <header class="pf-card-head">
+              <span class="pf-card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></span>
+              <div>
+                <h2 id="pf-plano-title">Meu plano</h2>
+                <p>Indústria Master VIP</p>
+              </div>
+            </header>
+            <div class="pf-plan-price"><span>Mensalidade</span><strong>R$ 119,90 <small>/mês</small></strong></div>
+            <ul class="pf-plan-list">
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>Todos os jogos garantidos</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>Camarote Master &amp; buffet</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>Face ID sem fila</li>
+            </ul>
+            <p class="pf-plan-renew">Próxima cobrança em <strong>14/nov/2026</strong> · Mastercard •••• 4417</p>
+            <a class="ghost-button pf-button-block" href="planos-de-socio.html">Gerenciar plano</a>
+          </section>
+
+          <section class="pf-card" aria-labelledby="pf-sessao-title">
+            <header class="pf-card-head">
+              <span class="pf-card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg></span>
+              <div>
+                <h2 id="pf-sessao-title">Conta e acesso</h2>
+                <p>Nível de proteção do seu cadastro.</p>
+              </div>
+            </header>
+            <ul class="pf-check-list">
+              <li class="ok"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>E-mail verificado</li>
+              <li class="ok"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>Biometria facial cadastrada</li>
+              <li class="warn"><svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg>Verificação em duas etapas desativada</li>
+              <li class="warn"><svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg>CPF não informado</li>
+            </ul>
+            <button class="ghost-button pf-button-block" id="pf-sair-tudo" type="button" data-message="Todas as outras sessões foram encerradas.">Sair de todas as sessões</button>
+            <a class="pf-logout" href="login.html"><svg class="icon" aria-hidden="true"><use href="#icon-logout"></use></svg>Encerrar sessão e sair da conta</a>
+          </section>
+
+          <section class="pf-card pf-card-danger" aria-labelledby="pf-perigo-title">
+            <header class="pf-card-head">
+              <span class="pf-card-icon"><svg class="icon" aria-hidden="true"><use href="#icon-trash"></use></svg></span>
+              <div>
+                <h2 id="pf-perigo-title">Zona de risco</h2>
+                <p>Ações definitivas no seu cadastro.</p>
+              </div>
+            </header>
+            <button class="pf-danger-button" id="pf-excluir" type="button" data-message="Solicitação de exclusão registrada. Em 7 dias ela pode ser cancelada.">Excluir minha conta</button>
+            <p class="pf-danger-note">Ao excluir, você perde o acesso aos ingressos já emitidos e ao histórico do clube.</p>
+          </section>
+        </aside>
+      </div>
+
+      <div class="pf-actions" id="pf-actions">
+        <p class="pf-actions-status" id="pf-status" role="status" aria-live="polite">Alterações não salvas</p>
+        <div class="pf-actions-buttons">
+          <button class="ghost-button" id="pf-descartar" type="button">Descartar</button>
+          <button class="primary-button" id="pf-salvar" type="button">Salvar alterações</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer"><div class="footer-inner"><div class="footer-grid"><div class="footer-column"><h3>SENAI F.C.</h3><p>Paixão, tradição e futebol. O portal do sócio torcedor para ingressos, acesso e tudo sobre o clube.</p></div><div class="footer-column"><h3>Institucional</h3><div class="footer-links"><button class="footer-link" type="button" data-message="O Estatuto do Torcedor do SENAI F.C. entra no ar na próxima atualização do portal.">Estatuto do Torcedor</button><button class="footer-link" type="button" data-message="O relatório de transparência da temporada é publicado após o encerramento da Copa Indústria.">Transparência</button><a href="perfil.html#pf-privacidade-title">Privacidade</a></div></div><div class="footer-column"><h3>Ajuda</h3><div class="footer-links"><a href="face-id-acesso.html">Acesso à arena</a><a href="mailto:socio@senai-fc.com.br">Fale com a gente</a><a href="mailto:ouvidoria@senai-fc.com.br">Ouvidoria</a></div></div><div class="footer-column"><h3>Parceiros</h3><div class="sponsor-grid"><span class="sponsor">Indústria Metallum</span><span class="sponsor">Robôtix Energia BR</span></div></div></div><div class="footer-bottom"><span>© <span data-current-year>2026</span> SENAI F.C.</span><span class="footer-highlight">Feito com paixão</span></div></div></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span id="toast-message"></span></div>
+  <script src="assets/js/senai-torcedor-web.js" defer></script>
+</body>
+</html>

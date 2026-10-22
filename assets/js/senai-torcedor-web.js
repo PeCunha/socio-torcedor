@@ -412,12 +412,31 @@
       return "Ajustes aprovados. Mantenha a posição.";
     };
 
-    const paintBox = (x, y, size) => {
+    /* Converte um retângulo normalizado do vídeo (0..1) para o espaço do
+       canvas. O vídeo aparece com object-fit: cover e espelhado
+       (scaleX(-1)); sem esta correção o desenho sai cortado e invertido. */
+    const mapearParaTela = (r) => {
+      const vw = video.videoWidth || 4;
+      const vh = video.videoHeight || 3;
+      const cw = canvas.clientWidth || vw;
+      const ch = canvas.clientHeight || vh;
+      const escala = Math.max(cw / vw, ch / vh);
+      const dw = vw * escala;
+      const dh = vh * escala;
+      const x = (r.x * dw - (dw - cw) / 2) / cw;
+      const y = (r.y * dh - (dh - ch) / 2) / ch;
+      const w = (r.w * dw) / cw;
+      const h = (r.h * dh) / ch;
+      /* o vídeo é exibido espelhado: inverte o eixo horizontal */
+      return { x: 1 - x - w, y, w, h };
+    };
+
+    const paintBox = (x, y, w, h) => {
       box.hidden = false;
       box.style.left = `${x * 100}%`;
       box.style.top = `${y * 100}%`;
-      box.style.width = `${size * 100}%`;
-      box.style.height = `${size * 1.35 * 100}%`;
+      box.style.width = `${w * 100}%`;
+      box.style.height = `${h * 100}%`;
     };
 
     const drawOverlay = (rect, label) => {
@@ -429,13 +448,15 @@
       }
       ctx.clearRect(0, 0, w, h);
       if (!rect) return;
+      /* rect chega normalizado no espaço do vídeo — convertemos para pixels */
+      const r = mapearParaTela(rect);
       ctx.save();
       ctx.lineWidth = 2;
       ctx.strokeStyle = "rgba(65, 209, 140, 0.9)";
-      ctx.strokeRect(rect.x, rect.y, rect.w, rect.h);
+      ctx.strokeRect(r.x * w, r.y * h, r.w * w, r.h * h);
       ctx.fillStyle = "rgba(65, 209, 140, 0.9)";
       ctx.font = "600 11px ui-monospace, Consolas, monospace";
-      ctx.fillText(label, rect.x, Math.max(12, rect.y - 6));
+      ctx.fillText(label, r.x * w, Math.max(12, r.y * h - 6));
       ctx.restore();
     };
 
@@ -460,8 +481,9 @@
               const f = faces[0].boundingBox;
               const w = video.videoWidth || 640;
               const h = video.videoHeight || 480;
-              rect = { x: (f.x / w) * canvas.clientWidth, y: (f.y / h) * canvas.clientHeight, w: (f.width / w) * canvas.clientWidth, h: (f.height / h) * canvas.clientHeight };
-              paintBox(rect.x / canvas.clientWidth, rect.y / canvas.clientHeight, f.width / w);
+              rect = { x: f.x / w, y: f.y / h, w: f.width / w, h: f.height / h };
+              const tela = mapearParaTela(rect);
+              paintBox(Math.max(0, tela.x), Math.max(0, tela.y), tela.w, tela.h);
               hold = Math.min(NEED, hold + 1);
             } else {
               hold = Math.max(0, hold - 3);
@@ -481,7 +503,8 @@
         }
         if (tracked) {
           rect = { x: tracked.x - tracked.size / 2, y: tracked.y - tracked.size * 0.62, w: tracked.size, h: tracked.size * 1.34 };
-          paintBox(Math.max(0, rect.x), Math.max(0, rect.y), tracked.size);
+          const tela = mapearParaTela(rect);
+          paintBox(Math.max(0, tela.x), Math.max(0, tela.y), tela.w, tela.h);
         } else {
           box.hidden = true;
         }
