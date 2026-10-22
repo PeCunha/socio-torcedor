@@ -18,6 +18,11 @@
     else link.removeAttribute("aria-current");
   });
 
+  // Ano corrente no rodapé — evita copyright desatualizado
+  document.querySelectorAll("[data-current-year]").forEach((el) => {
+    el.textContent = String(new Date().getFullYear());
+  });
+
   const setMenu = (open) => {
     if (!sidebar || !menuButton) return;
     body.classList.toggle("menu-open", open);
@@ -115,15 +120,9 @@
     const status = countdown.querySelector("[data-countdown-status]");
     const values = countdown.querySelector(".countdown-values");
 
-    const formatDate = new Intl.DateTimeFormat("pt-BR", {
-      day: "2-digit",
-      month: "long",
-      hour: "2-digit",
-      minute: "2-digit"
-    });
-
-    const dateLabel = countdown.querySelector("[data-countdown-date]");
-    if (dateLabel) dateLabel.textContent = formatDate.format(target);
+    /* O rótulo da data ("25 de outubro, 19:30") é escrito por
+       temporada-view.js, que é o dono da apresentação da temporada.
+       Aqui fica só a contagem que Anda. */
 
     const updateCountdown = () => {
       if (Number.isNaN(target.getTime())) return;

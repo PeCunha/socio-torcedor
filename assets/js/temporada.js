@@ -16,6 +16,7 @@
      visitante     { nome, sigla, posicao, curto }
      placar        [gols mandante, gols visitante] — null enquanto não jogou
      gols          resumo dos gols (aparece no card de resultado)
+     golsCurto     versão compacta, separada por "•" (card "Último jogo")
      resumo        frase de fechamento (aparece na notificação)
      status        "proximo" | "encerrado"
      statusTexto   etiqueta exibida no card do jogo
@@ -41,6 +42,7 @@
       visitante: { nome: "SENAI F.C.", sigla: "S", posicao: "1º colocado", curto: "SENAI F.C." },
       placar: [1, 1],
       gols: "Teixeira 90'.",
+      golsCurto: "Teixeira 90'",
       resumo: "Teixeira marcou o gol de empate nos minutos finais.",
       status: "encerrado"
     },
@@ -54,6 +56,7 @@
       visitante: { nome: "SENAI F.C.", sigla: "S", posicao: "1º colocado", curto: "SENAI F.C." },
       placar: [0, 2],
       gols: "Rocha 31' e Lima 64'.",
+      golsCurto: "Rocha 31' • Lima 64'",
       resumo: "Gols de Rocha e Lima garantiram a vitória fora de casa.",
       status: "encerrado"
     },
@@ -67,6 +70,7 @@
       visitante: { nome: "Metalúrgica F.C.", sigla: "M", posicao: "2º colocado", curto: "Metalúrgica" },
       placar: [3, 1],
       gols: "Lima 22', Rocha 34' e Teixeira 81'.",
+      golsCurto: "Lima 22' • Rocha 34' • Teixeira 81'",
       resumo: "Vitória por 3 a 1 com gol de Teixeira nos minutos finais.",
       status: "encerrado"
     },
@@ -80,6 +84,7 @@
       visitante: { nome: "Eletro Volt AC", sigla: "E", posicao: "4º colocado", curto: "Eletro Volt AC" },
       placar: [2, 1],
       gols: "Rocha 51' e Lima 78'.",
+      golsCurto: "Rocha 51' • Lima 78'",
       resumo: "Vitória suada com gol de Lima aos 78 minutos.",
       status: "encerrado"
     },

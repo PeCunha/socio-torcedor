@@ -197,8 +197,12 @@
       setTexto($("[data-last-result]", cardUltimo), `${golsCasa} × ${golsFora} • ${sinal}`);
       setTexto($("[data-last-home]", cardUltimo), ultimoJogo.mandante.curto);
       setTexto($("[data-last-away]", cardUltimo), ultimoJogo.visitante.curto);
-      setTexto($("[data-last-score]", cardUltimo), `${golsCasa} × ${golsFora}`);
-      setTexto($("[data-last-goals]", cardUltimo), ultimoJogo.gols);
+      setTexto($("[data-last-goals]", cardUltimo), ultimoJogo.golsCurto || ultimoJogo.gols);
+
+      /* O placar usa <span>×</span> para o separador — o innerHTML
+         preserva a marcação que o CSS estiliza. */
+      const placar = $("[data-last-score]", cardUltimo);
+      if (placar) placar.innerHTML = `${golsCasa} <span>×</span> ${golsFora}`;
     }
 
     /* ---- Marca os cards renderizados para os testes de teclado ------ */

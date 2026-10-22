@@ -1791,6 +1791,68 @@ svg {
   text-transform: uppercase;
 }
 
+/* Botões que substituem links no rodapé — mantêm a mesma aparência */
+.footer-column button {
+  width: fit-content;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--text-3);
+  font-size: 9px;
+  line-height: 1.65;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.18s ease;
+}
+
+.footer-column button:hover {
+  color: var(--text);
+}
+
+.footer-column button:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Aviso exibido quando o JavaScript está desativado */
+.noscript-banner {
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--text-2);
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.noscript-banner strong {
+  color: var(--text);
+}
+
+/* Resumo textual da temporada dentro de <noscript> */
+.noscript-note {
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  color: var(--text-2);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.noscript-note strong {
+  color: var(--text);
+}
+
+.noscript-note code {
+  padding: 1px 5px;
+  border-radius: 5px;
+  background: var(--surface-3);
+  font-size: 11px;
+}
+
 /* Dialog and feedback */
 .ticket-dialog {
   width: min(calc(100% - 32px), 470px);
@@ -7230,7 +7292,8 @@ svg {
     gap: 2px;
   }
 
-  .footer-column a {
+  .footer-column a,
+  .footer-column button {
     display: inline-flex;
     min-height: 44px;
     align-items: center;
