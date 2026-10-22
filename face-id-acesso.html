@@ -1,316 +1,309 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0a0a0d">
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <meta name="description" content="Acesso rápido do Sócio Torcedor do SENAI F.C. com Face ID.">
-  <title>Face ID &amp; Acesso — SENAI F.C.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/senai-torcedor-web.css">
-</head>
-<body data-page="face-id">
-  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
-
-  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true">
-    <symbol id="icon-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></symbol>
-    <symbol id="icon-ticket" viewBox="0 0 24 24"><path d="M3 8a2 2 0 0 0 0 8v4h18v-4a2 2 0 0 0 0-8V4H3Z"/><path d="M13 7v2M13 11v2M13 15v2"/></symbol>
-    <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
-    <symbol id="icon-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 6H4v2a4 4 0 0 0 4 4M16 6h4v2a4 4 0 0 1-4 4M12 13v4M8 21h8M9 17h6"/></symbol>
-    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v5c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-5"/></symbol>
-    <symbol id="icon-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14a2 2 0 0 1 2-2h1v7H6a2 2 0 0 1-2-2v-3ZM20 14a2 2 0 0 0-2-2h-1v7h1a2 2 0 0 0 2-2v-3ZM17 19c0 2-2 3-5 3"/></symbol>
-    <symbol id="icon-calendar" viewBox="0 0 24 24"><path d="M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2Z"/><path d="M8 2v4M16 2v4M3 9h18M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01"/></symbol>
-    <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
-    <symbol id="icon-map" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
-    <symbol id="icon-stadium" viewBox="0 0 24 24"><path d="M3 9c3-3 15-3 18 0v7H3V9Z"/><path d="M7 12h10M8 16v3M16 16v3M3 9V6h18v3"/></symbol>
-    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
-    
-    <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"/></symbol>
-    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
-    <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></symbol>
-    <symbol id="icon-signal" viewBox="0 0 24 24"><path d="M5 20v-4M10 20v-8M15 20v-12M20 20V4"/></symbol>
-    <symbol id="icon-chip" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></symbol>
-    <symbol id="icon-scan" viewBox="0 0 24 24"><path d="M4 8V5a1 1 0 0 1 1-1h3M20 8V5a1 1 0 0 0-1-1h-3M4 16v3a1 1 0 0 0 1 1h3M20 16v3a1 1 0 0 1-1 1h-3M4 12h16"/></symbol>
-    <symbol id="icon-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></symbol>
-    <symbol id="icon-nfc" viewBox="0 0 24 24"><path d="M6 20a10 10 0 0 1 0-16"/><path d="M18 4a10 10 0 0 1 0 16"/><path d="M9.5 17a5 5 0 0 1 0-10"/><path d="M14.5 7a5 5 0 0 1 0 10"/></symbol>
-    <symbol id="icon-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8 15.8 6.2M8.2 13.2l7.6 4.6"/></symbol>
-    <symbol id="icon-wallet" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2"/><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M16 13h2"/></symbol>
-    <symbol id="icon-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v5h-5"/></symbol>
-    <symbol id="icon-gate" viewBox="0 0 24 24"><path d="M4 20V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M2 20h20"/><path d="M9 8v8M15 8v8"/></symbol>
-  </svg>
-
-  <aside class="sidebar" id="sidebar" aria-label="Navegação principal">
-    <div class="sidebar-header">
-      <a class="brand" href="senai-torcedor-web.html" aria-label="SENAI F.C. — página principal">
-        <span class="brand-mark" aria-hidden="true">S</span>
-        <span class="brand-copy"><strong>SENAI F.C.</strong><span>Sócio torcedor</span></span>
-      </a>
-      <button class="icon-button sidebar-close" id="sidebar-close" type="button" aria-label="Fechar menu"><svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg></button>
-    </div>
-    <div class="membership-card" aria-label="Plano Sócio Master">
-      <div class="membership-topline"><span>Seu plano</span><span class="vip-badge"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg>Master</span></div>
-      <div class="membership-title" data-user-plan>Sócio Master</div>
-      <div class="membership-number" data-user-matricula>Matrícula #9842</div>
-    </div>
-    <nav class="sidebar-nav" aria-label="Páginas do portal">
-      <a class="nav-link active" href="face-id-acesso.html" data-page-link="face-id" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg><span>Face ID &amp; Acesso</span></a>
-      <a class="nav-link" href="senai-torcedor-web.html" data-page-link="jogos"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg><span>Jogos &amp; calendário</span></a>
-      <a class="nav-link" href="planos-de-socio.html" data-page-link="planos"><svg class="icon" aria-hidden="true"><use href="#icon-ticket"></use></svg><span>Planos de sócio</span></a>
-      <a class="nav-link" href="galeria-de-titulos.html" data-page-link="galeria"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg><span>Galeria de títulos</span></a>
-      <a class="nav-link" href="nossa-historia.html" data-page-link="historia"><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg><span>Nossa história</span></a>
-    </nav>
-    <div class="sidebar-footer"><div class="connection-status"><span>Seu acesso</span><strong>Liberado</strong></div></div>
-  </aside>
-  <button class="sidebar-overlay" id="sidebar-overlay" type="button" aria-label="Fechar menu"></button>
-
-  <div class="main-shell">
-    <header class="topbar">
-      <div class="topbar-inner">
-        <button class="icon-button menu-button" id="menu-button" type="button" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="#icon-menu"></use></svg></button>
-        <nav class="topbar-nav" aria-label="Navegação principal">
-        <a class="topbar-link" href="face-id-acesso.html" data-page-link="face-id">Face ID &amp; Acesso</a>
-        <a class="topbar-link" href="senai-torcedor-web.html" data-page-link="jogos">Jogos &amp; Calendário</a>
-        <a class="topbar-link" href="planos-de-socio.html" data-page-link="planos">Planos de Sócio</a>
-        <a class="topbar-link" href="galeria-de-titulos.html" data-page-link="galeria">Galeria de Títulos</a>
-        <a class="topbar-link" href="nossa-historia.html" data-page-link="historia">Nossa História</a>
-      </nav>
-        <div class="topbar-actions">
-          <button class="profile-button" type="button" data-message="Perfil do Sócio Master #9842 ativo." aria-label="Abrir perfil do torcedor"><span class="avatar avatar-photo" aria-hidden="true"></span><span class="profile-copy"><span>Torcedor</span><strong data-user-name>Operário</strong><small data-user-matricula>Matrícula #9842</small></span></button>
-        </div>
-      </div>
-    </header>
-
-    <main class="page-container" id="conteudo">
-      <div class="fid-page">
-
-        <section class="fid-arena" aria-labelledby="arena-title">
-          <div class="fid-arena-main">
-            <div class="fid-arena-title">
-              <h1 id="arena-title">Acesso à Arena</h1>
-              <span class="fid-live"><i aria-hidden="true"></i>ao vivo</span>
-            </div>
-            <p class="fid-arena-sub">SENAI F.C. x Atlético da Forja &bull; Portões abertos</p>
-            <p class="fid-arena-status"><span class="fid-pulse" aria-hidden="true"></span>Entrada liberada</p>
-          </div>
-        </section>
-
-        <div class="fid-grid">
-          <div class="fid-col fid-col-main">
-
-            <section class="fid-card fid-scanner" aria-labelledby="scanner-title">
-              <header class="fid-card-head">
-                <div class="fid-scanner-id">
-                  <div class="fid-row">
-                    <h2 id="scanner-title">Leitor facial</h2>
-                    <span class="fid-tag ok">ativo</span>
-                  </div>
-                </div>
-                <div class="fid-match">
-                  <span class="fid-label">Confiança</span>
-                  <strong>Alta</strong>
-                </div>
-              </header>
-
-              <div class="fid-viewport" id="fid-viewport" role="img" aria-label="Leitura biométrica facial em andamento, entrada B">
-                <img class="fid-shot" id="fid-shot" alt="" hidden>
-                <div class="fid-corner tl" aria-hidden="true"></div>
-                <div class="fid-corner tr" aria-hidden="true"></div>
-                <div class="fid-corner bl" aria-hidden="true"></div>
-                <div class="fid-corner br" aria-hidden="true"></div>
-                <div class="fid-face" id="fid-face-box" aria-hidden="true"></div>
-                <div class="fid-scanline" aria-hidden="true"></div>
-                <div class="fid-rec"><i aria-hidden="true"></i>Lendo...</div>
-              </div>
-
-              <p class="fid-entry">Entrada B — acesso facial</p>
-
-              <div class="fid-verdict">
-                <span class="fid-label">Torcedor identificado</span>
-                <strong>Acesso autorizado</strong>
-                <p><span data-user-full-name>Operário Silva</span> &bull; Portão 04</p>
-                <p class="fid-muted">Cadeira 42 Leste</p>
-              </div>
-
-              <div class="fid-mini">
-                <div class="fid-mini-item">
-                  <span class="fid-label">Proteção contra fotos</span>
-                  <strong>Ativa</strong>
-                </div>
-                <div class="fid-mini-item">
-                  <span class="fid-label">Dados protegidos</span>
-                  <strong>Sim</strong>
-                </div>
-              </div>
-
-              <footer class="fid-card-foot">
-                <button class="fid-btn fid-btn-primary" type="button" id="fid-cam-open"><svg class="icon" aria-hidden="true"><use href="#icon-scan"></use></svg>Iniciar reconhecimento facial</button>
-                <button class="fid-btn fid-btn-ghost" type="button" data-message="Liberação simulada. Catraca destravada."><svg class="icon" aria-hidden="true"><use href="#icon-gate"></use></svg>Simular liberação</button>
-                <button class="fid-btn fid-btn-ghost" type="button" data-message="Recalibração biométrica iniciada."><svg class="icon" aria-hidden="true"><use href="#icon-refresh"></use></svg>Recalibrar</button>
-              </footer>
-            </section>
-
-            <section class="fid-card fid-gate" aria-labelledby="gate-title">
-              <div class="fid-gate-id">
-                <h2 id="gate-title">Portão 04</h2>
-                <p class="fid-muted">Entrada Leste</p>
-              </div>
-              <div class="fid-gate-state">
-                <span class="fid-label">Status</span>
-                <span class="fid-tag ok">Aberto</span>
-              </div>
-            </section>
-
-          </div>
-
-          <div class="fid-col fid-col-side">
-
-            <section class="fid-card fid-cred" aria-labelledby="cred-title">
-              <header class="fid-cred-top">
-                <div>
-                  <h2 id="cred-title">SENAI F.C.</h2>
-                  <p>Seu cartão</p>
-                </div>
-                <span class="fid-vip">Master</span>
-              </header>
-              <div class="fid-cred-body">
-                <strong data-user-name>Operário</strong>
-                <span class="fid-cred-cat" data-user-plan>Sócio Master</span>
-                <span class="fid-cred-mat">Matrícula: <b data-user-matricula-id>#9842</b></span>
-              </div>
-              <div class="fid-cred-meta">
-                <div><span class="fid-label">Setor</span><b>Portão 04 Leste</b></div>
-                <div><span class="fid-label">Cadeira</span><b>42</b></div>
-                <div><span class="fid-label">Validade</span><b>12/2026</b></div>
-              </div>
-              <p class="fid-nfc"><svg class="icon" aria-hidden="true"><use href="#icon-nfc"></use></svg>NFC ativo</p>
-            </section>
-
-
-
-          </div>
-        </div>
-
-        <section class="fid-card fid-log" aria-labelledby="log-title">
-          <header class="fid-log-head">
-            <div>
-              <h2 id="log-title">Acessos recentes</h2>
-              <p class="fid-muted">Suas entradas na Arena SENAI</p>
-            </div>
-            <div class="fid-log-stats">
-              <span class="fid-label">Temporada 2026</span>
-              <strong>14 / 14 jogos <em>(100% presença)</em></strong>
-            </div>
-          </header>
-          <div class="table-wrap">
-            <table class="fid-table">
-              <caption class="sr-only">Histórico de acessos</caption>
-              <thead>
-                <tr>
-                  <th scope="col">Partida</th>
-                  <th scope="col">Data</th>
-                  <th scope="col">Portão</th>
-                  <th scope="col">Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="is-live">
-                  <td><strong>SENAI F.C. x Atlético da Forja</strong><span>Rodada 28</span></td>
-                  <td><strong>Hoje, 19:42</strong></td>
-                  <td><strong>Portão 04</strong></td>
-                  <td><span class="fid-badge live">Liberado</span></td>
-                </tr>
-                <tr>
-                  <td><strong>SENAI F.C. x Usina União</strong><span>Quartas de Final</span></td>
-                  <td><strong>14/10/2026</strong></td>
-                  <td><strong>Portão 04</strong></td>
-                  <td><span class="fid-badge">Utilizado</span></td>
-                </tr>
-                <tr>
-                  <td><strong>SENAI F.C. x Grêmio Siderúrgica</strong><span>Rodada 26</span></td>
-                  <td><strong>02/10/2026</strong></td>
-                  <td><strong>Portão 04</strong></td>
-                  <td><span class="fid-badge">Utilizado</span></td>
-                </tr>
-                <tr>
-                  <td><strong>SENAI F.C. x Ferroviário Operário</strong><span>Rodada 24</span></td>
-                  <td><strong>21/09/2026</strong></td>
-                  <td><strong>Portão 04</strong></td>
-                  <td><span class="fid-badge">Utilizado</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section class="fid-card fid-lgpd">
-          <svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg>
-          <p>Seus dados biométricos estão protegidos conforme a LGPD. As imagens ficam apenas no seu dispositivo e não são enviadas para nenhum servidor.</p>
-        </section>
-
-      </div>
-    </main>
-
-    <footer class="site-footer"><div class="footer-inner"><div class="footer-grid"><div class="footer-column"><h3>SENAI F.C.</h3><p>Paixão, tradição e futebol. O portal do sócio torcedor para ingressos, acesso e tudo sobre o clube.</p></div><div class="footer-column"><h3>Institucional</h3><div class="footer-links"><a href="#">Estatuto do Torcedor</a><a href="#">Transparência</a><a href="#">Privacidade</a></div></div><div class="footer-column"><h3>Ajuda</h3><div class="footer-links"><a href="face-id-acesso.html">Acesso à arena</a><a href="#">Fale com a gente</a><a href="#">Ouvidoria</a></div></div><div class="footer-column"><h3>Parceiros</h3><div class="footer-links"><a href="#">Indústria Metallum</a><a href="#">Robótix Energia BR</a></div></div></div><div class="footer-bottom"><span>© 2024 SENAI F.C.</span><span class="footer-highlight">Feito com paixão</span></div></div></footer>
-  </div>
-
-  <dialog class="fid-cam" id="fid-cam" aria-labelledby="fid-cam-title">
-    <div class="fid-cam-head">
-      <div>
-        <h2 id="fid-cam-title">Reconhecimento facial</h2>
-        <p id="fid-cam-sub">Apresente seu rosto no quadro. A leitura acontece no seu dispositivo.</p>
-      </div>
-      <button class="icon-button" type="button" data-fid-cam-close aria-label="Fechar câmera"><svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg></button>
-    </div>
-
-    <div class="fid-cam-stage" id="fid-cam-stage">
-      <video class="fid-cam-video" id="fid-cam-video" playsinline muted autoplay></video>
-      <canvas class="fid-cam-canvas" id="fid-cam-canvas" aria-hidden="true"></canvas>
-      <div class="fid-cam-frame" id="fid-cam-frame" aria-hidden="true">
-        <span class="fid-cam-corner tl"></span>
-        <span class="fid-cam-corner tr"></span>
-        <span class="fid-cam-corner bl"></span>
-        <span class="fid-cam-corner br"></span>
-        <span class="fid-cam-line"></span>
-      </div>
-      <div class="fid-cam-empty" id="fid-cam-empty" hidden>
-        <svg class="icon" aria-hidden="true"><use href="#icon-scan"></use></svg>
-        <p id="fid-cam-empty-text">Solicitando acesso à câmera…</p>
-      </div>
-      <p class="fid-cam-hud" id="fid-cam-hud" hidden><i aria-hidden="true"></i><span id="fid-cam-hud-text">procurando rosto</span></p>
-    </div>
-
-    <div class="fid-cam-metrics" id="fid-cam-metrics" hidden>
-      <div class="fid-cam-chip" data-fid-metric="lum"><span>Brilho</span><em id="fid-m-lum">—</em></div>
-      <div class="fid-cam-chip" data-fid-metric="sharp"><span>Nitidez</span><em id="fid-m-sharp">—</em></div>
-      <div class="fid-cam-chip" data-fid-metric="stable"><span>Imobilidade</span><em id="fid-m-stable">—</em></div>
-      <div class="fid-cam-chip" data-fid-metric="frame"><span>Enquadramento</span><em id="fid-m-frame">—</em></div>
-    </div>
-
-    <div class="fid-cam-meter" aria-hidden="true">
-      <span class="fid-cam-meter-label">Qualidade da leitura</span>
-      <div class="fid-cam-meter-bar"><span id="fid-cam-meter-fill"></span></div>
-      <strong class="fid-mono" id="fid-cam-meter-value">0.0%</strong>
-    </div>
-
-    <p class="fid-cam-status" id="fid-cam-status" role="status" aria-live="polite">Aguardando início.</p>
-
-    <div class="fid-cam-actions">
-      <button class="fid-btn fid-btn-ghost" type="button" id="fid-cam-flip" hidden><svg class="icon" aria-hidden="true"><use href="#icon-refresh"></use></svg>Trocar câmera</button>
-      <button class="fid-btn fid-btn-ghost" type="button" id="fid-cam-retry" hidden>Tentar novamente</button>
-      <span class="fid-cam-spacer"></span>
-      <button class="fid-btn fid-btn-ghost" type="button" data-fid-cam-close>Cancelar</button>
-      <button class="fid-btn fid-btn-primary" type="button" id="fid-cam-capture" disabled><svg class="icon" aria-hidden="true"><use href="#icon-scan"></use></svg>Capturar biometria</button>
-    </div>
-
-    <p class="fid-cam-note"><svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg>As imagens ficam apenas neste dispositivo e não são enviadas a nenhum servidor.</p>
-  </dialog>
-
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span id="toast-message"></span></div>
-  <script src="assets/js/senai-torcedor-web.js" defer></script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0d">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <meta name="description" content="Acesso rápido do Sócio Torcedor do SENAI F.C. com Face ID.">
+  <title>Face ID &amp; Acesso — SENAI F.C.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/senai-torcedor-web.css">
+</head>
+<body data-page="face-id">
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true">
+    <symbol id="icon-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></symbol>
+    <symbol id="icon-ticket" viewBox="0 0 24 24"><path d="M3 8a2 2 0 0 0 0 8v4h18v-4a2 2 0 0 0 0-8V4H3Z"/><path d="M13 7v2M13 11v2M13 15v2"/></symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="icon-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 6H4v2a4 4 0 0 0 4 4M16 6h4v2a4 4 0 0 1-4 4M12 13v4M8 21h8M9 17h6"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v5c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-5"/></symbol>
+    <symbol id="icon-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14a2 2 0 0 1 2-2h1v7H6a2 2 0 0 1-2-2v-3ZM20 14a2 2 0 0 0-2-2h-1v7h1a2 2 0 0 0 2-2v-3ZM17 19c0 2-2 3-5 3"/></symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24"><path d="M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2Z"/><path d="M8 2v4M16 2v4M3 9h18M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01"/></symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="icon-map" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="icon-stadium" viewBox="0 0 24 24"><path d="M3 9c3-3 15-3 18 0v7H3V9Z"/><path d="M7 12h10M8 16v3M16 16v3M3 9V6h18v3"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    
+    <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></symbol>
+    <symbol id="icon-signal" viewBox="0 0 24 24"><path d="M5 20v-4M10 20v-8M15 20v-12M20 20V4"/></symbol>
+    <symbol id="icon-chip" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></symbol>
+    <symbol id="icon-scan" viewBox="0 0 24 24"><path d="M4 8V5a1 1 0 0 1 1-1h3M20 8V5a1 1 0 0 0-1-1h-3M4 16v3a1 1 0 0 0 1 1h3M20 16v3a1 1 0 0 1-1 1h-3M4 12h16"/></symbol>
+    <symbol id="icon-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></symbol>
+    <symbol id="icon-nfc" viewBox="0 0 24 24"><path d="M6 20a10 10 0 0 1 0-16"/><path d="M18 4a10 10 0 0 1 0 16"/><path d="M9.5 17a5 5 0 0 1 0-10"/><path d="M14.5 7a5 5 0 0 1 0 10"/></symbol>
+    <symbol id="icon-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8 15.8 6.2M8.2 13.2l7.6 4.6"/></symbol>
+    <symbol id="icon-wallet" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2"/><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M16 13h2"/></symbol>
+    <symbol id="icon-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v5h-5"/></symbol>
+    <symbol id="icon-gate" viewBox="0 0 24 24"><path d="M4 20V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M2 20h20"/><path d="M9 8v8M15 8v8"/></symbol>
+  </svg>
+
+  <aside class="sidebar" id="sidebar" aria-label="Navegação principal">
+    <div class="sidebar-header">
+      <a class="brand" href="senai-torcedor-web.html" aria-label="SENAI F.C. — página principal">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span class="brand-copy"><strong>SENAI F.C.</strong><span>Sócio torcedor</span></span>
+      </a>
+      <button class="icon-button sidebar-close" id="sidebar-close" type="button" aria-label="Fechar menu"><svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg></button>
+    </div>
+    <div class="membership-card" aria-label="Plano Sócio Master">
+      <div class="membership-topline"><span>Seu plano</span><span class="vip-badge"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg>Master</span></div>
+      <div class="membership-title" data-user-plan>Sócio Master</div>
+      <div class="membership-number" data-user-matricula>Matrícula #9842</div>
+    </div>
+    <nav class="sidebar-nav" aria-label="Páginas do portal">
+      <a class="nav-link active" href="face-id-acesso.html" data-page-link="face-id" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg><span>Face ID &amp; Acesso</span></a>
+      <a class="nav-link" href="senai-torcedor-web.html" data-page-link="jogos"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg><span>Jogos &amp; calendário</span></a>
+      <a class="nav-link" href="planos-de-socio.html" data-page-link="planos"><svg class="icon" aria-hidden="true"><use href="#icon-ticket"></use></svg><span>Planos de sócio</span></a>
+      <a class="nav-link" href="galeria-de-titulos.html" data-page-link="galeria"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg><span>Galeria de títulos</span></a>
+      <a class="nav-link" href="nossa-historia.html" data-page-link="historia"><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg><span>Nossa história</span></a>
+    </nav>
+    <div class="sidebar-footer"><div class="connection-status"><span>Seu acesso</span><strong>Liberado</strong></div></div>
+  </aside>
+  <button class="sidebar-overlay" id="sidebar-overlay" type="button" aria-label="Fechar menu"></button>
+
+  <div class="main-shell">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <button class="icon-button menu-button" id="menu-button" type="button" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="#icon-menu"></use></svg></button>
+        <div class="topbar-actions">
+          <a class="profile-button" href="perfil.html" aria-label="Abrir configurações do perfil"><span class="avatar avatar-photo" aria-hidden="true"></span><span class="profile-copy"><span>Torcedor</span><strong data-user-name>Operário</strong><small data-user-matricula>Matrícula #9842</small></span></a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-container" id="conteudo">
+      <div class="fid-page">
+
+        <section class="fid-arena" aria-labelledby="arena-title">
+          <div class="fid-arena-main">
+            <div class="fid-arena-title">
+              <h1 id="arena-title">Acesso à Arena</h1>
+              <span class="fid-live"><i aria-hidden="true"></i>ao vivo</span>
+            </div>
+            <p class="fid-arena-sub">SENAI F.C. x Atlético da Forja &bull; Portões abertos</p>
+            <p class="fid-arena-status"><span class="fid-pulse" aria-hidden="true"></span>Entrada liberada</p>
+          </div>
+        </section>
+
+        <div class="fid-grid">
+          <div class="fid-col fid-col-main">
+
+            <section class="fid-card fid-scanner" aria-labelledby="scanner-title">
+              <header class="fid-card-head">
+                <div class="fid-scanner-id">
+                  <div class="fid-row">
+                    <h2 id="scanner-title">Leitor facial</h2>
+                    <span class="fid-tag ok">ativo</span>
+                  </div>
+                </div>
+                <div class="fid-match">
+                  <span class="fid-label">Confiança</span>
+                  <strong>Alta</strong>
+                </div>
+              </header>
+
+              <div class="fid-viewport" id="fid-viewport" role="img" aria-label="Leitura biométrica facial em andamento, entrada B">
+                <img class="fid-shot" id="fid-shot" alt="" hidden>
+                <div class="fid-corner tl" aria-hidden="true"></div>
+                <div class="fid-corner tr" aria-hidden="true"></div>
+                <div class="fid-corner bl" aria-hidden="true"></div>
+                <div class="fid-corner br" aria-hidden="true"></div>
+                <div class="fid-face" id="fid-face-box" aria-hidden="true"></div>
+                <div class="fid-scanline" aria-hidden="true"></div>
+                <div class="fid-rec"><i aria-hidden="true"></i>Lendo...</div>
+              </div>
+
+              <p class="fid-entry">Entrada B — acesso facial</p>
+
+              <div class="fid-verdict">
+                <span class="fid-label">Torcedor identificado</span>
+                <strong>Acesso autorizado</strong>
+                <p><span data-user-full-name>Operário Silva</span> &bull; Portão 04</p>
+                <p class="fid-muted">Cadeira 42 Leste</p>
+              </div>
+
+              <div class="fid-mini">
+                <div class="fid-mini-item">
+                  <span class="fid-label">Proteção contra fotos</span>
+                  <strong>Ativa</strong>
+                </div>
+                <div class="fid-mini-item">
+                  <span class="fid-label">Dados protegidos</span>
+                  <strong>Sim</strong>
+                </div>
+              </div>
+
+              <footer class="fid-card-foot">
+                <button class="fid-btn fid-btn-primary" type="button" id="fid-cam-open"><svg class="icon" aria-hidden="true"><use href="#icon-scan"></use></svg>Iniciar reconhecimento facial</button>
+                <button class="fid-btn fid-btn-ghost" type="button" data-message="Liberação simulada. Catraca destravada."><svg class="icon" aria-hidden="true"><use href="#icon-gate"></use></svg>Simular liberação</button>
+                <button class="fid-btn fid-btn-ghost" type="button" data-message="Recalibração biométrica iniciada."><svg class="icon" aria-hidden="true"><use href="#icon-refresh"></use></svg>Recalibrar</button>
+              </footer>
+            </section>
+
+            <section class="fid-card fid-gate" aria-labelledby="gate-title">
+              <div class="fid-gate-id">
+                <h2 id="gate-title">Portão 04</h2>
+                <p class="fid-muted">Entrada Leste</p>
+              </div>
+              <div class="fid-gate-state">
+                <span class="fid-label">Status</span>
+                <span class="fid-tag ok">Aberto</span>
+              </div>
+            </section>
+
+          </div>
+
+          <div class="fid-col fid-col-side">
+
+            <section class="fid-card fid-cred" aria-labelledby="cred-title">
+              <header class="fid-cred-top">
+                <div>
+                  <h2 id="cred-title">SENAI F.C.</h2>
+                  <p>Seu cartão</p>
+                </div>
+                <span class="fid-vip">Master</span>
+              </header>
+              <div class="fid-cred-body">
+                <strong data-user-name>Operário</strong>
+                <span class="fid-cred-cat" data-user-plan>Sócio Master</span>
+                <span class="fid-cred-mat">Matrícula: <b data-user-matricula-id>#9842</b></span>
+              </div>
+              <div class="fid-cred-meta">
+                <div><span class="fid-label">Setor</span><b>Portão 04 Leste</b></div>
+                <div><span class="fid-label">Cadeira</span><b>42</b></div>
+                <div><span class="fid-label">Validade</span><b>12/2026</b></div>
+              </div>
+              <p class="fid-nfc"><svg class="icon" aria-hidden="true"><use href="#icon-nfc"></use></svg>NFC ativo</p>
+            </section>
+
+
+
+          </div>
+        </div>
+
+        <section class="fid-card fid-log" aria-labelledby="log-title">
+          <header class="fid-log-head">
+            <div>
+              <h2 id="log-title">Acessos recentes</h2>
+              <p class="fid-muted">Suas entradas na Arena SENAI</p>
+            </div>
+            <div class="fid-log-stats">
+              <span class="fid-label">Temporada 2026</span>
+              <strong>14 / 14 jogos <em>(100% presença)</em></strong>
+            </div>
+          </header>
+          <div class="table-wrap">
+            <table class="fid-table">
+              <caption class="sr-only">Histórico de acessos</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Partida</th>
+                  <th scope="col">Data</th>
+                  <th scope="col">Portão</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="is-live">
+                  <td><strong>SENAI F.C. x Atlético da Forja</strong><span>Rodada 28</span></td>
+                  <td><strong>Hoje, 19:42</strong></td>
+                  <td><strong>Portão 04</strong></td>
+                  <td><span class="fid-badge live">Liberado</span></td>
+                </tr>
+                <tr>
+                  <td><strong>SENAI F.C. x Usina União</strong><span>Quartas de Final</span></td>
+                  <td><strong>14/10/2026</strong></td>
+                  <td><strong>Portão 04</strong></td>
+                  <td><span class="fid-badge">Utilizado</span></td>
+                </tr>
+                <tr>
+                  <td><strong>SENAI F.C. x Grêmio Siderúrgica</strong><span>Rodada 26</span></td>
+                  <td><strong>02/10/2026</strong></td>
+                  <td><strong>Portão 04</strong></td>
+                  <td><span class="fid-badge">Utilizado</span></td>
+                </tr>
+                <tr>
+                  <td><strong>SENAI F.C. x Ferroviário Operário</strong><span>Rodada 24</span></td>
+                  <td><strong>21/09/2026</strong></td>
+                  <td><strong>Portão 04</strong></td>
+                  <td><span class="fid-badge">Utilizado</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="fid-card fid-lgpd">
+          <svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg>
+          <p>Seus dados biométricos estão protegidos conforme a LGPD. As imagens ficam apenas no seu dispositivo e não são enviadas para nenhum servidor.</p>
+        </section>
+
+      </div>
+    </main>
+
+    <footer class="site-footer"><div class="footer-inner"><div class="footer-grid"><div class="footer-column"><h3>SENAI F.C.</h3><p>Paixão, tradição e futebol. O portal do sócio torcedor para ingressos, acesso e tudo sobre o clube.</p></div><div class="footer-column"><h3>Institucional</h3><div class="footer-links"><a href="#">Estatuto do Torcedor</a><a href="#">Transparência</a><a href="#">Privacidade</a></div></div><div class="footer-column"><h3>Ajuda</h3><div class="footer-links"><a href="face-id-acesso.html">Acesso à arena</a><a href="#">Fale com a gente</a><a href="#">Ouvidoria</a></div></div><div class="footer-column"><h3>Parceiros</h3><div class="footer-links"><a href="#">Indústria Metallum</a><a href="#">Robótix Energia BR</a></div></div></div><div class="footer-bottom"><span>© 2024 SENAI F.C.</span><span class="footer-highlight">Feito com paixão</span></div></div></footer>
+  </div>
+
+  <dialog class="fid-cam" id="fid-cam" aria-labelledby="fid-cam-title">
+    <div class="fid-cam-head">
+      <div>
+        <h2 id="fid-cam-title">Reconhecimento facial</h2>
+        <p id="fid-cam-sub">Apresente seu rosto no quadro. A leitura acontece no seu dispositivo.</p>
+      </div>
+      <button class="icon-button" type="button" data-fid-cam-close aria-label="Fechar câmera"><svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg></button>
+    </div>
+
+    <div class="fid-cam-stage" id="fid-cam-stage">
+      <video class="fid-cam-video" id="fid-cam-video" playsinline muted autoplay></video>
+      <canvas class="fid-cam-canvas" id="fid-cam-canvas" aria-hidden="true"></canvas>
+      <div class="fid-cam-frame" id="fid-cam-frame" aria-hidden="true">
+        <span class="fid-cam-corner tl"></span>
+        <span class="fid-cam-corner tr"></span>
+        <span class="fid-cam-corner bl"></span>
+        <span class="fid-cam-corner br"></span>
+        <span class="fid-cam-line"></span>
+      </div>
+      <div class="fid-cam-empty" id="fid-cam-empty" hidden>
+        <svg class="icon" aria-hidden="true"><use href="#icon-scan"></use></svg>
+        <p id="fid-cam-empty-text">Solicitando acesso à câmera…</p>
+      </div>
+      <p class="fid-cam-hud" id="fid-cam-hud" hidden><i aria-hidden="true"></i><span id="fid-cam-hud-text">procurando rosto</span></p>
+    </div>
+
+    <div class="fid-cam-metrics" id="fid-cam-metrics" hidden>
+      <div class="fid-cam-chip" data-fid-metric="lum"><span>Brilho</span><em id="fid-m-lum">—</em></div>
+      <div class="fid-cam-chip" data-fid-metric="sharp"><span>Nitidez</span><em id="fid-m-sharp">—</em></div>
+      <div class="fid-cam-chip" data-fid-metric="stable"><span>Imobilidade</span><em id="fid-m-stable">—</em></div>
+      <div class="fid-cam-chip" data-fid-metric="frame"><span>Enquadramento</span><em id="fid-m-frame">—</em></div>
+    </div>
+
+    <div class="fid-cam-meter" aria-hidden="true">
+      <span class="fid-cam-meter-label">Qualidade da leitura</span>
+      <div class="fid-cam-meter-bar"><span id="fid-cam-meter-fill"></span></div>
+      <strong class="fid-mono" id="fid-cam-meter-value">0.0%</strong>
+    </div>
+
+    <p class="fid-cam-status" id="fid-cam-status" role="status" aria-live="polite">Aguardando início.</p>
+
+    <div class="fid-cam-actions">
+      <button class="fid-btn fid-btn-ghost" type="button" id="fid-cam-flip" hidden><svg class="icon" aria-hidden="true"><use href="#icon-refresh"></use></svg>Trocar câmera</button>
+      <button class="fid-btn fid-btn-ghost" type="button" id="fid-cam-retry" hidden>Tentar novamente</button>
+      <span class="fid-cam-spacer"></span>
+      <button class="fid-btn fid-btn-ghost" type="button" data-fid-cam-close>Cancelar</button>
+      <button class="fid-btn fid-btn-primary" type="button" id="fid-cam-capture" disabled><svg class="icon" aria-hidden="true"><use href="#icon-scan"></use></svg>Capturar biometria</button>
+    </div>
+
+    <p class="fid-cam-note"><svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg>As imagens ficam apenas neste dispositivo e não são enviadas a nenhum servidor.</p>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span id="toast-message"></span></div>
+  <script src="assets/js/senai-torcedor-web.js" defer></script>
+</body>
+</html>

@@ -8,7 +8,6 @@
   const sidebarClose = document.getElementById("sidebar-close");
   const sidebarOverlay = document.getElementById("sidebar-overlay");
   const mobileQuery = window.matchMedia("(max-width: 760px)");
-  const currentSection = document.getElementById("current-section");
   const pageLinks = [...document.querySelectorAll("[data-page-link]")];
   const currentPage = body.dataset.page;
 
@@ -46,10 +45,6 @@
   const tabs = [...document.querySelectorAll("[data-tab]")];
   const panels = [...document.querySelectorAll("[data-tab-panel]")];
 
-  const setCurrentSection = (label) => {
-    if (currentSection) currentSection.textContent = label;
-  };
-
   const activateTab = (name, { focus = false } = {}) => {
     const selectedTab = tabs.find((tab) => tab.dataset.tab === name);
     if (!selectedTab) return;
@@ -70,7 +65,6 @@
   tabs.forEach((tab, index) => {
     tab.addEventListener("click", () => {
       activateTab(tab.dataset.tab);
-      setCurrentSection(tab.textContent.trim());
     });
 
     tab.addEventListener("keydown", (event) => {
@@ -83,7 +77,6 @@
 
       event.preventDefault();
       activateTab(tabs[nextIndex].dataset.tab, { focus: true });
-      setCurrentSection(tabs[nextIndex].textContent.trim());
     });
   });
 
@@ -105,10 +98,16 @@
     });
   });
 
-  // Contagem regressiva para o próximo jogo
+  /* Contagem regressiva para o próximo jogo.
+     O alvo vem de assets/js/temporada.js: o portal escolhe sempre o
+     primeiro jogo ainda não disputado, então a contagem nunca fica
+     desatualizada nem presa a uma data fixa no HTML. */
   const countdown = document.querySelector("[data-countdown]");
-  if (countdown) {
-    const target = new Date(countdown.dataset.countdown);
+  const jogoProximo = window.SenaiTemporada ? window.SenaiTemporada.proximo() : null;
+
+  if (countdown && jogoProximo) {
+    countdown.dataset.countdown = jogoProximo.dataISO;
+    const target = new Date(jogoProximo.dataISO);
     const units = {
       days: countdown.querySelector('[data-unit="days"]'),
       hours: countdown.querySelector('[data-unit="hours"]')
@@ -133,11 +132,11 @@
       const days = Math.floor(totalSeconds / 86400);
       const hours = Math.floor((totalSeconds % 86400) / 3600);
 
-      units.days.textContent = String(days).padStart(2, "0");
-      units.hours.textContent = String(hours).padStart(2, "0");
-      values.setAttribute("aria-label", `${days} dias e ${hours} horas para o jogo`);
+      if (units.days) units.days.textContent = String(days).padStart(2, "0");
+      if (units.hours) units.hours.textContent = String(hours).padStart(2, "0");
+      if (values) values.setAttribute("aria-label", `${days} dias e ${hours} horas para o jogo`);
 
-      if (totalSeconds === 0) status.textContent = "Jogo iniciado";
+      if (status) status.textContent = totalSeconds === 0 ? "Jogo iniciado" : "Faltam";
     };
 
     updateCountdown();
@@ -150,12 +149,15 @@
   const selectedMatch = document.getElementById("selected-match");
 
   if (ticketDialog && ticketForm && selectedMatch) {
-    document.querySelectorAll(".js-reserve").forEach((button) => {
-      button.addEventListener("click", () => {
-        selectedMatch.textContent = button.dataset.match;
-        ticketForm.reset();
-        ticketDialog.showModal();
-      });
+    /* Delegação de eventos: os botões de reserva são criados em tempo de
+       execução pelo renderizador da temporada, então não dá para amarrar
+       o listener no carregamento da página. */
+    document.addEventListener("click", (event) => {
+      const button = event.target.closest(".js-reserve");
+      if (!button) return;
+      selectedMatch.textContent = button.dataset.match;
+      ticketForm.reset();
+      ticketDialog.showModal();
     });
 
     document.querySelector("[data-close-dialog]")?.addEventListener("click", () => ticketDialog.close());
@@ -188,20 +190,25 @@
   // Exposto para os blocos independentes do arquivo (ex.: tela de login)
   window.SenaiPortal = Object.assign(window.SenaiPortal || {}, { showToast });
 
-  document.querySelectorAll("[data-message]").forEach((target) => {
-    if (target instanceof HTMLFormElement) {
-      target.addEventListener("submit", (event) => {
-        event.preventDefault();
-        if (!target.checkValidity()) {
-          target.reportValidity();
-          return;
-        }
-        showToast(target.dataset.message);
-        target.reset();
-      });
+  /* Delegação de eventos para as notificações. Os cards de jogo e de
+     resultado são renderizados em tempo de execução e já nascem com o
+     atributo data-message, então o listener precisa ser delegado. */
+  document.addEventListener("submit", (event) => {
+    const form = event.target;
+    if (!(form instanceof HTMLFormElement) || !form.dataset.message) return;
+    event.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
       return;
     }
-    target.addEventListener("click", () => showToast(target.dataset.message));
+    showToast(form.dataset.message);
+    form.reset();
+  });
+
+  document.addEventListener("click", (event) => {
+    const target = event.target.closest("[data-message]");
+    if (!target || target instanceof HTMLFormElement) return;
+    showToast(target.dataset.message);
   });
 
   // Reconhecimento facial ao vivo (Webcam API + FaceDetector)
@@ -814,9 +821,11 @@
     document.querySelectorAll("[data-user-matricula-id]").forEach((el) => { el.textContent = matricula; });
     document.querySelectorAll("[data-user-plan]").forEach((el) => { el.textContent = plano; });
 
-    const profileButton = document.querySelector(".profile-button[data-message]");
+    // O botao de perfil virou link para a tela de configuracoes (perfil.html)
+    const profileButton = document.querySelector(".profile-button");
     if (profileButton) {
-      profileButton.dataset.message = `Perfil do Sócio ${plano} ${matricula} ativo.`;
+      profileButton.setAttribute("aria-label", `Abrir configurações do perfil — Sócio ${plano} ${matricula}`);
+      profileButton.setAttribute("title", `Perfil do Sócio ${plano} ${matricula}`);
     }
 
     return session;
@@ -835,6 +844,356 @@
     }
   } catch (error) {
     /* URL nao manipulavel */
+  }
+
+  // ------------------------------------------------------------------
+  // Tela de perfil — configuracoes da conta
+  // ------------------------------------------------------------------
+  const PROFILE_KEY = "senai-torcedor:perfil";
+
+  const PROFILE_DEFAULTS = {
+    fields: {
+      nome: "Operário",
+      email: "operario@senai.com.br",
+      telefone: "(11) 98877-6655",
+      cpf: "",
+      nascimento: "",
+      cep: "",
+      logradouro: "",
+      numero: "",
+      complemento: "",
+      cidade: "",
+      uf: "",
+      visibilidade: "privado"
+    },
+    switches: {
+      cpf: true,
+      lembrete: true,
+      comunicados: true,
+      marketing: false,
+      faceid: true,
+      localizacao: false,
+      beneficios: true,
+      "dois-fatores": false,
+      ingresso: true
+    },
+    avatar: ""
+  };
+
+  const readProfile = () => {
+    const base = {
+      fields: { ...PROFILE_DEFAULTS.fields },
+      switches: { ...PROFILE_DEFAULTS.switches },
+      avatar: ""
+    };
+    try {
+      const raw = window.localStorage.getItem(PROFILE_KEY);
+      if (!raw) return base;
+      const saved = JSON.parse(raw);
+      return {
+        fields: { ...base.fields, ...(saved?.fields || {}) },
+        switches: { ...base.switches, ...(saved?.switches || {}) },
+        avatar: typeof saved?.avatar === "string" ? saved.avatar : ""
+      };
+    } catch (error) {
+      return base;
+    }
+  };
+
+  const writeProfile = (profile) => {
+    try {
+      window.localStorage.setItem(PROFILE_KEY, JSON.stringify(profile));
+      return true;
+    } catch (error) {
+      return false;
+    }
+  };
+
+  // Reduz a foto para 256px antes de guardar (localStorage tem limite de ~5 MB)
+  const shrinkImage = (dataUrl, size) => new Promise((resolve) => {
+    const image = new Image();
+    image.onload = () => {
+      try {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        const scale = Math.min(1, size / Math.max(image.width, image.height));
+        canvas.width = Math.max(1, Math.round(image.width * scale));
+        canvas.height = Math.max(1, Math.round(image.height * scale));
+        ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+        resolve(canvas.toDataURL("image/jpeg", 0.82));
+      } catch (error) {
+        resolve(dataUrl);
+      }
+    };
+    image.onerror = () => resolve(dataUrl);
+    image.src = dataUrl;
+  });
+
+  const profilePage = document.querySelector(".pf-page");
+  if (profilePage) initProfile();
+
+  function initProfile() {
+    const el = (id) => document.getElementById(id);
+    const statusEl = el("pf-status");
+    const avatarBox = el("pf-avatar");
+    const avatarInitials = el("pf-avatar-iniciais");
+    const avatarInput = el("pf-avatar-input");
+    const avatarButton = el("pf-avatar-btn");
+    const strengthBox = el("pf-forca");
+    const passwordInput = el("pf-senha-nova");
+    const cpfInput = el("pf-cpf");
+    const cepInput = el("pf-cep");
+    const phoneInput = el("pf-telefone");
+    const fieldInputs = [...profilePage.querySelectorAll("[name]")];
+    const switchButtons = [...profilePage.querySelectorAll(".pf-switch[data-setting]")];
+
+    let saved = readProfile();
+    let pendingAvatar = null;
+
+    // Sem perfil salvo, herda os dados da sessao ativa
+    try {
+      const hasProfile = !!window.localStorage.getItem(PROFILE_KEY);
+      const session = readSession();
+      if (!hasProfile && session?.usuario) {
+        if (session.usuario.nome) saved.fields.nome = session.usuario.nome;
+        if (session.usuario.email) saved.fields.email = session.usuario.email;
+      }
+    } catch (error) {
+      /* armazenamento indisponivel */
+    }
+
+    const initialsFrom = (name) => {
+      const parts = String(name || "").trim().split(/\s+/).filter(Boolean);
+      if (!parts.length) return "OP";
+      if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+      return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+    };
+
+    const renderAvatar = (profile) => {
+      if (!avatarBox) return;
+      const current = avatarBox.querySelector("img");
+      if (profile.avatar) {
+        if (current) {
+          current.src = profile.avatar;
+        } else {
+          const img = document.createElement("img");
+          img.alt = "";
+          img.src = profile.avatar;
+          avatarBox.appendChild(img);
+        }
+        if (avatarInitials) avatarInitials.hidden = true;
+        return;
+      }
+      if (current) current.remove();
+      if (avatarInitials) {
+        avatarInitials.hidden = false;
+        avatarInitials.textContent = initialsFrom(profile.fields.nome);
+      }
+    };
+
+    const fill = (profile) => {
+      fieldInputs.forEach((input) => {
+        const key = input.name;
+        if (!(key in profile.fields)) return;
+        const value = profile.fields[key] ?? "";
+        if (input.tagName === "SELECT") {
+          const index = [...input.options].findIndex((option) => option.value === value);
+          input.selectedIndex = index >= 0 ? index : 0;
+        } else {
+          input.value = value;
+        }
+      });
+      switchButtons.forEach((button) => {
+        button.setAttribute("aria-checked", String(profile.switches[button.dataset.setting] !== false));
+      });
+      pendingAvatar = null;
+      renderAvatar(profile);
+      updateChecks();
+      updateStrength();
+    };
+
+    const collect = () => {
+      const fields = { ...saved.fields };
+      fieldInputs.forEach((input) => {
+        if (input.name in fields) fields[input.name] = input.value.trim();
+      });
+      const switches = { ...saved.switches };
+      switchButtons.forEach((button) => {
+        switches[button.dataset.setting] = button.getAttribute("aria-checked") === "true";
+      });
+      return { fields, switches, avatar: pendingAvatar ?? saved.avatar };
+    };
+
+    const setStatus = (state, message) => {
+      if (!statusEl) return;
+      statusEl.textContent = message;
+      statusEl.classList.toggle("is-dirty", state === "dirty");
+      statusEl.classList.toggle("is-saved", state === "saved");
+    };
+
+    const markDirty = () => setStatus("dirty", "Alterações não salvas");
+
+    // Atualiza a lista de "Conta e acesso" conforme os dados preenchidos
+    const updateChecks = () => {
+      const cpfItem = el("pf-check-cpf");
+      if (cpfItem) {
+        const hasCpf = Boolean(cpfInput?.value.trim());
+        cpfItem.className = hasCpf ? "ok" : "warn";
+        cpfItem.innerHTML = `<svg class="icon" aria-hidden="true"><use href="#icon-${hasCpf ? "check" : "lock"}"></use></svg>CPF ${hasCpf ? "informado" : "não informado"}`;
+      }
+      const twofaItem = el("pf-check-2fa");
+      if (twofaItem) {
+        const on = document.querySelector('.pf-switch[data-setting="dois-fatores"]')?.getAttribute("aria-checked") === "true";
+        twofaItem.className = on ? "ok" : "warn";
+        twofaItem.innerHTML = `<svg class="icon" aria-hidden="true"><use href="#icon-${on ? "check" : "lock"}"></use></svg>Verificação em duas etapas ${on ? "ativada" : "desativada"}`;
+      }
+    };
+
+    // Medidor de forca da senha
+    const updateStrength = () => {
+      if (!strengthBox) return;
+      const value = passwordInput?.value || "";
+      let nivel = 0;
+      if (value.length >= 8) nivel = 1;
+      if (value.length >= 10 && /[A-Z]/.test(value) && /[0-9]/.test(value)) nivel = 2;
+      if (value.length >= 12 && /[^A-Za-z0-9]/.test(value)) nivel = 3;
+      const labels = ["Mínimo de 8 caracteres", "Senha fraca", "Senha razoável", "Senha forte"];
+      strengthBox.querySelectorAll("[data-nivel]").forEach((node) => node.setAttribute("data-nivel", String(nivel)));
+      const text = strengthBox.querySelector(".pf-strength-text");
+      if (text) text.textContent = value ? labels[nivel] : "Mínimo de 8 caracteres";
+    };
+
+    // Mascaras de CPF, CEP e telefone
+    const onlyDigits = (value) => String(value || "").replace(/\D/g, "");
+    const maskCpf = (value) => {
+      const d = onlyDigits(value).slice(0, 11);
+      return d.replace(/^(\d{3})(\d)/, "$1.$2").replace(/^(\d{3})\.(\d{3})(\d)/, "$1.$2.$3").replace(/^(\d{3})\.(\d{3})\.(\d{3})(\d)/, "$1.$2.$3-$4");
+    };
+    const maskCep = (value) => {
+      const d = onlyDigits(value).slice(0, 8);
+      return d.length > 5 ? `${d.slice(0, 5)}-${d.slice(5)}` : d;
+    };
+    const maskPhone = (value) => {
+      const d = onlyDigits(value).slice(0, 11);
+      if (d.length <= 2) return d;
+      if (d.length <= 6) return `(${d.slice(0, 2)}) ${d.slice(2)}`;
+      if (d.length <= 10) return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`;
+      return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
+    };
+
+    const applyMask = (input, mask) => {
+      input?.addEventListener("input", () => {
+        const masked = mask(input.value);
+        if (input.value !== masked) input.value = masked;
+      });
+    };
+
+    applyMask(cpfInput, maskCpf);
+    applyMask(cepInput, maskCep);
+    applyMask(phoneInput, maskPhone);
+
+    // Atualiza o cabecalho e a sessao global do portal
+    const syncSession = (profile) => {
+      const session = readSession();
+      if (session?.usuario) {
+        session.usuario.nome = profile.fields.nome;
+        session.usuario.email = profile.fields.email;
+        let remembered = false;
+        try {
+          remembered = !!window.localStorage.getItem(SESSION_KEY);
+        } catch (error) {
+          remembered = false;
+        }
+        writeSession(session, remembered);
+      }
+      applySession();
+      document.querySelectorAll("[data-user-name]").forEach((node) => { node.textContent = profile.fields.nome; });
+      document.querySelectorAll("[data-user-full-name]").forEach((node) => { node.textContent = profile.fields.nome; });
+    };
+
+    const save = () => {
+      const forms = [el("pf-form-dados"), el("pf-form-endereco"), el("pf-form-senha")];
+      for (const form of forms) {
+        if (form && !form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+      }
+      const profile = collect();
+      if (!writeProfile(profile)) {
+        notify("Não foi possível salvar as alterações neste navegador.");
+        return;
+      }
+      saved = profile;
+      pendingAvatar = null;
+      syncSession(profile);
+      renderAvatar(profile);
+      setStatus("saved", "Alterações salvas agora");
+      notify("Perfil atualizado com sucesso.");
+    };
+
+    const discard = () => {
+      saved = readProfile();
+      fill(saved);
+      setStatus("idle", "Nenhuma alteração pendente");
+      notify("Alterações descartadas.");
+    };
+
+    switchButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        if (button.disabled) return;
+        const on = button.getAttribute("aria-checked") === "true";
+        button.setAttribute("aria-checked", String(!on));
+        updateChecks();
+        markDirty();
+      });
+    });
+
+    fieldInputs.forEach((input) => {
+      input.addEventListener("input", () => {
+        updateChecks();
+        markDirty();
+      });
+      input.addEventListener("change", () => {
+        updateChecks();
+        markDirty();
+      });
+    });
+
+    [el("pf-form-dados"), el("pf-form-endereco"), el("pf-form-senha")].forEach((form) => {
+      form?.addEventListener("submit", (event) => {
+        event.preventDefault();
+        save();
+      });
+    });
+
+    el("pf-salvar")?.addEventListener("click", save);
+    el("pf-descartar")?.addEventListener("click", discard);
+
+    passwordInput?.addEventListener("input", updateStrength);
+
+    avatarButton?.addEventListener("click", () => avatarInput?.click());
+    avatarInput?.addEventListener("change", () => {
+      const file = avatarInput.files?.[0];
+      if (!file) return;
+      if (!file.type.startsWith("image/")) {
+        notify("Escolha um arquivo de imagem.");
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = () => {
+        shrinkImage(String(reader.result || ""), 256).then((small) => {
+          pendingAvatar = small;
+          renderAvatar({ fields: saved.fields, avatar: small });
+          markDirty();
+          notify("Foto atualizada. Salve para confirmar.");
+        });
+      };
+      reader.readAsDataURL(file);
+    });
+
+    fill(saved);
+    setStatus("idle", "Nenhuma alteração pendente");
   }
 
   // ------------------------------------------------------------------

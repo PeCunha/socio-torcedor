@@ -1,230 +1,223 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0a0a0d">
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <meta name="description" content="Galeria de títulos e conquistas do SENAI F.C.">
-  <title>Galeria de títulos — SENAI F.C.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/senai-torcedor-web.css">
-</head>
-<body data-page="galeria">
-  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
-  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true">
-    <symbol id="icon-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></symbol>
-    <symbol id="icon-ticket" viewBox="0 0 24 24"><path d="M3 8a2 2 0 0 0 0 8v4h18v-4a2 2 0 0 0 0-8V4H3Z"/><path d="M13 7v2M13 11v2M13 15v2"/></symbol>
-    <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
-    <symbol id="icon-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 6H4v2a4 4 0 0 0 4 4M16 6h4v2a4 4 0 0 1-4 4M12 13v4M8 21h8M9 17h6"/></symbol>
-    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v5c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-5"/></symbol>
-    <symbol id="icon-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14a2 2 0 0 1 2-2h1v7H6a2 2 0 0 1-2-2v-3ZM20 14a2 2 0 0 0-2-2h-1v7h1a2 2 0 0 0 2-2v-3ZM17 19c0 2-2 3-5 3"/></symbol>
-    <symbol id="icon-calendar" viewBox="0 0 24 24"><path d="M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2Z"/><path d="M8 2v4M16 2v4M3 9h18M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01"/></symbol>
-    <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
-    <symbol id="icon-map" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
-    <symbol id="icon-stadium" viewBox="0 0 24 24"><path d="M3 9c3-3 15-3 18 0v7H3V9Z"/><path d="M7 12h10M8 16v3M16 16v3M3 9V6h18v3"/></symbol>
-    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
-    
-    <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"/></symbol>
-    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
-    <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></symbol>
-  </svg>
-
-  <aside class="sidebar" id="sidebar" aria-label="Navegação principal">
-    <div class="sidebar-header"><a class="brand" href="senai-torcedor-web.html" aria-label="SENAI F.C. — página principal"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-copy"><strong>SENAI F.C.</strong><span>Sócio torcedor</span></span></a><button class="icon-button sidebar-close" id="sidebar-close" type="button" aria-label="Fechar menu"><svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg></button></div>
-    <div class="membership-card" aria-label="Plano Sócio Master"><div class="membership-topline"><span>Seu plano</span><span class="vip-badge"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg>Master</span></div><div class="membership-title" data-user-plan>Sócio Master</div><div class="membership-number" data-user-matricula>Matrícula #9842</div></div>
-    <nav class="sidebar-nav" aria-label="Páginas do portal">
-      <a class="nav-link" href="face-id-acesso.html" data-page-link="face-id"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg><span>Face ID &amp; Acesso</span></a>
-      <a class="nav-link" href="senai-torcedor-web.html" data-page-link="jogos"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg><span>Jogos &amp; calendário</span></a>
-      <a class="nav-link" href="planos-de-socio.html" data-page-link="planos"><svg class="icon" aria-hidden="true"><use href="#icon-ticket"></use></svg><span>Planos de sócio</span></a>
-      <a class="nav-link active" href="galeria-de-titulos.html" data-page-link="galeria" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg><span>Galeria de títulos</span></a>
-      <a class="nav-link" href="nossa-historia.html" data-page-link="historia"><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg><span>Nossa história</span></a>
-    </nav>
-    <div class="sidebar-footer"><div class="connection-status"><span>Seu acesso</span><strong>Liberado</strong></div></div>
-  </aside>
-  <button class="sidebar-overlay" id="sidebar-overlay" type="button" aria-label="Fechar menu"></button>
-
-  <div class="main-shell">
-    <header class="topbar"><div class="topbar-inner">
-      <button class="icon-button menu-button" id="menu-button" type="button" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="#icon-menu"></use></svg></button>
-      <nav class="topbar-nav" aria-label="Navegação principal">
-        <a class="topbar-link" href="face-id-acesso.html" data-page-link="face-id">Face ID &amp; Acesso</a>
-        <a class="topbar-link" href="senai-torcedor-web.html" data-page-link="jogos">Jogos &amp; Calendário</a>
-        <a class="topbar-link" href="planos-de-socio.html" data-page-link="planos">Planos de Sócio</a>
-        <a class="topbar-link" href="galeria-de-titulos.html" data-page-link="galeria">Galeria de Títulos</a>
-        <a class="topbar-link" href="nossa-historia.html" data-page-link="historia">Nossa História</a>
-      </nav>
-      <div class="topbar-actions"><button class="profile-button" type="button" data-message="Perfil do Sócio Master #9842 ativo." aria-label="Abrir perfil do torcedor"><span class="avatar avatar-photo" aria-hidden="true"></span><span class="profile-copy"><span>Torcedor</span><strong data-user-name>Operário</strong><small data-user-matricula>Matrícula #9842</small></span></button></div>
-    </div></header>
-
-    <main class="page-container" id="conteudo">
-      <section class="gl-hero" aria-labelledby="gl-title">
-        <div class="gl-hero-inner">
-          <div>
-            <p class="gl-kicker">Nossa história de conquistas</p>
-            <h1 id="gl-title">Galeria de glórias &amp; conquistas</h1>
-            <p class="gl-hero-copy">O testemunho eterno da força operária forjada no aço e no gramado. Cada taça carrega o suor dos trabalhadores e a paixão da nossa torcida.</p>
-            <div class="gl-hero-actions">
-              <a class="primary-button" href="#agendamento">Agendar ingresso</a>
-              <a class="ghost-button" href="planos-de-socio.html">Conhecer planos de sócio</a>
-            </div>
-          </div>
-          <div class="gl-hero-side">
-            <div class="gl-ticket"><p class="gl-ticket-label">Total geral</p><div class="gl-ticket-value"><strong>18 troféus</strong><span class="gl-live">Acervo ativo</span></div></div>
-            <div class="gl-ticket"><p class="gl-ticket-label">Primeiro triunfo</p><div class="gl-ticket-value"><strong>1982</strong><span class="gl-registry">Série Ouro</span></div></div>
-            <div class="gl-ticket"><p class="gl-ticket-label">Era Hexa</p><div class="gl-ticket-value"><strong>2018&ndash;2024</strong><span class="gl-registry">6 consecutivos</span></div></div>
-          </div>
-        </div>
-      </section>
-
-      <div class="gl-totals" role="list" aria-label="Totais do acervo">
-        <div class="gl-total" role="listitem"><span>Troféus</span><strong>18</strong><em>Desde 1982</em></div>
-        <div class="gl-total" role="listitem"><span>Títulos nacionais</span><strong>05</strong><em>Incluindo o Brasileiro</em></div>
-        <div class="gl-total" role="listitem"><span>Conquistas estaduais</span><strong>08</strong><em>Hexa consecutivo</em></div>
-        <div class="gl-total" role="listitem"><span>Copas da indústria</span><strong>05</strong><em>Domínio interestadual</em></div>
-      </div>
-
-      <section class="subpage-section" aria-labelledby="acervo">
-        <div class="subpage-section-header"><div><h2 id="acervo">Nossas taças</h2><p>Registro de cada conquista do clube.</p></div><span class="match-count">18 conquistas</span></div>
-
-        <div class="gl-toolbar">
-          <div class="gl-tabs" role="tablist" aria-label="Filtrar acervo por categoria">
-            <button class="gl-tab" type="button" role="tab" data-gl-filter="nacionais" aria-selected="false">Nacionais <b>05</b></button>
-            <button class="gl-tab" type="button" role="tab" data-gl-filter="regionais" aria-selected="false">Regionais <b>08</b></button>
-            <button class="gl-tab" type="button" role="tab" data-gl-filter="copas" aria-selected="false">Copas <b>05</b></button>
-          </div>
-          <p class="gl-viewmode">Visualização: <b>acervo curado</b></p>
-        </div>
-
-        <article class="gl-dossier" data-gl-category="nacionais">
-          <header class="gl-dossier-head">
-            <div class="gl-dossier-id"><span class="gl-ribbon">Invicto 2023&ndash;2025</span><span class="gl-registry">Campeonato Brasileiro da Indústria</span></div>
-            <span class="gl-registry">Série Ouro</span>
-          </header>
-          <div class="gl-dossier-body">
-            <div>
-              <h2>Taça Ouro Nacional 2023</h2>
-              <p class="gl-dossier-tagline">Consagração máxima da hegemonia do SENAI F.C. em território nacional</p>
-              <p class="gl-dossier-copy">A consagração máxima da hegemonia do SENAI F.C. em território nacional. Uma campanha perfeita, sem nenhuma derrota, coroada diante da torcida apaixonada na grande arena.</p>
-            </div>
-            <div class="gl-stats">
-              <div class="gl-stat"><span>Final decisiva</span><strong>SENAI F.C. 2 x 0<b>Mecatrônica lotação máxima</b></strong></div>
-              <div class="gl-stat"><span>Público pagante</span><strong>45.210 torcedores</strong></div>
-              <div class="gl-stat"><span>Aproveitamento</span><strong>100% invicto <b>14 jogos &middot; 12V &middot; 2E</b></strong></div>
-              <div class="gl-stat"><span>Gols decisivos</span><strong>34' e 88'</strong></div>
-              <div class="gl-stat"><span>Destaque</span><strong>Melhor defesa do torneio</strong></div>
-            </div>
-          </div>
-          <footer class="gl-dossier-foot">Pênaltis históricos &middot; Arena Operária</footer>
-        </article>
-
-        <article class="gl-dossier" data-gl-category="copas">
-          <header class="gl-dossier-head">
-            <div class="gl-dossier-id"><span class="gl-ribbon">Copa 2021</span><span class="gl-registry">Torneio Interestadual</span></div>
-            <span class="gl-registry">Copa dos Campeões</span>
-          </header>
-          <div class="gl-dossier-body">
-            <div>
-              <h2>Copa Campeões Tecnológicos</h2>
-              <p class="gl-dossier-tagline">O drama e a glória se encontraram aos 94 minutos</p>
-              <p class="gl-dossier-copy">O drama e a glória se encontraram aos 94 minutos. Uma final épica decidida pelas luvas de ferro do arqueiro &ldquo;Muralha&rdquo;, com defesa crucial no tempo regulamentar e duas penalidades defendidas.</p>
-            </div>
-            <div class="gl-stats">
-              <div class="gl-stat"><span>Placar da final</span><strong>SENAI F.C. 1 (5) x (4)<b>2021 &middot; decisão por pênaltis</b></strong></div>
-              <div class="gl-stat"><span>Herói do jogo</span><strong>Goleiro Marcos Automação &ldquo;Muralha&rdquo;</strong></div>
-              <div class="gl-stat"><span>Pênalti defendido</span><strong>Aos 94'</strong></div>
-              <div class="gl-stat"><span>Palco</span><strong>Arena Central de Curitiba <b>32.800 espectadores</b></strong></div>
-            </div>
-          </div>
-          <footer class="gl-dossier-foot">Hegemonia absoluta &middot; Liga Metropolitana &amp; Estadual da Indústria</footer>
-        </article>
-
-        <article class="gl-dossier" data-gl-category="regionais">
-          <header class="gl-dossier-head">
-            <div class="gl-dossier-id"><span class="gl-ribbon">Hexacampeonato 2018&ndash;2024</span><span class="gl-registry">Liga Metropolitana &amp; Estadual</span></div>
-            <span class="gl-registry">6 títulos consecutivos</span>
-          </header>
-          <div class="gl-dossier-body">
-            <div>
-              <h2>Dinastia regional</h2>
-              <p class="gl-dossier-tagline">Hexacampeonato Metropolitano (2018&ndash;2024)</p>
-              <p class="gl-dossier-copy">Uma dinastia incontestável. Por seis temporadas consecutivas, a taça regional pertenceu exclusivamente aos armários do SENAI F.C., marcando a maior soberania esportiva já registrada em todo o estado.</p>
-            </div>
-            <div class="gl-stats">
-              <div class="gl-stat"><span>Aproveitamento médio</span><strong>88.4% nos 6 anos</strong></div>
-              <div class="gl-stat"><span>Clássicos vencidos</span><strong>24 vitórias em 28 derbys</strong></div>
-              <div class="gl-stat"><span>Artilharia histórica</span><strong>64 gols de Diego Forja <b>maior artilheiro da dinastia</b></strong></div>
-              <div class="gl-stat"><span>Campanha</span><strong>112 vitórias em 134 jogos <b>7 títulos estaduais</b></strong></div>
-              <div class="gl-stat"><span>Selo</span><strong>Hexa &middot; supremacia contra rivais</strong></div>
-            </div>
-          </div>
-          <footer class="gl-dossier-foot">Duelo de gigantes &middot; a maior soberania esportiva do estado</footer>
-        </article>
-
-        <article class="gl-dossier" data-gl-category="copas">
-          <header class="gl-dossier-head">
-            <div class="gl-dossier-id"><span class="gl-ribbon">Supercopa 2019</span><span class="gl-registry">Supercopa dos Campeões Operários do Brasil</span></div>
-            <span class="gl-registry">Registro de taça #011-SC</span>
-          </header>
-          <div class="gl-dossier-body">
-            <div>
-              <h2>Supercopa SENAI Brasil 2019</h2>
-              <p class="gl-dossier-tagline">Disputada na capital federal</p>
-              <p class="gl-dossier-copy">Disputada na capital federal contra o fortíssimo Grêmio Indústria. Uma exibição tática primorosa de contra-ataque e velocidade que assegurou o título com autoridade perante caravanas de todo o país.</p>
-            </div>
-            <div class="gl-stats">
-              <div class="gl-stat"><span>Resultado oficial</span><strong>SENAI F.C. 3 x 1 Grêmio Ind. <b>2019 &middot; goleada controlada</b></strong></div>
-              <div class="gl-stat"><span>Arena neutra</span><strong>Estádio Nacional de Brasília</strong></div>
-              <div class="gl-stat"><span>Destaque do jogo</span><strong>2 assistências de Torno <b>camisa 10 eleito craque</b></strong></div>
-              <div class="gl-stat"><span>Caravana</span><strong>Mais de 80 ônibus</strong></div>
-            </div>
-          </div>
-          <footer class="gl-dossier-foot">Autoridade perante caravanas de todo o país</footer>
-        </article>
-      </section>
-
-      <section class="subpage-section" aria-labelledby="documentario">
-        <div class="subpage-section-header"><div><h2 id="documentario">Documentário fotográfico</h2><p>Registros inesquecíveis da massa operária que empurrou o SENAI F.C. rumo às maiores façanhas esportivas.</p></div><span class="match-count">Arquivo vivo // 1982&ndash;2024</span></div>
-        <div class="gl-photos">
-          <figure class="gl-photo"><div class="gl-photo-frame"><span class="gl-photo-mark"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></span></div><figcaption><b>Final de 2023 // Arquibancada Sul</b><span>Mosaico de engrenagens e coreografia de 40 mil pessoas celebrando o título invicto.</span></figcaption></figure>
-          <figure class="gl-photo"><div class="gl-photo-frame"><span class="gl-photo-mark"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></span></div><figcaption><b>Brasília 2019 // Pódio</b><span>A taça erguida no planalto, com o capitão diante da caravana operária.</span></figcaption></figure>
-          <figure class="gl-photo"><div class="gl-photo-frame"><span class="gl-photo-mark"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></span></div><figcaption><b>Curitiba 2021 // 94 minutos</b><span>O abraço da vitória improvável e e a defesa desesperada do Muralha.</span></figcaption></figure>
-          <figure class="gl-photo"><div class="gl-photo-frame"><span class="gl-photo-mark"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></span></div><figcaption><b>Arena Operária // Acervo</b><span>Emoção pura nas tribunas logo após a última defesa de pênalti.</span></figcaption></figure>
-        </div>
-      </section>
-
-      <section class="gl-visit" id="agendamento" aria-labelledby="beneficio-title">
-        <div>
-          <p class="gl-kicker">Benefício exclusivo // Plano Master &amp; VIP</p>
-          <h2 id="beneficio-title">Agendamento de visita</h2>
-          <p class="gl-visit-copy">Como sócio ativo, você tem direito a 01 visita guiada gratuita por mês, com direito a acompanhante. Conheça os bastidores da Arena, desça ao vestiário dos campeões e tire a clássica foto segurando a autêntica Taça Ouro Nacional de 2023 com luvas oficiais de colecionador.</p>
-          <ul class="gl-perks">
-            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span>Foto oficial segurando a Taça Ouro de 2023</span></li>
-            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span>Impressão térmica e arquivo digital 4K</span></li>
-            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span>Acesso ao túnel e vestiário dos campeões</span></li>
-            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span>Catraca com Face ID e 1 convidado grátis</span></li>
-          </ul>
-        </div>
-        <form class="gl-booking" data-message="Visita agendada. Confirmação enviada para o seu e-mail.">
-          <h3>Agende sua visita</h3>
-          <p>Tour presencial VIP no museu da Arena SENAI</p>
-          <div class="gl-field-row"><div class="gl-field"><label for="gl-nome">Nome completo</label><input id="gl-nome" name="nome" type="text" placeholder="Ex.: Carlos Eduardo da Silva" autocomplete="name" required></div><div class="gl-field"><label for="gl-email">E-mail para confirmação</label><input id="gl-email" name="email" type="email" placeholder="voce@email.com" autocomplete="email" required></div></div>
-          <div class="gl-field-row"><div class="gl-field"><label for="gl-data">Data e horário</label><select id="gl-data" name="data" required><option value="">Selecione uma data</option><option>Sábado, 26 de outubro &mdash; 10:30</option><option>Sábado, 09 de novembro &mdash; 10:30</option><option>Sábado, 23 de novembro &mdash; 15:00</option></select></div><div class="gl-field"><label for="gl-qtd">Quantidade de vagas</label><select id="gl-qtd" name="quantidade" required><option value="1">1 vaga</option><option value="2">2 vagas</option><option value="3">3 vagas</option><option value="4">4 vagas</option></select></div></div>
-          <div class="gl-field"><label for="gl-convidado">Acompanhar com (opcional)</label><input id="gl-convidado" name="convidado" type="text" placeholder="Ex.: Escola técnica SENAI Brás" autocomplete="off"></div>
-          <label class="gl-choice"><input type="checkbox" name="perks" value="foto" checked>Quero a foto oficial segurando a Taça Ouro de 2023</label>
-          <label class="gl-choice"><input type="checkbox" name="perks" value="tunel" checked>Acesso ao túnel e vestiário</label>
-          <button class="primary-button" type="submit">Confirmar reserva</button>
-          <p class="gl-seat"><span>Vagas para a data selecionada</span><b>Esgotando</b></p>
-        </form>
-      </section>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0d">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <meta name="description" content="Galeria de títulos e conquistas do SENAI F.C.">
+  <title>Galeria de títulos — SENAI F.C.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/senai-torcedor-web.css">
+</head>
+<body data-page="galeria">
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true">
+    <symbol id="icon-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></symbol>
+    <symbol id="icon-ticket" viewBox="0 0 24 24"><path d="M3 8a2 2 0 0 0 0 8v4h18v-4a2 2 0 0 0 0-8V4H3Z"/><path d="M13 7v2M13 11v2M13 15v2"/></symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="icon-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 6H4v2a4 4 0 0 0 4 4M16 6h4v2a4 4 0 0 1-4 4M12 13v4M8 21h8M9 17h6"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v5c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-5"/></symbol>
+    <symbol id="icon-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14a2 2 0 0 1 2-2h1v7H6a2 2 0 0 1-2-2v-3ZM20 14a2 2 0 0 0-2-2h-1v7h1a2 2 0 0 0 2-2v-3ZM17 19c0 2-2 3-5 3"/></symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24"><path d="M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2Z"/><path d="M8 2v4M16 2v4M3 9h18M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01"/></symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="icon-map" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="icon-stadium" viewBox="0 0 24 24"><path d="M3 9c3-3 15-3 18 0v7H3V9Z"/><path d="M7 12h10M8 16v3M16 16v3M3 9V6h18v3"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    
+    <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></symbol>
+  </svg>
+
+  <aside class="sidebar" id="sidebar" aria-label="Navegação principal">
+    <div class="sidebar-header"><a class="brand" href="senai-torcedor-web.html" aria-label="SENAI F.C. — página principal"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-copy"><strong>SENAI F.C.</strong><span>Sócio torcedor</span></span></a><button class="icon-button sidebar-close" id="sidebar-close" type="button" aria-label="Fechar menu"><svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg></button></div>
+    <div class="membership-card" aria-label="Plano Sócio Master"><div class="membership-topline"><span>Seu plano</span><span class="vip-badge"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg>Master</span></div><div class="membership-title" data-user-plan>Sócio Master</div><div class="membership-number" data-user-matricula>Matrícula #9842</div></div>
+    <nav class="sidebar-nav" aria-label="Páginas do portal">
+      <a class="nav-link" href="face-id-acesso.html" data-page-link="face-id"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg><span>Face ID &amp; Acesso</span></a>
+      <a class="nav-link" href="senai-torcedor-web.html" data-page-link="jogos"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg><span>Jogos &amp; calendário</span></a>
+      <a class="nav-link" href="planos-de-socio.html" data-page-link="planos"><svg class="icon" aria-hidden="true"><use href="#icon-ticket"></use></svg><span>Planos de sócio</span></a>
+      <a class="nav-link active" href="galeria-de-titulos.html" data-page-link="galeria" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg><span>Galeria de títulos</span></a>
+      <a class="nav-link" href="nossa-historia.html" data-page-link="historia"><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg><span>Nossa história</span></a>
+    </nav>
+    <div class="sidebar-footer"><div class="connection-status"><span>Seu acesso</span><strong>Liberado</strong></div></div>
+  </aside>
+  <button class="sidebar-overlay" id="sidebar-overlay" type="button" aria-label="Fechar menu"></button>
+
+  <div class="main-shell">
+    <header class="topbar"><div class="topbar-inner">
+      <button class="icon-button menu-button" id="menu-button" type="button" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="#icon-menu"></use></svg></button>
+      <div class="topbar-actions"><a class="profile-button" href="perfil.html" aria-label="Abrir configurações do perfil"><span class="avatar avatar-photo" aria-hidden="true"></span><span class="profile-copy"><span>Torcedor</span><strong data-user-name>Operário</strong><small data-user-matricula>Matrícula #9842</small></span></a></div>
+    </div></header>
+
+    <main class="page-container" id="conteudo">
+      <section class="gl-hero" aria-labelledby="gl-title">
+        <div class="gl-hero-inner">
+          <div>
+            <p class="gl-kicker">Nossa história de conquistas</p>
+            <h1 id="gl-title">Galeria de glórias &amp; conquistas</h1>
+            <p class="gl-hero-copy">O testemunho eterno da força operária forjada no aço e no gramado. Cada taça carrega o suor dos trabalhadores e a paixão da nossa torcida.</p>
+            <div class="gl-hero-actions">
+              <a class="primary-button" href="#agendamento">Agendar ingresso</a>
+              <a class="ghost-button" href="planos-de-socio.html">Conhecer planos de sócio</a>
+            </div>
+          </div>
+          <div class="gl-hero-side">
+            <div class="gl-ticket"><p class="gl-ticket-label">Total geral</p><div class="gl-ticket-value"><strong>18 troféus</strong><span class="gl-live">Acervo ativo</span></div></div>
+            <div class="gl-ticket"><p class="gl-ticket-label">Primeiro triunfo</p><div class="gl-ticket-value"><strong>1982</strong><span class="gl-registry">Série Ouro</span></div></div>
+            <div class="gl-ticket"><p class="gl-ticket-label">Era Hexa</p><div class="gl-ticket-value"><strong>2018&ndash;2024</strong><span class="gl-registry">6 consecutivos</span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="gl-totals" role="list" aria-label="Totais do acervo">
+        <div class="gl-total" role="listitem"><span>Troféus</span><strong>18</strong><em>Desde 1982</em></div>
+        <div class="gl-total" role="listitem"><span>Títulos nacionais</span><strong>05</strong><em>Incluindo o Brasileiro</em></div>
+        <div class="gl-total" role="listitem"><span>Conquistas estaduais</span><strong>08</strong><em>Hexa consecutivo</em></div>
+        <div class="gl-total" role="listitem"><span>Copas da indústria</span><strong>05</strong><em>Domínio interestadual</em></div>
+      </div>
+
+      <section class="subpage-section" aria-labelledby="acervo">
+        <div class="subpage-section-header"><div><h2 id="acervo">Nossas taças</h2><p>Registro de cada conquista do clube.</p></div><span class="match-count">18 conquistas</span></div>
+
+        <div class="gl-toolbar">
+          <div class="gl-tabs" role="tablist" aria-label="Filtrar acervo por categoria">
+            <button class="gl-tab" type="button" role="tab" data-gl-filter="nacionais" aria-selected="false">Nacionais <b>05</b></button>
+            <button class="gl-tab" type="button" role="tab" data-gl-filter="regionais" aria-selected="false">Regionais <b>08</b></button>
+            <button class="gl-tab" type="button" role="tab" data-gl-filter="copas" aria-selected="false">Copas <b>05</b></button>
+          </div>
+          <p class="gl-viewmode">Visualização: <b>acervo curado</b></p>
+        </div>
+
+        <article class="gl-dossier" data-gl-category="nacionais">
+          <header class="gl-dossier-head">
+            <div class="gl-dossier-id"><span class="gl-ribbon">Invicto 2023&ndash;2025</span><span class="gl-registry">Campeonato Brasileiro da Indústria</span></div>
+            <span class="gl-registry">Série Ouro</span>
+          </header>
+          <div class="gl-dossier-body">
+            <div>
+              <h2>Taça Ouro Nacional 2023</h2>
+              <p class="gl-dossier-tagline">Consagração máxima da hegemonia do SENAI F.C. em território nacional</p>
+              <p class="gl-dossier-copy">A consagração máxima da hegemonia do SENAI F.C. em território nacional. Uma campanha perfeita, sem nenhuma derrota, coroada diante da torcida apaixonada na grande arena.</p>
+            </div>
+            <div class="gl-stats">
+              <div class="gl-stat"><span>Final decisiva</span><strong>SENAI F.C. 2 x 0<b>Mecatrônica lotação máxima</b></strong></div>
+              <div class="gl-stat"><span>Público pagante</span><strong>45.210 torcedores</strong></div>
+              <div class="gl-stat"><span>Aproveitamento</span><strong>100% invicto <b>14 jogos &middot; 12V &middot; 2E</b></strong></div>
+              <div class="gl-stat"><span>Gols decisivos</span><strong>34' e 88'</strong></div>
+              <div class="gl-stat"><span>Destaque</span><strong>Melhor defesa do torneio</strong></div>
+            </div>
+          </div>
+          <footer class="gl-dossier-foot">Pênaltis históricos &middot; Arena Operária</footer>
+        </article>
+
+        <article class="gl-dossier" data-gl-category="copas">
+          <header class="gl-dossier-head">
+            <div class="gl-dossier-id"><span class="gl-ribbon">Copa 2021</span><span class="gl-registry">Torneio Interestadual</span></div>
+            <span class="gl-registry">Copa dos Campeões</span>
+          </header>
+          <div class="gl-dossier-body">
+            <div>
+              <h2>Copa Campeões Tecnológicos</h2>
+              <p class="gl-dossier-tagline">O drama e a glória se encontraram aos 94 minutos</p>
+              <p class="gl-dossier-copy">O drama e a glória se encontraram aos 94 minutos. Uma final épica decidida pelas luvas de ferro do arqueiro &ldquo;Muralha&rdquo;, com defesa crucial no tempo regulamentar e duas penalidades defendidas.</p>
+            </div>
+            <div class="gl-stats">
+              <div class="gl-stat"><span>Placar da final</span><strong>SENAI F.C. 1 (5) x (4)<b>2021 &middot; decisão por pênaltis</b></strong></div>
+              <div class="gl-stat"><span>Herói do jogo</span><strong>Goleiro Marcos Automação &ldquo;Muralha&rdquo;</strong></div>
+              <div class="gl-stat"><span>Pênalti defendido</span><strong>Aos 94'</strong></div>
+              <div class="gl-stat"><span>Palco</span><strong>Arena Central de Curitiba <b>32.800 espectadores</b></strong></div>
+            </div>
+          </div>
+          <footer class="gl-dossier-foot">Hegemonia absoluta &middot; Liga Metropolitana &amp; Estadual da Indústria</footer>
+        </article>
+
+        <article class="gl-dossier" data-gl-category="regionais">
+          <header class="gl-dossier-head">
+            <div class="gl-dossier-id"><span class="gl-ribbon">Hexacampeonato 2018&ndash;2024</span><span class="gl-registry">Liga Metropolitana &amp; Estadual</span></div>
+            <span class="gl-registry">6 títulos consecutivos</span>
+          </header>
+          <div class="gl-dossier-body">
+            <div>
+              <h2>Dinastia regional</h2>
+              <p class="gl-dossier-tagline">Hexacampeonato Metropolitano (2018&ndash;2024)</p>
+              <p class="gl-dossier-copy">Uma dinastia incontestável. Por seis temporadas consecutivas, a taça regional pertenceu exclusivamente aos armários do SENAI F.C., marcando a maior soberania esportiva já registrada em todo o estado.</p>
+            </div>
+            <div class="gl-stats">
+              <div class="gl-stat"><span>Aproveitamento médio</span><strong>88.4% nos 6 anos</strong></div>
+              <div class="gl-stat"><span>Clássicos vencidos</span><strong>24 vitórias em 28 derbys</strong></div>
+              <div class="gl-stat"><span>Artilharia histórica</span><strong>64 gols de Diego Forja <b>maior artilheiro da dinastia</b></strong></div>
+              <div class="gl-stat"><span>Campanha</span><strong>112 vitórias em 134 jogos <b>7 títulos estaduais</b></strong></div>
+              <div class="gl-stat"><span>Selo</span><strong>Hexa &middot; supremacia contra rivais</strong></div>
+            </div>
+          </div>
+          <footer class="gl-dossier-foot">Duelo de gigantes &middot; a maior soberania esportiva do estado</footer>
+        </article>
+
+        <article class="gl-dossier" data-gl-category="copas">
+          <header class="gl-dossier-head">
+            <div class="gl-dossier-id"><span class="gl-ribbon">Supercopa 2019</span><span class="gl-registry">Supercopa dos Campeões Operários do Brasil</span></div>
+            <span class="gl-registry">Registro de taça #011-SC</span>
+          </header>
+          <div class="gl-dossier-body">
+            <div>
+              <h2>Supercopa SENAI Brasil 2019</h2>
+              <p class="gl-dossier-tagline">Disputada na capital federal</p>
+              <p class="gl-dossier-copy">Disputada na capital federal contra o fortíssimo Grêmio Indústria. Uma exibição tática primorosa de contra-ataque e velocidade que assegurou o título com autoridade perante caravanas de todo o país.</p>
+            </div>
+            <div class="gl-stats">
+              <div class="gl-stat"><span>Resultado oficial</span><strong>SENAI F.C. 3 x 1 Grêmio Ind. <b>2019 &middot; goleada controlada</b></strong></div>
+              <div class="gl-stat"><span>Arena neutra</span><strong>Estádio Nacional de Brasília</strong></div>
+              <div class="gl-stat"><span>Destaque do jogo</span><strong>2 assistências de Torno <b>camisa 10 eleito craque</b></strong></div>
+              <div class="gl-stat"><span>Caravana</span><strong>Mais de 80 ônibus</strong></div>
+            </div>
+          </div>
+          <footer class="gl-dossier-foot">Autoridade perante caravanas de todo o país</footer>
+        </article>
+      </section>
+
+      <section class="subpage-section" aria-labelledby="documentario">
+        <div class="subpage-section-header"><div><h2 id="documentario">Documentário fotográfico</h2><p>Registros inesquecíveis da massa operária que empurrou o SENAI F.C. rumo às maiores façanhas esportivas.</p></div><span class="match-count">Arquivo vivo // 1982&ndash;2024</span></div>
+        <div class="gl-photos">
+          <figure class="gl-photo"><div class="gl-photo-frame"><span class="gl-photo-mark"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></span></div><figcaption><b>Final de 2023 // Arquibancada Sul</b><span>Mosaico de engrenagens e coreografia de 40 mil pessoas celebrando o título invicto.</span></figcaption></figure>
+          <figure class="gl-photo"><div class="gl-photo-frame"><span class="gl-photo-mark"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></span></div><figcaption><b>Brasília 2019 // Pódio</b><span>A taça erguida no planalto, com o capitão diante da caravana operária.</span></figcaption></figure>
+          <figure class="gl-photo"><div class="gl-photo-frame"><span class="gl-photo-mark"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></span></div><figcaption><b>Curitiba 2021 // 94 minutos</b><span>O abraço da vitória improvável e e a defesa desesperada do Muralha.</span></figcaption></figure>
+          <figure class="gl-photo"><div class="gl-photo-frame"><span class="gl-photo-mark"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></span></div><figcaption><b>Arena Operária // Acervo</b><span>Emoção pura nas tribunas logo após a última defesa de pênalti.</span></figcaption></figure>
+        </div>
+      </section>
+
+      <section class="gl-visit" id="agendamento" aria-labelledby="beneficio-title">
+        <div>
+          <p class="gl-kicker">Benefício exclusivo // Plano Master &amp; VIP</p>
+          <h2 id="beneficio-title">Agendamento de visita</h2>
+          <p class="gl-visit-copy">Como sócio ativo, você tem direito a 01 visita guiada gratuita por mês, com direito a acompanhante. Conheça os bastidores da Arena, desça ao vestiário dos campeões e tire a clássica foto segurando a autêntica Taça Ouro Nacional de 2023 com luvas oficiais de colecionador.</p>
+          <ul class="gl-perks">
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span>Foto oficial segurando a Taça Ouro de 2023</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span>Impressão térmica e arquivo digital 4K</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span>Acesso ao túnel e vestiário dos campeões</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span>Catraca com Face ID e 1 convidado grátis</span></li>
+          </ul>
+        </div>
+        <form class="gl-booking" data-message="Visita agendada. Confirmação enviada para o seu e-mail.">
+          <h3>Agende sua visita</h3>
+          <p>Tour presencial VIP no museu da Arena SENAI</p>
+          <div class="gl-field-row"><div class="gl-field"><label for="gl-nome">Nome completo</label><input id="gl-nome" name="nome" type="text" placeholder="Ex.: Carlos Eduardo da Silva" autocomplete="name" required></div><div class="gl-field"><label for="gl-email">E-mail para confirmação</label><input id="gl-email" name="email" type="email" placeholder="voce@email.com" autocomplete="email" required></div></div>
+          <div class="gl-field-row"><div class="gl-field"><label for="gl-data">Data e horário</label><select id="gl-data" name="data" required><option value="">Selecione uma data</option><option>Sábado, 26 de outubro &mdash; 10:30</option><option>Sábado, 09 de novembro &mdash; 10:30</option><option>Sábado, 23 de novembro &mdash; 15:00</option></select></div><div class="gl-field"><label for="gl-qtd">Quantidade de vagas</label><select id="gl-qtd" name="quantidade" required><option value="1">1 vaga</option><option value="2">2 vagas</option><option value="3">3 vagas</option><option value="4">4 vagas</option></select></div></div>
+          <div class="gl-field"><label for="gl-convidado">Acompanhar com (opcional)</label><input id="gl-convidado" name="convidado" type="text" placeholder="Ex.: Escola técnica SENAI Brás" autocomplete="off"></div>
+          <label class="gl-choice"><input type="checkbox" name="perks" value="foto" checked>Quero a foto oficial segurando a Taça Ouro de 2023</label>
+          <label class="gl-choice"><input type="checkbox" name="perks" value="tunel" checked>Acesso ao túnel e vestiário</label>
+          <button class="primary-button" type="submit">Confirmar reserva</button>
+          <p class="gl-seat"><span>Vagas para a data selecionada</span><b>Esgotando</b></p>
+        </form>
+      </section>
     </main>
-    <footer class="site-footer"><div class="footer-inner"><div class="footer-grid"><div class="footer-column"><h3>SENAI F.C.</h3><p>Paixão, tradição e futebol. O portal do sócio torcedor para ingressos, acesso e tudo sobre o clube.</p></div><div class="footer-column"><h3>Institucional</h3><div class="footer-links"><a href="#">Estatuto do Torcedor</a><a href="#">Transparência</a><a href="#">Privacidade</a></div></div><div class="footer-column"><h3>Ajuda</h3><div class="footer-links"><a href="face-id-acesso.html">Acesso à arena</a><a href="#">Fale com a gente</a><a href="#">Ouvidoria</a></div></div><div class="footer-column"><h3>Parceiros</h3><div class="footer-links"><a href="#">Indústria Metallum</a><a href="#">Robótix Energia BR</a></div></div></div><div class="footer-bottom"><span>© 2024 SENAI F.C.</span><span class="footer-highlight">Feito com paixão</span></div></div></footer>
-  </div>
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span id="toast-message"></span></div>
-  <script src="assets/js/senai-torcedor-web.js" defer></script>
-</body>
-</html>
+    <footer class="site-footer"><div class="footer-inner"><div class="footer-grid"><div class="footer-column"><h3>SENAI F.C.</h3><p>Paixão, tradição e futebol. O portal do sócio torcedor para ingressos, acesso e tudo sobre o clube.</p></div><div class="footer-column"><h3>Institucional</h3><div class="footer-links"><a href="#">Estatuto do Torcedor</a><a href="#">Transparência</a><a href="#">Privacidade</a></div></div><div class="footer-column"><h3>Ajuda</h3><div class="footer-links"><a href="face-id-acesso.html">Acesso à arena</a><a href="#">Fale com a gente</a><a href="#">Ouvidoria</a></div></div><div class="footer-column"><h3>Parceiros</h3><div class="footer-links"><a href="#">Indústria Metallum</a><a href="#">Robótix Energia BR</a></div></div></div><div class="footer-bottom"><span>© 2024 SENAI F.C.</span><span class="footer-highlight">Feito com paixão</span></div></div></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span id="toast-message"></span></div>
+  <script src="assets/js/senai-torcedor-web.js" defer></script>
+</body>
+</html>

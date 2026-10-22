@@ -1,220 +1,213 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0a0a0d">
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <meta name="description" content="Conheça a história do SENAI F.C. e a evolução do projeto esportivo.">
-  <title>Nossa história — SENAI F.C.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/senai-torcedor-web.css">
-</head>
-<body data-page="historia">
-  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
-  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true">
-    <symbol id="icon-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></symbol>
-    <symbol id="icon-ticket" viewBox="0 0 24 24"><path d="M3 8a2 2 0 0 0 0 8v4h18v-4a2 2 0 0 0 0-8V4H3Z"/><path d="M13 7v2M13 11v2M13 15v2"/></symbol>
-    <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
-    <symbol id="icon-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 6H4v2a4 4 0 0 0 4 4M16 6h4v2a4 4 0 0 1-4 4M12 13v4M8 21h8M9 17h6"/></symbol>
-    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v5c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-5"/></symbol>
-    <symbol id="icon-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14a2 2 0 0 1 2-2h1v7H6a2 2 0 0 1-2-2v-3ZM20 14a2 2 0 0 0-2-2h-1v7h1a2 2 0 0 0 2-2v-3ZM17 19c0 2-2 3-5 3"/></symbol>
-    <symbol id="icon-calendar" viewBox="0 0 24 24"><path d="M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2Z"/><path d="M8 2v4M16 2v4M3 9h18M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01"/></symbol>
-    <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
-    <symbol id="icon-map" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
-    <symbol id="icon-stadium" viewBox="0 0 24 24"><path d="M3 9c3-3 15-3 18 0v7H3V9Z"/><path d="M7 12h10M8 16v3M16 16v3M3 9V6h18v3"/></symbol>
-    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
-    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
-    
-    <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
-    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"/></symbol>
-    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
-    <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></symbol>
-  </svg>
-
-  <aside class="sidebar" id="sidebar" aria-label="Navegação principal">
-    <div class="sidebar-header"><a class="brand" href="senai-torcedor-web.html" aria-label="SENAI F.C. — página principal"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-copy"><strong>SENAI F.C.</strong><span>Sócio torcedor</span></span></a><button class="icon-button sidebar-close" id="sidebar-close" type="button" aria-label="Fechar menu"><svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg></button></div>
-    <div class="membership-card" aria-label="Plano Sócio Master"><div class="membership-topline"><span>Seu plano</span><span class="vip-badge"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg>Master</span></div><div class="membership-title" data-user-plan>Sócio Master</div><div class="membership-number" data-user-matricula>Matrícula #9842</div></div>
-    <nav class="sidebar-nav" aria-label="Páginas do portal">
-      <a class="nav-link" href="face-id-acesso.html" data-page-link="face-id"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg><span>Face ID &amp; Acesso</span></a>
-      <a class="nav-link" href="senai-torcedor-web.html" data-page-link="jogos"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg><span>Jogos &amp; calendário</span></a>
-      <a class="nav-link" href="planos-de-socio.html" data-page-link="planos"><svg class="icon" aria-hidden="true"><use href="#icon-ticket"></use></svg><span>Planos de sócio</span></a>
-      <a class="nav-link" href="galeria-de-titulos.html" data-page-link="galeria"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg><span>Galeria de títulos</span></a>
-      <a class="nav-link active" href="nossa-historia.html" data-page-link="historia" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg><span>Nossa história</span></a>
-    </nav>
-    <div class="sidebar-footer"><div class="connection-status"><span>Seu acesso</span><strong>Liberado</strong></div></div>
-  </aside>
-  <button class="sidebar-overlay" id="sidebar-overlay" type="button" aria-label="Fechar menu"></button>
-
-  <div class="main-shell">
-    <header class="topbar"><div class="topbar-inner">
-      <button class="icon-button menu-button" id="menu-button" type="button" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="#icon-menu"></use></svg></button>
-      <nav class="topbar-nav" aria-label="Navegação principal">
-        <a class="topbar-link" href="face-id-acesso.html" data-page-link="face-id">Face ID &amp; Acesso</a>
-        <a class="topbar-link" href="senai-torcedor-web.html" data-page-link="jogos">Jogos &amp; Calendário</a>
-        <a class="topbar-link" href="planos-de-socio.html" data-page-link="planos">Planos de Sócio</a>
-        <a class="topbar-link" href="galeria-de-titulos.html" data-page-link="galeria">Galeria de Títulos</a>
-        <a class="topbar-link" href="nossa-historia.html" data-page-link="historia">Nossa História</a>
-      </nav>
-      <div class="topbar-actions"><button class="profile-button" type="button" data-message="Perfil do Sócio Master #9842 ativo." aria-label="Abrir perfil do torcedor"><span class="avatar avatar-photo" aria-hidden="true"></span><span class="profile-copy"><span>Torcedor</span><strong data-user-name>Operário</strong><small data-user-matricula>Matrícula #9842</small></span></button></div>
-    </div></header>
-
-    <main class="page-container" id="conteudo">
-      <section class="hs-hero" aria-labelledby="hs-title">
-        <p class="hs-kicker">Nossa história // fundado em 1942</p>
-        <h1 id="hs-title">A paixão nos gramados e nas oficinas</h1>
-        <p class="hs-hero-copy">Tradição forjada há mais de oito décadas nas oficinas de formação técnica. O clube que transformou o suor operário no futebol mais apaixonado do país.</p>
-      </section>
-
-      <div class="hs-numbers" role="list" aria-label="Números do clube">
-        <div class="hs-number" role="listitem"><span>Anos de casa</span><strong>82</strong><em>Sem jamais abandonar nossas raízes</em></div>
-        <div class="hs-number" role="listitem"><span>Associados</span><strong>48.200</strong><em>Técnicos e operários</em></div>
-        <div class="hs-number" role="listitem"><span>DNA esportivo</span><strong>28</strong><em>Operário: gerido de dentro das linhas</em></div>
-        <div class="hs-number" role="listitem"><span>Corpo social</span><strong>100%</strong><em>Formação técnico-industrial</em></div>
-      </div>
-
-      <section class="subpage-section" aria-labelledby="notarial">
-        <div class="subpage-section-header"><div><h2 id="notarial">Nossa fundação</h2><p>SP &mdash; Brás, 1942</p></div><span class="match-count">1942</span></div>
-        <div class="hs-notarial">
-          <div>
-            <h2>Nas oficinas de ajustagem e soldagem</h2>
-            <p>Na Escola Técnica do Brás, instrutores e aprendizes não dividiam apenas turnos de fresa: dividiam a urgência de erguer um clube que representasse o suor operário de São Paulo. Reunião histórica de fundação com 34 mestres de ofício e 110 operários. As agulhas da alfaiataria industrial produziram as camisas rubro-negras com emblema gravado à mão em chapa de latão batido, estreado contra a seleção dos ferroviários.</p>
-          </div>
-          <div class="hs-seal"><div><strong>1942</strong><span>Registro notarial<br>SP &mdash; Brás</span></div></div>
-        </div>
-      </section>
-
-      <section class="subpage-section" aria-labelledby="artefato">
-        <div class="subpage-section-header"><div><h2 id="artefato">Nosso primeiro escudo</h2><p>Escudo em latão batido &amp; uniforme inicial.</p></div><span class="match-count">1942</span></div>
-        <article class="hs-artifact">
-          <header class="hs-artifact-head">
-            <div class="hs-artifact-id"><span class="gl-ribbon">Escudo &middot; 1942</span><span class="gl-registry">Feito à mão em latão</span></div>
-            <span class="gl-registry">Pelos torneiros mecânicos</span>
-          </header>
-          <div class="hs-artifact-body">
-            <div class="hs-shield"><div><span class="hs-shield-mark"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg></span><b>Brás FC</b><span>Alto relevo &middot; 1942</span></div></div>
-            <div>
-              <h3>O primeiro uniforme alvirrubro</h3>
-              <p class="hs-artifact-copy">O primeiro uniforme alvirrubro foi costurado pelos próprios alunos do curso de têxtil com sobras de lonas reforçadas. No peito, o emblema foi feito à mão em latão pelos torneiros mecânicos, dando início a uma linhagem desportiva onde a mecânica e a tática operam em sincronia.</p>
-              <div class="hs-facts">
-                <div class="hs-fact"><span>Uniforme inicial</span><strong>Lona de algodão 120z</strong></div>
-                <div class="hs-fact"><span>Primeiro adversário</span><strong>Ferroviária central (3x1)</strong></div>
-                <div class="hs-fact"><span>Primeira sede</span><strong>Galpão de usinagem 04</strong></div>
-              </div>
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <section class="subpage-section" aria-labelledby="cronicas">
-        <div class="subpage-section-header"><div><h2 id="cronicas">Nossa trajetória</h2><p>1942 &mdash; 2024</p></div><span class="match-count">4 capítulos</span></div>
-        <div class="hs-chronics">
-          <article class="hs-chapter">
-            <div class="hs-chapter-year">1942</div>
-            <div class="hs-chapter-body">
-              <span>Capítulo I // O começo</span>
-              <h3>Fundação &amp; primeiro manto</h3>
-              <p>Reunião histórica de fundação com 34 mestres de ofício e 110 operários. As agulhas da alfaiataria industrial produziram as camisas rubro-negras com emblema gravado à mão em chapa de latão batido, estreado contra a seleção dos ferroviários.</p>
-              <div class="hs-chapter-tags"><span class="hs-tag">Manto inicial</span><span class="hs-tag">Escudo feito à mão</span><span class="hs-tag">1942</span></div>
-            </div>
-          </article>
-          <article class="hs-chapter">
-            <div class="hs-chapter-year">1968</div>
-            <div class="hs-chapter-body">
-              <span>Capítulo II // A nova arena</span>
-              <h3>Arena SENAI Lab &amp; títulos invicto</h3>
-              <p>Inauguração da lendária Arena com os primeiros refletores concebidos e montados pelos engenheiros eletromecânicos da casa. No mesmo ano, a equipe levantou o Campeonato Metropolitano de forma invicta, sem sofrer gols nos jogos noturnos.</p>
-              <div class="hs-chapter-tags"><span class="hs-tag">Torres de 45 metros</span><span class="hs-tag">22 jogos &middot; 18 vitórias</span><span class="hs-tag">0 gols sofridos</span><span class="hs-tag">4 derrotas</span></div>
-            </div>
-          </article>
-          <article class="hs-chapter">
-            <div class="hs-chapter-year">1995</div>
-            <div class="hs-chapter-body">
-              <span>Capítulo III // A era da tecnologia</span>
-              <h3>Era da automação &amp; biomecânica</h3>
-              <p>O SENAI F.C. tornou-se o pioneiro global a introduzir laboratórios de biomecânica com sensores de aceleração e telemetria computadorizada à beira do gramado. Os treinos de finalização utilizavam dados de sensores de pressão acoplados às chuteiras.</p>
-              <div class="hs-chapter-tags"><span class="hs-tag">Biomecânica</span><span class="hs-tag">Telemetria</span><span class="hs-tag">Tecnologia</span></div>
-            </div>
-          </article>
-          <article class="hs-chapter">
-            <div class="hs-chapter-year">2024</div>
-            <div class="hs-chapter-body">
-              <span>Capítulo IV // O futuro</span>
-              <h3>Vanguarda biométrica total</h3>
-              <p>Transformação completa da Arena SENAI no estádio mais tecnológico da América Latina. Portões inteligentes com reconhecimento biométrico instantâneo, emissão descentralizada para sócios e operação carbono neutro da fundição esportiva.</p>
-              <div class="hs-chapter-tags"><span class="hs-tag">100% face ID</span><span class="hs-tag">Zero catracas analógicas</span><span class="hs-tag">+48 mil catracadas por minuto de pico</span></div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="subpage-section" aria-labelledby="hall">
-        <div class="subpage-section-header"><div><h2 id="hall">Hall da glória metalúrgica</h2><p>Eternos craques forjados nas ferramentas que jamais tiraram as luvas de solda do coração para honrar as cores do clube.</p></div><span class="match-count">3 eternos</span></div>
-        <div class="hs-hall">
-          <article class="hs-legend">
-            <div class="hs-legend-top"><span class="hs-legend-avatar"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg></span><div><span class="hs-legend-role">Ergueiro central &middot; 1958&ndash;1974</span><h3>Mestre Geraldo</h3></div></div>
-            <p>Torneiro mecânico de primeira classe no pátio industrial durante o dia e xerife implacável da grande área à noite. Conhecido por desarmes cirúrgicos com tolerância de micrômetro: jamais foi expulso em 412 partidas oficiais pelo clube.</p>
-            <div class="hs-legend-stats"><div><strong>412</strong><span>Jogos oficiais</span></div><div><strong>0</strong><span>Cartões vermelhos</span></div><div><strong>6</strong><span>Títulos estaduais</span></div><div><strong>238</strong><span>Gols</span></div></div>
-          </article>
-          <article class="hs-legend">
-            <div class="hs-legend-top"><span class="hs-legend-avatar"><svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg></span><div><span class="hs-legend-role">O torneiro da zaga</span><h3>Valdir Martelo</h3></div></div>
-            <p>Operador de prensa hidráulica e o mais temido finalizador da história do futebol operário. O mito conta que seus chutes ultrapassavam 134 km/h, tendo rompido três redes da Arena SENAI Lab em clássicos decisivos.</p>
-            <div class="hs-legend-stats"><div><strong>134</strong><span>km/h &middot; pico de artilheiro</span></div><div><strong>4x</strong><span>Potência máxima</span></div></div>
-          </article>
-          <article class="hs-legend">
-            <div class="hs-legend-top"><span class="hs-legend-avatar"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></span><div><span class="hs-legend-role">Matrícula funcional #00412</span><h3>Camisa 3 &middot; Aposentada</h3></div></div>
-            <p>Major artilheiro do histórico: responsável por 2.041 gols em 1.876 jogos e por erguer a Taça Ouro Nacional de 2023, ainda hoje a marca mais alta da história operária.</p>
-            <div class="hs-legend-stats"><div><strong>2.041</strong><span>Gols</span></div><div><strong>#01923</strong><span>Histórico</span></div></div>
-          </article>
-        </div>
-      </section>
-
-      <section class="subpage-section" aria-labelledby="hino">
-        <div class="subpage-section-header"><div><h2 id="hino">Hino oficial do clube</h2><p>Gravação original // 1954 &mdash; letra completa.</p></div><span class="match-count">01:42 &mdash; 03:48</span></div>
-        <div class="hs-anthem">
-          <div>
-            <h2>A marcha de aço e fogo</h2>
-            <h3>Composição: Mestre Armando Fagundes &amp; Orquestra Fabril de Metais</h3>
-            <p>Da forja à grama, a mesma disciplina. O hino que atravessa as oficinas do Brás, toca a catraca antes do jogo e ecoa na Arena enquanto a torcida levanta a voz na arquibancada. Cada verso celebra a linhagem de um clube que nasceu para provar que a mecânica e a tática operam em sincronia pura.</p>
-            <p class="hs-anthem-access"><strong>Acesso exclusivo de sócio:</strong> sócios das categorias Master, Operário e Aluno têm passe livre para conhecer o cofre com o primeiro torno mecânico do clube, os troféus forjados e a sala imersiva com holografia histórica.</p>
-          </div>
-          <div class="hs-disc"><div><span class="hs-disc-ring"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></span><strong>A marcha de aço e fogo</strong><span>Original // 1954</span></div></div>
-        </div>
-      </section>
-
-      <section class="subpage-section" aria-labelledby="cofre">
-        <div class="subpage-section-header"><div><h2 id="cofre">Acesso exclusivo de sócio</h2><p>Categorias Master, Operário e Aluno &mdash; passe liberado no cofre histórico da Arena SENAI Lab.</p></div><span class="match-count">Passe livre</span></div>
-        <div class="hs-vault">
-          <article class="hs-vault-card">
-            <span class="hs-vault-icon"><svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg></span>
-            <h3>Cofre dos troféus</h3>
-            <p>Reúna as dezoito taças do acervo, da Taça Ouro Nacional de 2023 ao escudo de latão batido de 1942, expostas emredade e iluminação de vitrines de oficina.</p>
-            <button class="ghost-button" type="button" data-message="Visita ao cofre de troféus solicitada. Confirmação em até 24h.">Solicitar visita</button>
-          </article>
-          <article class="hs-vault-card">
-            <span class="hs-vault-icon"><svg class="icon" aria-hidden="true"><use href="#icon-stadium"></use></svg></span>
-            <h3>Sala imersiva</h3>
-            <p>Sala imersiva com holografia histórica: revise a fundição do clube em 1942, o erguimento das torres de 45 metros em 1968 e a chegada da era biométrica em 2024.</p>
-            <button class="ghost-button" type="button" data-message="Sessão imersiva reservada. Chegue 15 minutos antes.">Reservar sessão</button>
-          </article>
-          <article class="hs-vault-card">
-            <span class="hs-vault-icon"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></span>
-            <h3>Primeiro torno mecânico</h3>
-            <p>O torno que abriu as oficinas do Brás em 1942, preservado em estado de funcionamento. Uma estação de caldeira original completa o percurso da fundição esportiva.</p>
-            <button class="ghost-button" type="button" data-message="Estação do torno mecânico reservada para a sua visita.">Reservar estação</button>
-          </article>
-        </div>
-        <div class="hs-vault-cta">
-          <p><strong>Leve a linhagem do clube com você.</strong> Escolas técnicas, coletivos de fábrica e comunidades operárias têm acesso gratuito mediante agendamento, com acompanhamento do Mestre Armando Fagundes.</p>
-          <a class="primary-button" href="planos-de-socio.html">Conhecer planos de sócio</a>
-        </div>
-      </section>
-    </main>
-    <footer class="site-footer"><div class="footer-inner"><div class="footer-grid"><div class="footer-column"><h3>SENAI F.C.</h3><p>Paixão, tradição e futebol. O portal do sócio torcedor para ingressos, acesso e tudo sobre o clube.</p></div><div class="footer-column"><h3>Institucional</h3><div class="footer-links"><a href="#">Estatuto do Torcedor</a><a href="#">Transparência</a><a href="#">Privacidade</a></div></div><div class="footer-column"><h3>Ajuda</h3><div class="footer-links"><a href="face-id-acesso.html">Acesso à arena</a><a href="#">Fale com a gente</a><a href="#">Ouvidoria</a></div></div><div class="footer-column"><h3>Parceiros</h3><div class="footer-links"><a href="#">Indústria Metallum</a><a href="#">Robótix Energia BR</a></div></div></div><div class="footer-bottom"><span>© 2024 SENAI F.C.</span><span class="footer-highlight">Feito com paixão</span></div></div></footer>
-  </div>
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span id="toast-message"></span></div>
-  <script src="assets/js/senai-torcedor-web.js" defer></script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0d">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <meta name="description" content="Conheça a história do SENAI F.C. e a evolução do projeto esportivo.">
+  <title>Nossa história — SENAI F.C.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/senai-torcedor-web.css">
+</head>
+<body data-page="historia">
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true">
+    <symbol id="icon-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></symbol>
+    <symbol id="icon-ticket" viewBox="0 0 24 24"><path d="M3 8a2 2 0 0 0 0 8v4h18v-4a2 2 0 0 0 0-8V4H3Z"/><path d="M13 7v2M13 11v2M13 15v2"/></symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="icon-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 6H4v2a4 4 0 0 0 4 4M16 6h4v2a4 4 0 0 1-4 4M12 13v4M8 21h8M9 17h6"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v5c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-5"/></symbol>
+    <symbol id="icon-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14a2 2 0 0 1 2-2h1v7H6a2 2 0 0 1-2-2v-3ZM20 14a2 2 0 0 0-2-2h-1v7h1a2 2 0 0 0 2-2v-3ZM17 19c0 2-2 3-5 3"/></symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24"><path d="M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2Z"/><path d="M8 2v4M16 2v4M3 9h18M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01"/></symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="icon-map" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="icon-stadium" viewBox="0 0 24 24"><path d="M3 9c3-3 15-3 18 0v7H3V9Z"/><path d="M7 12h10M8 16v3M16 16v3M3 9V6h18v3"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    
+    <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></symbol>
+  </svg>
+
+  <aside class="sidebar" id="sidebar" aria-label="Navegação principal">
+    <div class="sidebar-header"><a class="brand" href="senai-torcedor-web.html" aria-label="SENAI F.C. — página principal"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-copy"><strong>SENAI F.C.</strong><span>Sócio torcedor</span></span></a><button class="icon-button sidebar-close" id="sidebar-close" type="button" aria-label="Fechar menu"><svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg></button></div>
+    <div class="membership-card" aria-label="Plano Sócio Master"><div class="membership-topline"><span>Seu plano</span><span class="vip-badge"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg>Master</span></div><div class="membership-title" data-user-plan>Sócio Master</div><div class="membership-number" data-user-matricula>Matrícula #9842</div></div>
+    <nav class="sidebar-nav" aria-label="Páginas do portal">
+      <a class="nav-link" href="face-id-acesso.html" data-page-link="face-id"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg><span>Face ID &amp; Acesso</span></a>
+      <a class="nav-link" href="senai-torcedor-web.html" data-page-link="jogos"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg><span>Jogos &amp; calendário</span></a>
+      <a class="nav-link" href="planos-de-socio.html" data-page-link="planos"><svg class="icon" aria-hidden="true"><use href="#icon-ticket"></use></svg><span>Planos de sócio</span></a>
+      <a class="nav-link" href="galeria-de-titulos.html" data-page-link="galeria"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg><span>Galeria de títulos</span></a>
+      <a class="nav-link active" href="nossa-historia.html" data-page-link="historia" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg><span>Nossa história</span></a>
+    </nav>
+    <div class="sidebar-footer"><div class="connection-status"><span>Seu acesso</span><strong>Liberado</strong></div></div>
+  </aside>
+  <button class="sidebar-overlay" id="sidebar-overlay" type="button" aria-label="Fechar menu"></button>
+
+  <div class="main-shell">
+    <header class="topbar"><div class="topbar-inner">
+      <button class="icon-button menu-button" id="menu-button" type="button" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="#icon-menu"></use></svg></button>
+      <div class="topbar-actions"><a class="profile-button" href="perfil.html" aria-label="Abrir configurações do perfil"><span class="avatar avatar-photo" aria-hidden="true"></span><span class="profile-copy"><span>Torcedor</span><strong data-user-name>Operário</strong><small data-user-matricula>Matrícula #9842</small></span></a></div>
+    </div></header>
+
+    <main class="page-container" id="conteudo">
+      <section class="hs-hero" aria-labelledby="hs-title">
+        <p class="hs-kicker">Nossa história // fundado em 1942</p>
+        <h1 id="hs-title">A paixão nos gramados e nas oficinas</h1>
+        <p class="hs-hero-copy">Tradição forjada há mais de oito décadas nas oficinas de formação técnica. O clube que transformou o suor operário no futebol mais apaixonado do país.</p>
+      </section>
+
+      <div class="hs-numbers" role="list" aria-label="Números do clube">
+        <div class="hs-number" role="listitem"><span>Anos de casa</span><strong>82</strong><em>Sem jamais abandonar nossas raízes</em></div>
+        <div class="hs-number" role="listitem"><span>Associados</span><strong>48.200</strong><em>Técnicos e operários</em></div>
+        <div class="hs-number" role="listitem"><span>DNA esportivo</span><strong>28</strong><em>Operário: gerido de dentro das linhas</em></div>
+        <div class="hs-number" role="listitem"><span>Corpo social</span><strong>100%</strong><em>Formação técnico-industrial</em></div>
+      </div>
+
+      <section class="subpage-section" aria-labelledby="notarial">
+        <div class="subpage-section-header"><div><h2 id="notarial">Nossa fundação</h2><p>SP &mdash; Brás, 1942</p></div><span class="match-count">1942</span></div>
+        <div class="hs-notarial">
+          <div>
+            <h2>Nas oficinas de ajustagem e soldagem</h2>
+            <p>Na Escola Técnica do Brás, instrutores e aprendizes não dividiam apenas turnos de fresa: dividiam a urgência de erguer um clube que representasse o suor operário de São Paulo. Reunião histórica de fundação com 34 mestres de ofício e 110 operários. As agulhas da alfaiataria industrial produziram as camisas rubro-negras com emblema gravado à mão em chapa de latão batido, estreado contra a seleção dos ferroviários.</p>
+          </div>
+          <div class="hs-seal"><div><strong>1942</strong><span>Registro notarial<br>SP &mdash; Brás</span></div></div>
+        </div>
+      </section>
+
+      <section class="subpage-section" aria-labelledby="artefato">
+        <div class="subpage-section-header"><div><h2 id="artefato">Nosso primeiro escudo</h2><p>Escudo em latão batido &amp; uniforme inicial.</p></div><span class="match-count">1942</span></div>
+        <article class="hs-artifact">
+          <header class="hs-artifact-head">
+            <div class="hs-artifact-id"><span class="gl-ribbon">Escudo &middot; 1942</span><span class="gl-registry">Feito à mão em latão</span></div>
+            <span class="gl-registry">Pelos torneiros mecânicos</span>
+          </header>
+          <div class="hs-artifact-body">
+            <div class="hs-shield"><div><span class="hs-shield-mark"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg></span><b>Brás FC</b><span>Alto relevo &middot; 1942</span></div></div>
+            <div>
+              <h3>O primeiro uniforme alvirrubro</h3>
+              <p class="hs-artifact-copy">O primeiro uniforme alvirrubro foi costurado pelos próprios alunos do curso de têxtil com sobras de lonas reforçadas. No peito, o emblema foi feito à mão em latão pelos torneiros mecânicos, dando início a uma linhagem desportiva onde a mecânica e a tática operam em sincronia.</p>
+              <div class="hs-facts">
+                <div class="hs-fact"><span>Uniforme inicial</span><strong>Lona de algodão 120z</strong></div>
+                <div class="hs-fact"><span>Primeiro adversário</span><strong>Ferroviária central (3x1)</strong></div>
+                <div class="hs-fact"><span>Primeira sede</span><strong>Galpão de usinagem 04</strong></div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="subpage-section" aria-labelledby="cronicas">
+        <div class="subpage-section-header"><div><h2 id="cronicas">Nossa trajetória</h2><p>1942 &mdash; 2024</p></div><span class="match-count">4 capítulos</span></div>
+        <div class="hs-chronics">
+          <article class="hs-chapter">
+            <div class="hs-chapter-year">1942</div>
+            <div class="hs-chapter-body">
+              <span>Capítulo I // O começo</span>
+              <h3>Fundação &amp; primeiro manto</h3>
+              <p>Reunião histórica de fundação com 34 mestres de ofício e 110 operários. As agulhas da alfaiataria industrial produziram as camisas rubro-negras com emblema gravado à mão em chapa de latão batido, estreado contra a seleção dos ferroviários.</p>
+              <div class="hs-chapter-tags"><span class="hs-tag">Manto inicial</span><span class="hs-tag">Escudo feito à mão</span><span class="hs-tag">1942</span></div>
+            </div>
+          </article>
+          <article class="hs-chapter">
+            <div class="hs-chapter-year">1968</div>
+            <div class="hs-chapter-body">
+              <span>Capítulo II // A nova arena</span>
+              <h3>Arena SENAI Lab &amp; títulos invicto</h3>
+              <p>Inauguração da lendária Arena com os primeiros refletores concebidos e montados pelos engenheiros eletromecânicos da casa. No mesmo ano, a equipe levantou o Campeonato Metropolitano de forma invicta, sem sofrer gols nos jogos noturnos.</p>
+              <div class="hs-chapter-tags"><span class="hs-tag">Torres de 45 metros</span><span class="hs-tag">22 jogos &middot; 18 vitórias</span><span class="hs-tag">0 gols sofridos</span><span class="hs-tag">4 derrotas</span></div>
+            </div>
+          </article>
+          <article class="hs-chapter">
+            <div class="hs-chapter-year">1995</div>
+            <div class="hs-chapter-body">
+              <span>Capítulo III // A era da tecnologia</span>
+              <h3>Era da automação &amp; biomecânica</h3>
+              <p>O SENAI F.C. tornou-se o pioneiro global a introduzir laboratórios de biomecânica com sensores de aceleração e telemetria computadorizada à beira do gramado. Os treinos de finalização utilizavam dados de sensores de pressão acoplados às chuteiras.</p>
+              <div class="hs-chapter-tags"><span class="hs-tag">Biomecânica</span><span class="hs-tag">Telemetria</span><span class="hs-tag">Tecnologia</span></div>
+            </div>
+          </article>
+          <article class="hs-chapter">
+            <div class="hs-chapter-year">2024</div>
+            <div class="hs-chapter-body">
+              <span>Capítulo IV // O futuro</span>
+              <h3>Vanguarda biométrica total</h3>
+              <p>Transformação completa da Arena SENAI no estádio mais tecnológico da América Latina. Portões inteligentes com reconhecimento biométrico instantâneo, emissão descentralizada para sócios e operação carbono neutro da fundição esportiva.</p>
+              <div class="hs-chapter-tags"><span class="hs-tag">100% face ID</span><span class="hs-tag">Zero catracas analógicas</span><span class="hs-tag">+48 mil catracadas por minuto de pico</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="subpage-section" aria-labelledby="hall">
+        <div class="subpage-section-header"><div><h2 id="hall">Hall da glória metalúrgica</h2><p>Eternos craques forjados nas ferramentas que jamais tiraram as luvas de solda do coração para honrar as cores do clube.</p></div><span class="match-count">3 eternos</span></div>
+        <div class="hs-hall">
+          <article class="hs-legend">
+            <div class="hs-legend-top"><span class="hs-legend-avatar"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg></span><div><span class="hs-legend-role">Ergueiro central &middot; 1958&ndash;1974</span><h3>Mestre Geraldo</h3></div></div>
+            <p>Torneiro mecânico de primeira classe no pátio industrial durante o dia e xerife implacável da grande área à noite. Conhecido por desarmes cirúrgicos com tolerância de micrômetro: jamais foi expulso em 412 partidas oficiais pelo clube.</p>
+            <div class="hs-legend-stats"><div><strong>412</strong><span>Jogos oficiais</span></div><div><strong>0</strong><span>Cartões vermelhos</span></div><div><strong>6</strong><span>Títulos estaduais</span></div><div><strong>238</strong><span>Gols</span></div></div>
+          </article>
+          <article class="hs-legend">
+            <div class="hs-legend-top"><span class="hs-legend-avatar"><svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg></span><div><span class="hs-legend-role">O torneiro da zaga</span><h3>Valdir Martelo</h3></div></div>
+            <p>Operador de prensa hidráulica e o mais temido finalizador da história do futebol operário. O mito conta que seus chutes ultrapassavam 134 km/h, tendo rompido três redes da Arena SENAI Lab em clássicos decisivos.</p>
+            <div class="hs-legend-stats"><div><strong>134</strong><span>km/h &middot; pico de artilheiro</span></div><div><strong>4x</strong><span>Potência máxima</span></div></div>
+          </article>
+          <article class="hs-legend">
+            <div class="hs-legend-top"><span class="hs-legend-avatar"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></span><div><span class="hs-legend-role">Matrícula funcional #00412</span><h3>Camisa 3 &middot; Aposentada</h3></div></div>
+            <p>Major artilheiro do histórico: responsável por 2.041 gols em 1.876 jogos e por erguer a Taça Ouro Nacional de 2023, ainda hoje a marca mais alta da história operária.</p>
+            <div class="hs-legend-stats"><div><strong>2.041</strong><span>Gols</span></div><div><strong>#01923</strong><span>Histórico</span></div></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="subpage-section" aria-labelledby="hino">
+        <div class="subpage-section-header"><div><h2 id="hino">Hino oficial do clube</h2><p>Gravação original // 1954 &mdash; letra completa.</p></div><span class="match-count">01:42 &mdash; 03:48</span></div>
+        <div class="hs-anthem">
+          <div>
+            <h2>A marcha de aço e fogo</h2>
+            <h3>Composição: Mestre Armando Fagundes &amp; Orquestra Fabril de Metais</h3>
+            <p>Da forja à grama, a mesma disciplina. O hino que atravessa as oficinas do Brás, toca a catraca antes do jogo e ecoa na Arena enquanto a torcida levanta a voz na arquibancada. Cada verso celebra a linhagem de um clube que nasceu para provar que a mecânica e a tática operam em sincronia pura.</p>
+            <p class="hs-anthem-access"><strong>Acesso exclusivo de sócio:</strong> sócios das categorias Master, Operário e Aluno têm passe livre para conhecer o cofre com o primeiro torno mecânico do clube, os troféus forjados e a sala imersiva com holografia histórica.</p>
+          </div>
+          <div class="hs-disc"><div><span class="hs-disc-ring"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></span><strong>A marcha de aço e fogo</strong><span>Original // 1954</span></div></div>
+        </div>
+      </section>
+
+      <section class="subpage-section" aria-labelledby="cofre">
+        <div class="subpage-section-header"><div><h2 id="cofre">Acesso exclusivo de sócio</h2><p>Categorias Master, Operário e Aluno &mdash; passe liberado no cofre histórico da Arena SENAI Lab.</p></div><span class="match-count">Passe livre</span></div>
+        <div class="hs-vault">
+          <article class="hs-vault-card">
+            <span class="hs-vault-icon"><svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg></span>
+            <h3>Cofre dos troféus</h3>
+            <p>Reúna as dezoito taças do acervo, da Taça Ouro Nacional de 2023 ao escudo de latão batido de 1942, expostas emredade e iluminação de vitrines de oficina.</p>
+            <button class="ghost-button" type="button" data-message="Visita ao cofre de troféus solicitada. Confirmação em até 24h.">Solicitar visita</button>
+          </article>
+          <article class="hs-vault-card">
+            <span class="hs-vault-icon"><svg class="icon" aria-hidden="true"><use href="#icon-stadium"></use></svg></span>
+            <h3>Sala imersiva</h3>
+            <p>Sala imersiva com holografia histórica: revise a fundição do clube em 1942, o erguimento das torres de 45 metros em 1968 e a chegada da era biométrica em 2024.</p>
+            <button class="ghost-button" type="button" data-message="Sessão imersiva reservada. Chegue 15 minutos antes.">Reservar sessão</button>
+          </article>
+          <article class="hs-vault-card">
+            <span class="hs-vault-icon"><svg class="icon" aria-hidden="true"><use href="#icon-trophy"></use></svg></span>
+            <h3>Primeiro torno mecânico</h3>
+            <p>O torno que abriu as oficinas do Brás em 1942, preservado em estado de funcionamento. Uma estação de caldeira original completa o percurso da fundição esportiva.</p>
+            <button class="ghost-button" type="button" data-message="Estação do torno mecânico reservada para a sua visita.">Reservar estação</button>
+          </article>
+        </div>
+        <div class="hs-vault-cta">
+          <p><strong>Leve a linhagem do clube com você.</strong> Escolas técnicas, coletivos de fábrica e comunidades operárias têm acesso gratuito mediante agendamento, com acompanhamento do Mestre Armando Fagundes.</p>
+          <a class="primary-button" href="planos-de-socio.html">Conhecer planos de sócio</a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="footer-inner"><div class="footer-grid"><div class="footer-column"><h3>SENAI F.C.</h3><p>Paixão, tradição e futebol. O portal do sócio torcedor para ingressos, acesso e tudo sobre o clube.</p></div><div class="footer-column"><h3>Institucional</h3><div class="footer-links"><a href="#">Estatuto do Torcedor</a><a href="#">Transparência</a><a href="#">Privacidade</a></div></div><div class="footer-column"><h3>Ajuda</h3><div class="footer-links"><a href="face-id-acesso.html">Acesso à arena</a><a href="#">Fale com a gente</a><a href="#">Ouvidoria</a></div></div><div class="footer-column"><h3>Parceiros</h3><div class="footer-links"><a href="#">Indústria Metallum</a><a href="#">Robótix Energia BR</a></div></div></div><div class="footer-bottom"><span>© 2024 SENAI F.C.</span><span class="footer-highlight">Feito com paixão</span></div></div></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"><svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg><span id="toast-message"></span></div>
+  <script src="assets/js/senai-torcedor-web.js" defer></script>
+</body>
+</html>
