@@ -11,7 +11,8 @@
  * depender de quantos arquivos de estilo a pagina carrega.
  *
  * O criterio de aceite do projeto e: 84 retratos (7 paginas x 12 larguras)
- * com zero divergencia entre duas execucoes.
+ * com zero divergencia entre duas execucoes. O index.html fica de fora: ele
+ * nao e uma pagina do site, so redireciona para o login.
  *
  * Uso:
  *   node tools/verificar-equivalencia.js <raiz> <saida.json> [porta] [larguras...]
@@ -36,7 +37,11 @@ const SAIDA = process.argv[3] || path.join(os.tmpdir(), "verificar2.json");
 const PORT = Number(process.argv[4] || 9833);
 const LARGURAS = (process.argv.slice(5).length ? process.argv.slice(5) : ["360", "1440"]).map(Number);
 
-const PAGINAS = fs.readdirSync(RAIZ).filter((f) => f.endsWith(".html")).sort();
+/* O index.html e apenas um redirecionamento para o login: abri-lo sairia da
+   pagina imediatamente, entao ele nao entra na verificacao. */
+const IGNORAR = new Set(["index.html"]);
+
+const PAGINAS = fs.readdirSync(RAIZ).filter((f) => f.endsWith(".html") && !IGNORAR.has(f)).sort();
 
 const PROPS = [
   "display", "position", "top", "right", "bottom", "left", "zIndex", "float", "clear", "visibility",

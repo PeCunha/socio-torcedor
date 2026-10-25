@@ -14,9 +14,10 @@ direto do disco.
 
 ## Como executar
 
-**Opção 1 — abrir direto no disco.** Abra `senai-torcedor-web.html` no
-navegador. Não há dependência de servidor: nenhuma página faz requisição
-`fetch` para a API.
+**Opção 1 — abrir direto no disco.** Abra `index.html` no navegador: ele
+redireciona para o login. Para ir direto ao portal, abra
+`senai-torcedor-web.html`. Não há dependência de servidor: o login simula a
+sessão no próprio navegador quando a API não responde.
 
 **Opção 2 — servidor local** (recomendado para testar em mais de um
 dispositivo ao mesmo tempo):
@@ -25,7 +26,29 @@ dispositivo ao mesmo tempo):
 python -m http.server 8000
 ```
 
-Depois acesse `http://localhost:8000/senai-torcedor-web.html`.
+Depois acesse `http://localhost:8000/` (login) ou
+`http://localhost:8000/senai-torcedor-web.html` (portal).
+
+---
+
+## Publicação
+
+O site está publicado no GitHub Pages:
+
+**https://pecunha.github.io/socio-torcedor/**
+
+A raiz (`/`) serve o `index.html`, que redireciona para `login.html`. O
+`index.html` não é uma página do site: é só um atalho para o login, com
+`<meta http-equiv="refresh">` e `location.replace()`, além de um link de
+fallback para quem estiver sem JavaScript.
+
+A raiz também tem um arquivo **`.nojekyll`** vazio. Sem ele, o GitHub Pages
+roda o Jekyll e publica o `README.md` como página inicial — foi exatamente o
+que aconteceu antes de o `index.html` existir. Com o `.nojekyll`, os arquivos
+são servidos como estão.
+
+Publicar uma alteração é só commitar na `main` e dar `push`; o Pages
+reconstrói o site em cerca de um minuto.
 
 ---
 
@@ -33,6 +56,7 @@ Depois acesse `http://localhost:8000/senai-torcedor-web.html`.
 
 ```
 projeto_final/
+├── index.html                   Redireciona para o login (home do GitHub Pages)
 ├── senai-torcedor-web.html      Página inicial (aba Jogos)
 ├── face-id-acesso.html          Tela Face ID & Acesso
 ├── planos-de-socio.html         Planos de Sócio
@@ -57,6 +81,7 @@ projeto_final/
 │   ├── aplicar-carga.js          Aplica o subconjunto aos <link> dos HTMLs
 │   ├── teclado.js                Teste de navegação por teclado
 │   └── chrome.js                 Localiza o Chrome (ou usa CHROME_PATH)
+├── .nojekyll                    Desliga o Jekyll no GitHub Pages
 ├── .gitattributes               Normaliza fim de linha (LF) e o charset
 └── .gitignore
 ```
@@ -118,6 +143,11 @@ monólito.
 | `face-id-acesso.html` | base · layout · componentes · faceid · mobile | 5 |
 
 Isso derruba o CSS baixado por página de ~150 KB (monólito) para 48–95 KB.
+
+O `index.html` não aparece na tabela porque não é uma página do site: ele só
+redireciona para o login, com um `<style>` inline e nenhum arquivo externo.
+Por isso as ferramentas de verificação (retratos, análise de carga e teclado)
+ignoram o `index.html`.
 
 **Ao mexer no DOM de uma página, refaça a conta.** O subconjunto acima foi
 calculado por uma análise que percorre cada página em todos os estados

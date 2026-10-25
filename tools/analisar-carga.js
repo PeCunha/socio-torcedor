@@ -211,7 +211,8 @@ class CDP {
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 (async () => {
-  const paginas = fs.readdirSync(RAIZ).filter((f) => f.endsWith(".html")).sort();
+  /* index.html e apenas um redirecionamento para o login: nao carrega CSS */
+  const paginas = fs.readdirSync(RAIZ).filter((f) => f.endsWith(".html") && f !== "index.html").sort();
   const resultado = {};
 
   for (let idx = 0; idx < paginas.length; idx++) {

@@ -15,6 +15,9 @@
  *   - confere que todo controle tem nome acessivel (aria-labelledby, aria-label,
  *     <label for>, <label> que envolve o controle ou title).
  *
+ * O index.html fica de fora: ele so redireciona para o login, e o
+ * redirecionamento interromperia a tabulacao.
+ *
  * Uso: node tools/teclado.js <raiz> [largura]
  *
  * Exemplo:
@@ -94,7 +97,9 @@ const ASSINATURA = `
 `;
 
 (async () => {
-  const paginas = fs.readdirSync(RAIZ).filter((f) => f.endsWith(".html")).sort();
+  /* index.html e apenas um redirecionamento para o login: abri-lo sairia da
+     pagina imediatamente, entao ele nao entra no teste */
+  const paginas = fs.readdirSync(RAIZ).filter((f) => f.endsWith(".html") && f !== "index.html").sort();
   const profile = fs.mkdtempSync(path.join(os.tmpdir(), "kbd-"));
   const proc = spawn(CHROME, ["--headless=new", "--disable-gpu", "--no-sandbox",
     "--allow-file-access-from-files", "--hide-scrollbars",
