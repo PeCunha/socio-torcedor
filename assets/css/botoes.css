@@ -1,0 +1,88 @@
+/* =============================================================================
+   botoes.css — Botoes de acao
+   -----------------------------------------------------------------------------
+   Botao principal, secundario, fantasma, de perigo e botao de texto.
+   Alturas de toque de 44 px e estados de foco acessiveis.
+   ============================================================================= */
+.primary-button,
+.secondary-button,
+.ghost-button,
+.danger-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 11px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-button {
+  padding: 11px 16px;
+  background: var(--red);
+  color: #fff;
+  box-shadow: 0 8px 22px rgba(232, 93, 74, 0.18);
+}
+
+.primary-button:hover {
+  background: var(--red-bright);
+  box-shadow: 0 10px 26px rgba(232, 93, 74, 0.25);
+  transform: translateY(-2px);
+}
+
+.primary-button .icon,
+.secondary-button .icon,
+.ghost-button .icon {
+  width: 15px;
+  height: 15px;
+}
+
+.secondary-button {
+  padding: 10px 14px;
+  border: 1px solid rgba(232, 93, 74, 0.28);
+  background: var(--red-soft);
+  color: #f09b8e;
+}
+
+.secondary-button:hover {
+  border-color: var(--red-bright);
+  background: var(--red);
+  color: #fff;
+}
+
+.ghost-button {
+  padding: 9px 13px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text-2);
+}
+
+.ghost-button:hover {
+  border-color: #5a5048;
+  background: rgba(255, 255, 255, 0.035);
+  color: #fff;
+}
+
+.text-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  background: transparent;
+  color: var(--red-bright);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.text-button .icon {
+  width: 12px;
+  height: 12px;
+}

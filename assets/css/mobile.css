@@ -1,0 +1,477 @@
+/* =============================================================================
+   mobile.css — Ajustes mobile do portal
+   -----------------------------------------------------------------------------
+   Bloco consolidado apos auditoria de usabilidade em 360 / 375 / 390 /
+   412 px: piso tipografico de 12 px, alvos de toque de 44x44 px, campos de
+   formulario a 16 px (evita zoom no iOS) e tabelas com rolagem real.
+   ============================================================================= */
+/* ==========================================================================
+   AJUSTES MOBILE — SENAI F.C.
+   --------------------------------------------------------------------------
+   Bloco consolidado após auditoria de usabilidade em viewports de
+   360 / 375 / 390 / 412 px (Chrome mobile, toque real, câmera fake).
+
+   Regras aplicadas:
+     1. Piso tipográfico: nenhum texto abaixo de 12 px no mobile.
+     2. Alvos de toque: mínimo de 44 x 44 px (WCAG 2.5.5).
+     3. Campos de formulário com 16 px para o iOS não dar zoom automático.
+     4. Rolagem real nas tabelas que transbordam, com sombra de direção.
+   ========================================================================== */
+
+@media (max-width: 760px) {
+
+  /* ------------------------------------------------------------------
+     1. Campos de formulário — 16 px evita o zoom automático do iOS
+     ------------------------------------------------------------------ */
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  .gl-field input,
+  .gl-field select {
+    min-height: 48px;
+    padding: 12px 13px;
+    font-size: 16px;
+  }
+
+  .gl-choice {
+    min-height: 44px;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  .gl-choice input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* ------------------------------------------------------------------
+     2. Alvos de toque — mínimo de 44 x 44 px
+     ------------------------------------------------------------------ */
+
+  .icon-button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .skip-link {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .tab-button {
+    min-height: 44px;
+    flex: 1 1 auto;
+    font-size: 12px;
+  }
+
+  .gl-tab {
+    min-height: 44px;
+    font-size: 12px;
+  }
+
+  .gl-tab b {
+    font-size: 11px;
+  }
+
+  .fid-btn {
+    min-height: 48px;
+    font-size: 12px;
+  }
+
+  .footer-links {
+    gap: 2px;
+  }
+
+  .footer-column a,
+  .footer-column button {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  /* ------------------------------------------------------------------
+     3. Faixa de abas — quebra em linhas em vez de transbordar
+     ------------------------------------------------------------------ */
+
+  .tabs {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+
+  .tab-button {
+    scroll-snap-align: none;
+    padding: 9px 14px;
+  }
+
+  /* ------------------------------------------------------------------
+     4. Tabela comparativa de planos — rolagem com sombra de direção
+     ------------------------------------------------------------------ */
+
+  .comparison-card .table-wrap {
+    scroll-snap-type: x proximity;
+    background:
+      linear-gradient(to right, var(--surface) 30%, rgba(30, 26, 22, 0)),
+      linear-gradient(to left, var(--surface) 30%, rgba(30, 26, 22, 0)),
+      radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, 0.5), transparent),
+      radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.5), transparent);
+    background-position: left center, right center, left center, right center;
+    background-repeat: no-repeat;
+    background-size: 36px 100%, 36px 100%, 13px 100%, 13px 100%;
+    background-attachment: local, local, scroll, scroll;
+  }
+
+  .comparison-section::after {
+    content: "→ Arraste para comparar os planos";
+    display: block;
+    margin-top: 10px;
+    color: var(--text-3);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  /* ------------------------------------------------------------------
+     5. Piso tipográfico — tabelas
+     ------------------------------------------------------------------ */
+
+  .standings-table th,
+  .standings-table td {
+    font-size: 12px;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    font-size: 12px;
+  }
+
+  .comparison-table th small,
+  .comparison-table td small {
+    font-size: 11px;
+  }
+
+  .fid-table th,
+  .fid-table td {
+    font-size: 12px;
+  }
+
+  .fid-table td span,
+  .fid-table td strong {
+    font-size: 12px;
+  }
+
+  .standings-table th,
+  .standings-table td {
+    padding: 10px 8px;
+  }
+
+  /* ------------------------------------------------------------------
+     6. Piso tipográfico — selos, pílulas e etiquetas
+     ------------------------------------------------------------------ */
+
+  .status-pill,
+  .live-pill,
+  .competition-pill,
+  .occupancy-badge,
+  .versus-line,
+  .match-count,
+  .eyebrow,
+  .date,
+  .reference-label,
+  .reference-selected-label,
+  .telemetry-note,
+  .gl-ticket-label,
+  .gl-live,
+  .gl-ribbon,
+  .gl-kicker,
+  .gl-registry,
+  .gl-dossier-tagline,
+  .gl-viewmode,
+  .hs-kicker,
+  .hs-tag,
+  .hs-legend-role,
+  .fid-tag,
+  .fid-label,
+  .fid-badge,
+  .fid-cred-cat,
+  .fid-muted,
+  .gl-seat span,
+  .gl-seat b {
+    font-size: 12px;
+  }
+
+  .gl-viewmode b {
+    font-size: 12px;
+  }
+
+  .gl-dossier-foot {
+    font-size: 12px;
+  }
+
+  /* ------------------------------------------------------------------
+     7. Piso tipográfico — sidebar, topbar e rodapé
+     ------------------------------------------------------------------ */
+
+  .brand-copy span,
+  .membership-topline span,
+  .membership-number,
+  .connection-status span,
+  .connection-status strong,
+  .profile-button small {
+    font-size: 12px;
+  }
+
+  .nav-link span {
+    font-size: 13px;
+  }
+
+  .footer-column h3 {
+    font-size: 13px;
+  }
+
+  .footer-column p,
+  .footer-column a {
+    font-size: 12px;
+  }
+
+  .footer-bottom span,
+  .footer-highlight {
+    font-size: 12px;
+  }
+
+  /* ------------------------------------------------------------------
+     8. Piso tipográfico — jogos e calendário
+     ------------------------------------------------------------------ */
+
+  .featured-team p,
+  .team-copy span,
+  .card-time span,
+  .countdown-unit span,
+  .round-label span,
+  .venue-topline span,
+  .capacity-copy span,
+  .countdown-copy span,
+  .venue-info-row span,
+  .last-goals,
+  .last-team,
+  .side-card-header span,
+  .section-heading p {
+    font-size: 12px;
+  }
+
+  .team-copy strong,
+  .venue-info-row strong,
+  .countdown-copy strong,
+  .event-banner strong {
+    font-size: 12px;
+  }
+
+  .side-card-header h3 {
+    font-size: 13px;
+  }
+
+  /* ------------------------------------------------------------------
+     9. Piso tipográfico — planos de sócio
+     ------------------------------------------------------------------ */
+
+  .plans-breadcrumb span,
+  .plans-breadcrumb b,
+  .plans-breadcrumb i,
+  .plans-breadcrumb em,
+  .contract-tag span,
+  .contract-tag b,
+  .contract-price span,
+  .contract-price b,
+  .contract-price small,
+  .contract-copy p,
+  .plans-section-kicker span,
+  .insight-kicker span,
+  .reference-benefits span,
+  .reference-benefits b,
+  .reference-price small,
+  .reference-plan p,
+  .reference-plan small,
+  .telemetry-card small,
+  .telemetry-card p,
+  .biometric-card p,
+  .biometric-status b,
+  .pl-security-item span,
+  .pl-security-item p,
+  .support-card p,
+  .support-card a,
+  .plans-section-copy {
+    font-size: 12px;
+  }
+
+  .faq-list summary,
+  .faq-list details p {
+    font-size: 12px;
+  }
+
+  /* ------------------------------------------------------------------
+     10. Piso tipográfico — Face ID & Acesso
+     ------------------------------------------------------------------ */
+
+  .fid-cred-top p,
+  .fid-cred-meta b,
+  .fid-cred-mat b,
+  .fid-log-stats em,
+  .fid-arena-sub,
+  .fid-entry,
+  .fid-verdict p,
+  .fid-card p {
+    font-size: 12px;
+  }
+
+  /* ------------------------------------------------------------------
+     11. Piso tipográfico — galeria de títulos
+     ------------------------------------------------------------------ */
+
+  .gl-booking > p,
+  .gl-field label,
+  .gl-stat span,
+  .gl-stat b,
+  .gl-stat strong,
+  .gl-total span,
+  .gl-total em,
+  .gl-perks li span,
+  .gl-photo figcaption,
+  .gl-photo figcaption b,
+  .gl-photo figcaption span {
+    font-size: 12px;
+  }
+
+  /* ------------------------------------------------------------------
+     12. Piso tipográfico — nossa história
+     ------------------------------------------------------------------ */
+
+  .hs-number span,
+  .hs-number em,
+  .hs-chapter-body span,
+  .hs-chapter-body p,
+  .hs-fact span,
+  .hs-fact strong,
+  .hs-legend span,
+  .hs-legend p,
+  .hs-shield span,
+  .hs-disc span,
+  .hs-notarial p,
+  .hs-anthem p,
+  .hs-anthem-access strong,
+  .hs-vault-card p,
+  .hs-vault-cta strong,
+  .hs-artifact-copy {
+    font-size: 12px;
+  }
+
+  /* ------------------------------------------------------------------
+     13. Segunda passada — regras originais com especificidade maior
+         que os seletores genéricos acima, e lacunas restantes
+     ------------------------------------------------------------------ */
+
+  .venue-topline > span:first-child,
+  .match-time-block .date,
+  .plans-breadcrumb strong,
+  .contract-price strong small,
+  .ticket-counter > span small,
+  .gl-stat,
+  .gl-stat > span,
+  .gl-stat > strong,
+  .gl-stat > strong b,
+  .gl-dossier-copy,
+  .gl-visit-copy,
+  .fid-verdict p + p,
+  .fid-log-head p,
+  .fid-cam-head p,
+  .fid-cam-status,
+  .fid-vip,
+  .venue-heading p,
+  .last-result span,
+  .subpage-section-header p,
+  .small-crest {
+    font-size: 12px;
+  }
+
+  .primary-button,
+  .secondary-button,
+  .ghost-button,
+  .gl-tab b,
+  .reference-plan > button,
+  .comparison-table th small,
+  .comparison-table td small {
+    font-size: 12px;
+  }
+
+  .capacity-ring span {
+    font-size: 12px;
+  }
+
+  /* Estatísticas da galeria empilham no mobile para caber em 12 px */
+  .gl-stat {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+
+  /* Alvos de toque restantes */
+  .support-card > a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  .support-card .primary-button {
+    font-size: 12px;
+  }
+
+  .gl-choice input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* ------------------------------------------------------------------
+     14. Tabelas roláveis de verdade
+     Itens de grid/flex têm `min-width: auto` por padrão, o que faz a
+     tabela esticar a coluna em vez de rolar dentro do `.table-wrap`.
+     Zerando isso, o scroller assume o controle e a página não transborda.
+     ------------------------------------------------------------------ */
+
+  .content-grid > *,
+  .aside-column > *,
+  .tab-panel,
+  .side-card,
+  .standings-card,
+  .match-list,
+  .result-list {
+    min-width: 0;
+  }
+
+  .table-wrap {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  /* ------------------------------------------------------------------
+     15. Indicadores de forma (V/E/D) e HUD da câmera do Face ID
+     ------------------------------------------------------------------ */
+
+  .form-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+
+  .fid-cam-chip span,
+  .fid-cam-chip em,
+  .fid-cam-hud,
+  .fid-cam-empty {
+    font-size: 12px;
+  }
+}

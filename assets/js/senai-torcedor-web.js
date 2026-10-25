@@ -23,13 +23,27 @@
     el.textContent = String(new Date().getFullYear());
   });
 
+  /* No celular o menu e um painel fora da tela. Enquanto ele esta fechado,
+     seus links continuam visiveis para o teclado e para leitores de tela,
+     mesmo estando fora da janela — o que faz o foco "sumir" na navegacao.
+     O atributo inert tira o painel fechado da ordem de tabulacao e da arvore
+     de acessibilidade sem alterar nenhum estilo (ao contrario de
+     visibility: hidden, que mudaria o desenho). */
+  const atualizarInert = () => {
+    if (!sidebar) return;
+    const fechadoNoCelular = mobileQuery.matches && !body.classList.contains("menu-open");
+    sidebar.inert = fechadoNoCelular;
+  };
+
   const setMenu = (open) => {
     if (!sidebar || !menuButton) return;
+    const focoDentro = document.activeElement && sidebar.contains(document.activeElement);
     body.classList.toggle("menu-open", open);
     menuButton.setAttribute("aria-expanded", String(open));
+    atualizarInert();
     if (open) {
       window.setTimeout(() => sidebarClose?.focus(), 180);
-    } else if (document.activeElement && sidebar.contains(document.activeElement)) {
+    } else if (focoDentro) {
       menuButton.focus();
     }
   };
@@ -40,7 +54,10 @@
 
   mobileQuery.addEventListener("change", (event) => {
     if (!event.matches) setMenu(false);
+    else atualizarInert();
   });
+
+  atualizarInert();
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && body.classList.contains("menu-open")) setMenu(false);

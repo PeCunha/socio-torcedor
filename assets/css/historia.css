@@ -1,0 +1,717 @@
+/* =============================================================================
+   historia.css — Nossa Historia
+   -----------------------------------------------------------------------------
+   Hero, registro notarial, artefatos, cronicas, hall da gloria, hino e
+   bloco de seguranca de dados.
+   ============================================================================= */
+/* ============================================================
+   NOSSA HISTORIA - componentes das referencias
+   ============================================================ */
+
+.hs-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 40px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(720px 300px at 92% 0%, rgba(227, 6, 19, 0.14), transparent 60%),
+    linear-gradient(140deg, #26211c, #1e1a16 58%, #1a1613);
+}
+
+.hs-hero h1 {
+  max-width: 20ch;
+  margin: 0 0 14px;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.hs-kicker {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 12px;
+  color: var(--text-3);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.hs-kicker::before {
+  width: 22px;
+  height: 2px;
+  background: var(--red);
+  content: "";
+}
+
+.hs-hero-copy {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--text-2);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.hs-numbers {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--line);
+}
+
+.hs-number {
+  padding: 20px 18px;
+  background: #1e1a16;
+}
+
+.hs-number strong {
+  display: block;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.hs-number span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hs-number em {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-3);
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+/* registro notarial */
+.hs-notarial {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 26px;
+  align-items: center;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(150deg, #26211c, #1e1a16);
+}
+
+.hs-notarial h2 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.hs-notarial p {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 11px;
+  line-height: 1.85;
+}
+
+.hs-seal {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  padding: 20px;
+  border: 1px dashed rgba(227, 6, 19, 0.5);
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, rgba(227, 6, 19, 0.12), transparent 70%);
+  text-align: center;
+}
+
+.hs-seal strong {
+  display: block;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.hs-seal span {
+  display: block;
+  margin-top: 5px;
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* artefato */
+.hs-artifact {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, #26211c, #1e1a16);
+}
+
+.hs-artifact-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(13, 14, 18, 0.5);
+}
+
+.hs-artifact-id {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.hs-artifact-body {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 26px;
+  padding: 24px;
+}
+
+.hs-shield {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 3 / 4;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background:
+    radial-gradient(120% 90% at 50% 10%, rgba(227, 6, 19, 0.2), transparent 62%),
+    linear-gradient(170deg, #26272b, #14151a);
+  text-align: center;
+}
+
+.hs-shield-mark {
+  color: var(--red);
+}
+
+.hs-shield b {
+  display: block;
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.hs-shield span {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hs-artifact h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.hs-artifact-copy {
+  margin: 0 0 18px;
+  color: var(--text-2);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.hs-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.hs-fact {
+  padding: 13px 15px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(13, 14, 18, 0.6);
+}
+
+.hs-fact span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hs-fact strong {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* cronicas / capitulos */
+.hs-chronics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.hs-chapter {
+  display: grid;
+  grid-template-columns: 108px minmax(0, 1fr);
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #1e1a16;
+}
+
+.hs-chapter-year {
+  display: grid;
+  place-items: center;
+  padding: 18px 10px;
+  border-right: 1px solid var(--line);
+  background: linear-gradient(160deg, rgba(227, 6, 19, 0.18), rgba(227, 6, 19, 0.04));
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  writing-mode: horizontal-tb;
+}
+
+.hs-chapter-body {
+  padding: 18px 20px;
+}
+
+.hs-chapter-body > span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--red-bright);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hs-chapter h3 {
+  margin: 0 0 7px;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.hs-chapter p {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.hs-chapter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 11px;
+}
+
+.hs-tag {
+  padding: 4px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* hall da gloria */
+.hs-hall {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.hs-legend {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #1e1a16;
+}
+
+.hs-legend-top {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.hs-legend-avatar {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--red-soft);
+  color: var(--red-bright);
+}
+
+.hs-legend-role {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hs-legend h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.hs-legend p {
+  margin: 0;
+  padding: 16px 18px;
+  color: var(--text-2);
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.hs-legend-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: auto;
+  border-top: 1px solid var(--line);
+  background: var(--line);
+}
+
+.hs-legend-stats div {
+  padding: 11px 12px;
+  background: #16161a;
+  text-align: center;
+}
+
+.hs-legend-stats strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.hs-legend-stats span {
+  display: block;
+  margin-top: 2px;
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* hino */
+.hs-anthem {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 26px;
+  align-items: center;
+  padding: 26px;
+  border: 1px solid rgba(227, 6, 19, 0.3);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(560px 260px at 100% 0%, rgba(227, 6, 19, 0.12), transparent 62%),
+    linear-gradient(150deg, #26211c, #1e1a16);
+}
+
+.hs-anthem h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.hs-anthem h3 {
+  margin: 0 0 10px;
+  color: var(--red-bright);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.hs-anthem p {
+  margin: 0 0 12px;
+  color: var(--text-2);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.hs-disc {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(13, 14, 18, 0.66);
+  text-align: center;
+}
+
+.hs-disc-ring {
+  display: grid;
+  width: 96px;
+  height: 96px;
+  place-items: center;
+  border: 1px solid rgba(227, 6, 19, 0.45);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(227, 6, 19, 0.16), transparent 68%);
+  color: var(--red-bright);
+}
+
+.hs-disc strong {
+  display: block;
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.hs-disc span {
+  display: block;
+  margin-top: 3px;
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1180px) {
+  .hs-notarial,
+  .hs-anthem {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hs-artifact-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hs-hall {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hs-seal {
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hs-chronics {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hs-numbers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .hs-hero {
+    padding: 24px 20px;
+  }
+
+  .hs-hero h1 {
+    font-size: 30px;
+  }
+
+  .hs-numbers,
+  .hs-facts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hs-chapter {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hs-chapter-year {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+.hs-anthem-access {
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--red);
+  border-radius: var(--radius-sm);
+  background: rgba(13, 14, 18, 0.6);
+  color: var(--text-2);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.hs-anthem-access strong {
+  color: var(--text);
+}
+
+.hs-vault {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.hs-vault-card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: linear-gradient(160deg, #26211c, #1e1a16);
+}
+
+.hs-vault-icon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  background: var(--red-soft);
+  color: var(--red-bright);
+}
+
+.hs-vault-card h3 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.hs-vault-card p {
+  margin: 0 0 14px;
+  color: var(--text-2);
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.hs-vault-card .primary-button,
+.hs-vault-card .ghost-button {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.hs-vault-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding: 22px 24px;
+  border: 1px solid rgba(227, 6, 19, 0.3);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(560px 240px at 0% 0%, rgba(227, 6, 19, 0.12), transparent 62%),
+    linear-gradient(150deg, #26211c, #1e1a16);
+}
+
+.hs-vault-cta p {
+  margin: 0;
+  max-width: 62ch;
+  color: var(--text-2);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.hs-vault-cta p strong {
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .hs-vault {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* seguranca de dados (referencia: Planos de Socio) */
+.pl-security {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--line);
+}
+
+.pl-security-item {
+  padding: 20px 18px;
+  background: #1e1a16;
+}
+
+.pl-security-item span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pl-security-item strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.pl-security-item p {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.pl-security-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 14px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: var(--red-soft);
+  color: var(--red-bright);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .pl-security {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .pl-security {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

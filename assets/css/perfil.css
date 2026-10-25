@@ -1,0 +1,745 @@
+/* =============================================================================
+   perfil.css — Tela de perfil
+   -----------------------------------------------------------------------------
+   Configuracoes da conta do socio torcedor. Escopo proprio: prefixo .pf-*.
+   Nao altera nenhuma regra das demais paginas do portal.
+   ============================================================================= */
+/* ==========================================================================
+   TELA DE PERFIL — configuracoes da conta do socio torcedor
+   --------------------------------------------------------------------------
+   Escopo: .pf-* (prefixo proprio). Nao altera nenhuma regra das demais
+   paginas do portal.
+   ========================================================================== */
+
+.pf-page {
+  max-width: 1320px;
+  padding-bottom: 120px;
+}
+
+/* ---------------------------------------------------------------- Hero --- */
+
+.pf-hero {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 26px;
+  margin-top: 18px;
+  padding: 26px 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background:
+    radial-gradient(120% 160% at 100% 0%, rgba(232, 93, 74, 0.16), transparent 58%),
+    var(--surface);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+.pf-avatar-wrap {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.pf-avatar {
+  display: grid;
+  width: 104px;
+  height: 104px;
+  place-items: center;
+  border: 2px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  background: linear-gradient(145deg, #4a423c, #2e2823);
+  color: #cfc6bc;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  overflow: hidden;
+}
+
+.pf-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pf-avatar-edit {
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+.pf-avatar-edit:hover {
+  border-color: var(--red);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.pf-avatar-edit .icon {
+  width: 17px;
+  height: 17px;
+}
+
+.pf-hero-copy h1 {
+  margin: 0 0 4px;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.pf-hero-sub {
+  margin: 0 0 14px;
+  color: var(--text-3);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pf-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pf-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-2);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.pf-tag .icon {
+  width: 13px;
+  height: 13px;
+  color: var(--text-3);
+}
+
+.pf-tag.ok {
+  border-color: rgba(127, 182, 133, 0.3);
+  background: rgba(127, 182, 133, 0.1);
+  color: var(--green);
+}
+
+.pf-tag.ok .icon {
+  color: var(--green);
+}
+
+.pf-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+.pf-hero-stats div {
+  min-width: 96px;
+  padding: 12px 14px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.22);
+  text-align: center;
+}
+
+.pf-hero-stats dt {
+  color: var(--text-3);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.pf-hero-stats dd {
+  margin: 4px 0 0;
+  color: var(--text);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+/* --------------------------------------------------------------- Layout --- */
+
+.pf-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  align-items: start;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.pf-main,
+.pf-side {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------- Cards --- */
+
+.pf-card {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14);
+}
+
+.pf-card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.pf-card-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--surface-2);
+  color: var(--red-bright);
+}
+
+.pf-card-icon .icon {
+  width: 18px;
+  height: 18px;
+}
+
+.pf-card-head h2 {
+  margin: 0 0 3px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.pf-card-head p {
+  margin: 0;
+  color: var(--text-3);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.pf-subtitle {
+  margin: 22px 0 12px;
+  color: var(--text-2);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------- Forms --- */
+
+.pf-form {
+  display: grid;
+  gap: 4px;
+}
+
+.pf-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.pf-field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.pf-field-wide {
+  grid-column: 1 / -1;
+}
+
+.pf-field label {
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.pf-field input,
+.pf-field select {
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: #16161a;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.pf-field select {
+  cursor: pointer;
+}
+
+.pf-field input::placeholder {
+  color: var(--text-3);
+}
+
+.pf-field input:focus,
+.pf-field select:focus {
+  border-color: var(--red);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--red-soft);
+}
+
+.pf-field input:user-invalid {
+  border-color: #ff6b6b;
+}
+
+.pf-field-select {
+  margin-top: 16px;
+}
+
+/* -------------------------------------------------------------- Switches --- */
+
+.pf-switch-list {
+  display: grid;
+  gap: 2px;
+}
+
+.pf-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+.pf-switch-list .pf-switch-row:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.pf-form .pf-switch-row {
+  margin-top: 14px;
+}
+
+.pf-switch-copy {
+  min-width: 0;
+}
+
+.pf-switch-copy strong {
+  display: block;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.pf-switch-copy p {
+  margin: 3px 0 0;
+  color: var(--text-3);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.pf-switch {
+  flex: 0 0 auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.pf-switch-track {
+  display: block;
+  position: relative;
+  width: 52px;
+  height: 30px;
+  border-radius: 999px;
+  background: var(--surface-3);
+  border: 1px solid var(--line);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.pf-switch-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--text-3);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.pf-switch[aria-checked="true"] .pf-switch-track {
+  background: var(--red-soft);
+  border-color: rgba(232, 93, 74, 0.5);
+}
+
+.pf-switch[aria-checked="true"] .pf-switch-knob {
+  transform: translateX(22px);
+  background: var(--red-bright);
+}
+
+.pf-switch:focus-visible .pf-switch-track {
+  outline: 2px solid rgba(232, 93, 74, 0.55);
+  outline-offset: 2px;
+}
+
+.pf-switch.is-locked {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* --------------------------------------------------------- Password meter --- */
+
+.pf-strength {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 2px 0 0;
+}
+
+.pf-strength-bar {
+  position: relative;
+  display: block;
+  width: 96px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--surface-3);
+  overflow: hidden;
+}
+
+.pf-strength-bar i {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  border-radius: 999px;
+  background: var(--text-3);
+  transition: width 0.25s ease, background 0.25s ease;
+}
+
+.pf-strength-bar[data-nivel="1"] i {
+  width: 33%;
+  background: var(--red);
+}
+
+.pf-strength-bar[data-nivel="2"] i {
+  width: 66%;
+  background: var(--yellow);
+}
+
+.pf-strength-bar[data-nivel="3"] i {
+  width: 100%;
+  background: var(--green);
+}
+
+.pf-strength-text {
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.pf-strength-text[data-nivel="1"] {
+  color: var(--red-bright);
+}
+
+.pf-strength-text[data-nivel="2"] {
+  color: var(--yellow);
+}
+
+.pf-strength-text[data-nivel="3"] {
+  color: var(--green);
+}
+
+/* ------------------------------------------------------------- Sessions --- */
+
+.pf-session-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pf-session-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.pf-session-icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--surface-2);
+  color: var(--text-3);
+}
+
+.pf-session-icon .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.pf-session-list li > div {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.pf-session-list strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.pf-session-list p {
+  margin: 2px 0 0;
+  color: var(--text-3);
+  font-size: 11px;
+}
+
+.pf-badge {
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-3);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pf-badge.ok {
+  background: rgba(127, 182, 133, 0.12);
+  color: var(--green);
+}
+
+.pf-session-end {
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-2);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+.pf-session-end:hover {
+  border-color: var(--red);
+  color: var(--red-bright);
+}
+
+/* ----------------------------------------------------------- Aside cards --- */
+
+.pf-plan-price {
+  display: grid;
+  gap: 2px;
+  margin-bottom: 16px;
+  padding: 14px 16px;
+  border: 1px solid rgba(232, 93, 74, 0.24);
+  border-radius: var(--radius-sm);
+  background: var(--red-soft);
+}
+
+.pf-plan-price span {
+  color: var(--text-3);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pf-plan-price strong {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.pf-plan-price small {
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.pf-plan-list,
+.pf-check-list {
+  display: grid;
+  gap: 9px;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.pf-plan-list li,
+.pf-check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--text-2);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.pf-plan-list .icon,
+.pf-check-list .icon {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+  margin-top: 1px;
+  color: var(--green);
+}
+
+.pf-check-list li.warn .icon {
+  color: var(--yellow);
+}
+
+.pf-check-list li.warn {
+  color: var(--text-3);
+}
+
+.pf-plan-renew {
+  margin: 0 0 16px;
+  color: var(--text-3);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.pf-plan-renew strong {
+  color: var(--text-2);
+}
+
+.pf-button-block {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  text-align: center;
+}
+
+.pf-logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+  color: var(--text-3);
+  font-size: 12px;
+  font-weight: 700;
+  transition: color 0.18s ease;
+}
+
+.pf-logout:hover {
+  color: var(--red-bright);
+}
+
+.pf-logout .icon {
+  width: 15px;
+  height: 15px;
+}
+
+.pf-card-danger {
+  border-color: rgba(232, 93, 74, 0.28);
+}
+
+.pf-card-danger .pf-card-icon {
+  border-color: rgba(232, 93, 74, 0.3);
+  background: var(--red-soft);
+  color: var(--red-bright);
+}
+
+.pf-danger-button {
+  display: flex;
+  width: 100%;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(232, 93, 74, 0.4);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--red-bright);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease;
+}
+
+.pf-danger-button:hover {
+  background: var(--red-soft);
+  border-color: var(--red);
+}
+
+.pf-danger-note {
+  margin: 12px 0 0;
+  color: var(--text-3);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------- Action bar --- */
+
+.pf-actions {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: var(--sidebar-width);
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 32px;
+  border-top: 1px solid var(--line);
+  background: rgba(18, 16, 14, 0.92);
+  backdrop-filter: blur(12px);
+}
+
+.pf-actions-status {
+  margin: 0;
+  color: var(--text-3);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pf-actions-status.is-dirty {
+  color: var(--yellow);
+}
+
+.pf-actions-status.is-saved {
+  color: var(--green);
+}
+
+.pf-actions-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.pf-actions-buttons .primary-button,
+.pf-actions-buttons .ghost-button {
+  min-height: 46px;
+  padding-inline: 22px;
+}

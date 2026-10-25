@@ -1,0 +1,1154 @@
+/* =============================================================================
+   componentes.css — Componentes compartilhados
+   -----------------------------------------------------------------------------
+   Cards, tabelas rolaveis, rodape, aviso de ambiente de demonstracao,
+   faixa de <noscript>, dialogo de ingresso, formularios, toast e as secoes
+   internas usadas pelas paginas de conteudo.
+
+   Ao fim, a camada responsiva do portal (breakpoints de 1280, 1080, 920,
+   760, 560 e 390 px + prefers-reduced-motion). Ela fica no fim deste
+   arquivo de proposito: precisa vir depois das regras base de layout,
+   jogos e componentes para sobrescreve-las.
+   ============================================================================= */
+/* Standings */
+.standings-card {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.side-card {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.side-card + .side-card {
+  margin-top: 16px;
+}
+
+.side-card-header {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--line);
+}
+
+.side-card-header h3 {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.side-card-header span {
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.standings-table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+
+.standings-table th,
+.standings-table td {
+  padding: 9px 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.035);
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 650;
+  text-align: center;
+}
+
+.standings-table th {
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.standings-table th:nth-child(2),
+.standings-table td:nth-child(2) {
+  text-align: left;
+}
+
+.standings-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.standings-table tr.highlight td {
+  background: linear-gradient(90deg, rgba(228, 37, 54, 0.13), rgba(228, 37, 54, 0.025));
+  color: #fff;
+  font-weight: 750;
+}
+
+.standings-table tr.highlight td:first-child {
+  color: var(--red-bright);
+  font-weight: 800;
+}
+
+.standings-table td:last-child {
+  color: #fff;
+  font-weight: 800;
+}
+
+.form-list {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.form-dot {
+  display: grid;
+  width: 16px;
+  height: 16px;
+  place-items: center;
+  border-radius: 5px;
+  background: rgba(65, 209, 140, 0.1);
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.form-dot.draw {
+  background: rgba(245, 196, 81, 0.1);
+  color: var(--yellow);
+}
+
+.form-dot.loss {
+  background: rgba(228, 37, 54, 0.11);
+  color: var(--red-bright);
+}
+
+.last-score {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 9px;
+  padding: 19px 15px 14px;
+}
+
+.last-score > span:first-child {
+  text-align: left;
+}
+
+.last-score > span:last-child {
+  text-align: right;
+}
+
+.last-team {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.last-result {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.last-result span {
+  margin: 0 4px;
+  color: var(--text-3);
+  font-size: 11px;
+}
+
+.last-goals {
+  padding: 0 15px 15px;
+  color: var(--text-3);
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.benefits-list {
+  display: grid;
+  gap: 12px;
+  padding: 15px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-2);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.benefit-check {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 8px;
+  background: rgba(65, 209, 140, 0.1);
+  color: var(--green);
+}
+
+.benefit-check .icon {
+  width: 13px;
+  height: 13px;
+}
+
+.aside-column {
+  display: grid;
+  gap: 16px;
+}
+
+.aside-column > .side-card {
+  margin-top: 0;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: #0a0b0e;
+}
+
+.footer-inner {
+  width: min(100%, 1660px);
+  margin: 0 auto;
+  padding: 32px 30px 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 36px;
+  padding-bottom: 27px;
+}
+
+.footer-column h3 {
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.footer-column p,
+.footer-column a {
+  color: var(--text-3);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.footer-column p {
+  max-width: 360px;
+}
+
+.footer-links {
+  display: grid;
+  gap: 7px;
+}
+
+.footer-column a {
+  width: fit-content;
+  transition: color 0.18s ease;
+}
+
+.footer-column a:hover {
+  color: var(--text);
+}
+
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7px;
+}
+
+.sponsor {
+  display: grid;
+  min-height: 42px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--text-2);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: border-color 0.18s ease, color 0.18s ease;
+}
+
+.sponsor:hover {
+  border-color: var(--red-dark);
+  color: #fff;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 17px;
+  border-top: 1px solid var(--line);
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Aviso de ambiente de demonstração — a API ainda não está no ar e
+   qualquer senha abre uma sessão simulada (ver API.demoFallback). */
+.demo-badge {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin: 12px 0 0;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.demo-badge .icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--yellow);
+}
+/* Botões que substituem links no rodapé — mantêm a mesma aparência */
+.footer-column button {
+  width: fit-content;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--text-3);
+  font-size: 12px;
+  line-height: 1.65;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.18s ease;
+}
+
+.footer-column button:hover {
+  color: var(--text);
+}
+
+.footer-column button:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Aviso exibido quando o JavaScript está desativado */
+.noscript-banner {
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--text-2);
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.noscript-banner strong {
+  color: var(--text);
+}
+
+/* Resumo textual da temporada dentro de <noscript> */
+.noscript-note {
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  color: var(--text-2);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.noscript-note strong {
+  color: var(--text);
+}
+
+.noscript-note code {
+  padding: 1px 5px;
+  border-radius: 5px;
+  background: var(--surface-3);
+  font-size: 11px;
+}
+
+/* Dialog and feedback */
+.ticket-dialog {
+  /* Largo o bastante para o mapa da arena caber na escala legivel
+     (600px) sem depender de rolagem horizontal no desktop. */
+  width: min(calc(100% - 32px), 720px);
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  overflow: auto;
+  border: 1px solid #393942;
+  border-radius: 20px;
+  background: #131318;
+  color: var(--text);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.65);
+}
+
+.ticket-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+}
+
+.dialog-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.dialog-header h2 {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.dialog-header p {
+  margin-top: 5px;
+  color: var(--text-3);
+  font-size: 12px;
+}
+
+.ticket-form {
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+}
+
+.match-summary {
+  padding: 13px;
+  border: 1px solid rgba(228, 37, 54, 0.22);
+  border-radius: 12px;
+  background: var(--red-soft);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.form-field {
+  display: grid;
+  gap: 7px;
+}
+
+.form-field label {
+  color: var(--text-2);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.form-field select {
+  width: 100%;
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  outline: 0;
+  background: var(--surface-2);
+  font-size: 12px;
+}
+
+.form-field select:focus {
+  border-color: var(--red);
+}
+
+.benefit-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-3);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.benefit-note .icon {
+  width: 15px;
+  height: 15px;
+  color: var(--green);
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 2px;
+}
+
+.toast {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 300;
+  display: flex;
+  max-width: min(380px, calc(100% - 32px));
+  min-height: 50px;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border: 1px solid #383842;
+  border-radius: 13px;
+  background: rgba(25, 25, 31, 0.96);
+  color: var(--text);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  font-size: 12px;
+  font-weight: 650;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(18px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  backdrop-filter: blur(14px);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast .icon {
+  width: 17px;
+  height: 17px;
+  color: var(--green);
+}
+
+@media (max-width: 1280px) {
+  :root {
+    --sidebar-width: 260px;
+  }
+
+  .featured-content {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 24px;
+    padding: 24px;
+  }
+
+  .content-grid {
+    grid-template-columns: minmax(0, 1fr) 300px;
+  }
+
+  .countdown-bar {
+    padding-inline: 24px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .featured-content {
+    grid-template-columns: 1fr;
+  }
+
+  .venue-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(190px, 0.8fr) minmax(200px, 0.9fr);
+    align-items: center;
+    gap: 18px;
+  }
+
+  .venue-topline,
+  .venue-heading {
+    margin: 0;
+  }
+
+  .venue-heading {
+    align-self: start;
+  }
+
+  .capacity-row {
+    padding: 0 18px;
+    border-top: 0;
+    border-right: 1px solid var(--line-soft);
+    border-bottom: 0;
+    border-left: 1px solid var(--line-soft);
+  }
+
+  .venue-info {
+    margin: 0;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aside-column {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 920px) {
+  :root {
+    --sidebar-width: 82px;
+  }
+
+  .sidebar-header {
+    justify-content: center;
+    padding-inline: 14px;
+  }
+
+  .brand-copy,
+  .membership-card,
+  .nav-link span,
+  .connection-status span,
+  .connection-status strong {
+    display: none;
+  }
+
+  .sidebar-nav {
+    padding-inline: 12px;
+  }
+
+  .nav-link {
+    justify-content: center;
+    padding-inline: 0;
+  }
+
+  .nav-link.active::before {
+    left: -12px;
+  }
+
+  .sidebar-footer {
+    display: grid;
+    place-items: center;
+  }
+
+  .connection-status {
+    width: 34px;
+    height: 34px;
+    margin: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .connection-status::before {
+    top: 13px;
+    left: 13px;
+    width: 7px;
+    height: 7px;
+  }
+
+  .footer-inner {
+    padding-inline: 24px;
+  }
+
+  .venue-card {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .venue-heading {
+    align-self: center;
+  }
+
+  .venue-info {
+    grid-column: 1 / -1;
+    padding-top: 12px;
+    border-top: 1px solid var(--line-soft);
+  }
+
+  .capacity-row {
+    padding: 0 0 0 18px;
+    border-right: 0;
+    border-left: 1px solid var(--line-soft);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --topbar-height: 64px;
+  }
+
+  .sidebar {
+    width: min(86vw, 280px);
+    transform: translateX(-105%);
+    transition: transform 0.25s ease;
+  }
+
+  body.menu-open .sidebar {
+    transform: translateX(0);
+  }
+
+  body.menu-open .sidebar-overlay {
+    display: block;
+    opacity: 1;
+  }
+
+  .sidebar-header {
+    justify-content: space-between;
+  }
+
+  .brand-copy,
+  .sidebar-close,
+  .menu-button {
+    display: inline-grid;
+  }
+
+  .sidebar-close {
+    display: inline-grid;
+  }
+
+  .nav-link.active::before {
+    left: -12px;
+  }
+
+  .sidebar-footer {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .main-shell {
+    margin-left: 0;
+  }
+
+  .topbar-inner,
+  .page-container,
+  .footer-inner {
+    padding-inline: 16px;
+  }
+
+  .menu-button {
+    margin-left: -7px;
+  }
+
+  .profile-copy {
+    display: none;
+  }
+
+  .profile-button {
+    min-width: 46px;
+  }
+
+  .avatar-photo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .page-container {
+    padding-top: 22px;
+    padding-bottom: 38px;
+  }
+
+  .page-heading {
+    align-items: flex-start;
+  }
+
+  .season-chip {
+    display: none;
+  }
+
+  .featured-content {
+    padding: 20px 16px;
+  }
+
+  .featured-label {
+    margin-bottom: 21px;
+  }
+
+  .match-stage {
+    grid-template-columns: minmax(0, 1fr) 72px minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .crest {
+    width: 66px;
+    height: 74px;
+    font-size: 21px;
+  }
+
+  .venue-card {
+    display: block;
+    padding: 16px;
+  }
+
+  .venue-heading {
+    margin: 16px 0;
+  }
+
+  .capacity-row {
+    padding: 13px 0;
+    border: 0;
+    border-top: 1px solid var(--line-soft);
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .venue-info {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .countdown-bar {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .countdown-copy {
+    min-width: 0;
+  }
+
+  .countdown-values {
+    min-width: 0;
+  }
+
+  .countdown-bar .primary-button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+  }
+
+  .tab-button {
+    flex: 0 0 auto;
+  }
+
+  .aside-column {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 560px) {
+  .match-meta,
+  .match-details,
+  .event-banner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .match-details {
+    display: flex;
+  }
+
+  .match-actions,
+  .match-actions .ghost-button,
+  .match-actions .secondary-button {
+    width: 100%;
+  }
+
+  .match-actions {
+    flex-direction: column;
+  }
+
+  .match-card-body {
+    padding: 15px 12px;
+  }
+
+  .match-row {
+    grid-template-columns: minmax(0, 1fr) 61px minmax(0, 1fr);
+    gap: 5px;
+  }
+
+  .team-block,
+  .team-block.away {
+    gap: 7px;
+  }
+
+  .small-crest {
+    width: 34px;
+    height: 38px;
+    font-size: 12px;
+  }
+
+  .team-copy strong {
+    font-size: 12px;
+    white-space: normal;
+  }
+
+  .team-copy span {
+    font-size: 11px;
+  }
+
+  .card-time strong {
+    font-size: 17px;
+  }
+
+  .result-card-body {
+    gap: 7px;
+    padding-inline: 12px;
+  }
+
+  .result-team {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  .result-team.away {
+    flex-direction: column;
+  }
+
+  .result-team strong {
+    font-size: 12px;
+  }
+
+  .result-score {
+    min-width: 65px;
+    font-size: 22px;
+  }
+
+  .result-card-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .dialog-actions {
+    flex-direction: column-reverse;
+  }
+
+  .dialog-actions button {
+    width: 100%;
+  }
+
+  .ticket-dialog {
+    width: calc(100% - 24px);
+    max-height: calc(100dvh - 24px);
+  }
+
+  .dialog-header {
+    padding: 16px;
+  }
+
+  .dialog-header h2 {
+    font-size: 16px;
+  }
+
+  .ticket-form {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .arena-map-container {
+    min-height: 0;
+  }
+
+  .arena-map-wrapper {
+    min-height: 0;
+  }
+
+  .arena-map {
+    height: auto;
+    min-height: 180px;
+  }
+
+  .form-field select {
+    min-height: 40px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 390px) {
+  .page-heading h1 {
+    font-size: 23px;
+  }
+
+  .competition-pill {
+    display: none;
+  }
+
+  .match-stage {
+    grid-template-columns: minmax(0, 1fr) 58px minmax(0, 1fr);
+  }
+
+  .crest {
+    width: 56px;
+    height: 64px;
+    font-size: 18px;
+  }
+
+  .featured-team h2 {
+    font-size: 13px;
+  }
+
+  .featured-team p {
+    font-size: 11px;
+  }
+
+  .match-time-block .time {
+    font-size: 26px;
+  }
+
+  .countdown-unit {
+    padding-inline: 5px;
+  }
+
+  .countdown-unit strong {
+    font-size: 17px;
+  }
+
+  .ticket-dialog {
+    width: calc(100% - 16px);
+    max-height: calc(100dvh - 16px);
+  }
+
+  .dialog-header {
+    padding: 14px;
+  }
+
+  .dialog-header h2 {
+    font-size: 15px;
+  }
+
+  .dialog-header p {
+    font-size: 11px;
+  }
+
+  .ticket-form {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .match-summary {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .arena-map-header h3 {
+    font-size: 13px;
+  }
+
+  .arena-map-header p {
+    font-size: 12px;
+  }
+
+  .arena-map-selection {
+    padding: 8px;
+  }
+
+  .arena-map-selection strong {
+    font-size: 11px;
+  }
+
+  .arena-map-selection p {
+    font-size: 12px;
+  }
+
+  .arena-map-selection small {
+    font-size: 11px;
+  }
+
+  .form-field label {
+    font-size: 11px;
+  }
+
+  .form-field select {
+    min-height: 44px;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .benefit-note {
+    font-size: 11px;
+  }
+
+  .fid-cam[open] {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .fid-cam-head h2 {
+    font-size: 14px;
+  }
+
+  .fid-cam-head p {
+    font-size: 12px;
+  }
+
+  .fid-cam-meter-label {
+    font-size: 11px;
+  }
+
+  .fid-cam-meter-value {
+    min-width: 42px;
+    font-size: 12px;
+  }
+
+  .fid-cam-status {
+    min-height: 24px;
+    font-size: 12px;
+  }
+
+  .fid-cam-note {
+    font-size: 11px;
+    padding-top: 10px;
+  }
+
+  .fid-cam-actions {
+    gap: 8px;
+  }
+
+  .fid-cam-actions .fid-btn {
+    min-height: 44px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Secoes internas das paginas de conteudo */
+.subpage-section {
+  margin-top: 28px;
+}
+
+.subpage-section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 14px;
+}
+
+.subpage-section-header h2 {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.subpage-section-header p {
+  margin-top: 5px;
+  color: var(--text-3);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.footer-highlight {
+  color: var(--red-bright);
+}

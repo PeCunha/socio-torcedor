@@ -1,0 +1,178 @@
+/* =============================================================================
+   arena.css — Mapa da arena
+   -----------------------------------------------------------------------------
+   Mapa da arena e o scroller que o comporta. O viewBox e fixo (800x600) e
+   a largura travada em 600 px para manter a escala legivel dos rotulos.
+   ============================================================================= */
+/* Arena Map */
+.arena-map-container {
+  /* min-width: 0 impede que o item do grid cresca com o mapa: e o
+     .arena-map-wrapper que rola, nao o dialogo inteiro. */
+  min-width: 0;
+  margin-bottom: 20px;
+}
+
+.arena-map-header {
+  margin-bottom: 16px;
+}
+
+.arena-map-header h3 {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.arena-map-header p {
+  margin-top: 4px;
+  color: var(--text-3);
+  font-size: 12px;
+}
+
+/* O mapa tem viewBox fixo (800x600). Fixamos a largura em 600px para que
+   a escala seja sempre 0,75 e os rotulos dos setores fiquem legiveis
+   (15 unidades = 11,25px). Quando o espaco e menor, o contêiner rola. */
+.arena-map-wrapper {
+  display: block;
+  overflow-x: auto;
+  margin-bottom: 16px;
+  padding-bottom: 6px;
+}
+
+.arena-map {
+  width: 100%;
+  min-width: 600px;
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Só aparece quando o mapa precisa ser arrastado (telas estreitas). */
+.arena-map-hint {
+  display: none;
+  margin: 8px 0 0;
+  color: var(--text-3);
+  font-size: 11px;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .arena-map-hint {
+    display: block;
+  }
+}
+
+.arena-sector {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.arena-sector:hover {
+  opacity: 0.8;
+}
+
+.arena-sector:focus {
+  outline: none;
+}
+
+.arena-sector:focus .sector-rect {
+  stroke: var(--red-bright);
+  stroke-width: 3;
+}
+
+.arena-sector.selected .sector-rect {
+  stroke: var(--red-bright);
+  stroke-width: 3;
+  filter: brightness(1.2);
+}
+
+.arena-map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-2);
+}
+
+.legend-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid var(--line);
+}
+
+.arena-map-selection {
+  padding: 12px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  text-align: center;
+}
+
+.arena-map-selection p {
+  margin: 0;
+  color: var(--text-3);
+  font-size: 12px;
+}
+
+.arena-map-selection strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.arena-map-selection small {
+  color: var(--text-3);
+  font-size: 11px;
+}
+
+.arena-map-selection.has-selection {
+  border-color: var(--red);
+  background: var(--red-soft);
+}
+
+.arena-map-selection.has-selection p {
+  color: var(--text);
+  font-weight: 600;
+}
+
+@media (max-width: 620px) {
+  .arena-map-legend {
+    gap: 8px;
+  }
+
+  .legend-item {
+    font-size: 12px;
+  }
+
+  .arena-map-header h3 {
+    font-size: 14px;
+  }
+
+  .arena-map-header p {
+    font-size: 12px;
+  }
+
+  .arena-map-selection {
+    padding: 10px;
+  }
+
+  .arena-map-selection strong {
+    font-size: 12px;
+  }
+
+  .arena-map-selection p {
+    font-size: 12px;
+  }
+
+  .arena-map-selection small {
+    font-size: 12px;
+  }
+}

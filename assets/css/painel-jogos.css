@@ -1,0 +1,295 @@
+/* =============================================================================
+   painel-jogos.css — Paineis ampliados da aba Jogos
+   -----------------------------------------------------------------------------
+   A partir de 561 px os paineis de Proximos jogos, Resultados e
+   Classificacao ocupam toda a largura util e a escala interna dos cartoes
+   e ampliada.
+   ============================================================================= */
+/* ------------------------------------------------------------------
+   16. Painéis ampliados — Próximos jogos, Resultados, Classificação
+   As três abas do portal viviam espremidas numa coluna estreita
+   (1fr ao lado de uma coluna lateral de 320px) e com tipografia
+   miúda de 7–12px. Aqui os painéis passam a ocupar toda a largura
+   útil da página — o resumo lateral vira uma faixa horizontal logo
+   abaixo — e a escala interna dos cartões (alturas, espaçamentos,
+   fontes e ícones) é ampliada.
+
+   Tudo aqui fica dentro de `min-width: 561px` para não competir com
+   as regras de mobile (bloco de 560px) que já reduzem a escala dos
+   cartões em telas estreitas.
+   ------------------------------------------------------------------ */
+
+@media (min-width: 561px) {
+  /* Página do portal ganha um pouco mais de largura útil */
+  body[data-page="jogos"] .page-container {
+    width: min(100%, 1800px);
+  }
+
+  /* Painéis em largura total */
+  body[data-page="jogos"] .content-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  /* Resumo lateral vira faixa horizontal de três cartões.
+     O <aside> é o segundo item do .content-grid (que tem uma coluna só
+     nesta faixa de larguras), por isso precisa do próprio espaçamento
+     vertical em relação aos painéis. */
+  body[data-page="jogos"] .aside-column {
+    margin-top: 22px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  /* --- Barra de abas ------------------------------------------------ */
+  .tabs {
+    gap: 6px;
+    padding: 7px;
+    border-radius: 18px;
+  }
+
+  .tab-button {
+    min-height: 50px;
+    gap: 9px;
+    padding: 12px 20px;
+    border-radius: 13px;
+    font-size: 11px;
+  }
+
+  .tab-button .icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* --- Cabeçalho dos cartões ---------------------------------------- */
+  .match-card-header,
+  .result-card-header {
+    min-height: 58px;
+    gap: 14px;
+    padding: 14px 22px;
+  }
+
+  .round-label {
+    gap: 9px;
+    font-size: 12px;
+  }
+
+  .status-pill {
+    min-height: 30px;
+    gap: 6px;
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+
+  .status-pill::before {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* --- Próximos jogos ------------------------------------------------ */
+  .match-list,
+  .result-list {
+    gap: 16px;
+  }
+
+  .match-card-body {
+    padding: 26px 24px;
+  }
+
+  .match-row {
+    grid-template-columns: minmax(0, 1fr) 116px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .team-block {
+    gap: 14px;
+  }
+
+  .small-crest {
+    width: 48px;
+    height: 52px;
+    font-size: 14px;
+  }
+
+  .team-copy strong {
+    font-size: 15px;
+  }
+
+  .team-copy span {
+    margin-top: 4px;
+    font-size: 12px;
+  }
+
+  .card-time strong {
+    font-size: 26px;
+  }
+
+  .card-time span {
+    margin-top: 4px;
+    font-size: 12px;
+  }
+
+  .match-details {
+    gap: 16px;
+    margin-top: 22px;
+    padding-top: 18px;
+  }
+
+  .match-note {
+    gap: 9px;
+    font-size: 12px;
+  }
+
+  .match-note .icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .match-actions {
+    gap: 9px;
+  }
+
+  .match-actions .ghost-button,
+  .match-actions .secondary-button,
+  .event-banner .ghost-button {
+    min-height: 46px;
+    padding-inline: 18px;
+    font-size: 12px;
+  }
+
+  .event-banner {
+    gap: 16px;
+    padding: 13px 22px;
+  }
+
+  .event-banner p {
+    font-size: 12px;
+  }
+
+  /* --- Resultados --------------------------------------------------- */
+  .result-card-body {
+    gap: 26px;
+    padding: 30px 26px;
+  }
+
+  .result-team {
+    gap: 14px;
+  }
+
+  .result-score {
+    min-width: 104px;
+    font-size: 38px;
+  }
+
+  .result-score span {
+    margin: 0 7px;
+    font-size: 19px;
+  }
+
+  .result-summary {
+    padding: 15px 22px;
+    font-size: 12px;
+  }
+
+  .text-button {
+    gap: 7px;
+    font-size: 12px;
+  }
+
+  .text-button .icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* --- Classificação ------------------------------------------------ */
+  .side-card-header {
+    min-height: 56px;
+    gap: 12px;
+    padding: 14px 20px;
+  }
+
+  .side-card-header h3 {
+    font-size: 13px;
+  }
+
+  .side-card-header span {
+    font-size: 12px;
+  }
+
+  .standings-table th,
+  .standings-table td {
+    padding: 13px 10px;
+    font-size: 12px;
+  }
+
+  .standings-table th {
+    font-size: 12px;
+  }
+
+  .form-list {
+    gap: 4px;
+  }
+
+  .form-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    font-size: 12px;
+  }
+
+  /* --- Faixa de resumo (era a coluna lateral) ------------------------ */
+  .benefits-list {
+    gap: 14px;
+    padding: 17px;
+  }
+
+  .benefit-item {
+    gap: 11px;
+    font-size: 12px;
+  }
+
+  .benefit-check {
+    width: 26px;
+    height: 26px;
+  }
+
+  .benefit-check .icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .last-score {
+    gap: 10px;
+    padding: 22px 18px 16px;
+  }
+
+  .last-team {
+    font-size: 12px;
+  }
+
+  .last-result {
+    font-size: 24px;
+  }
+
+  .last-result span {
+    margin: 0 5px;
+    font-size: 13px;
+  }
+
+  .last-goals {
+    padding: 0 18px 18px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 1080px) {
+  body[data-page="jogos"] .aside-column {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 561px) and (max-width: 720px) {
+  body[data-page="jogos"] .aside-column {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -1,4 +1,5 @@
-# Material de referência do Figma — fica fora da pasta do site (ver README).
+# Arquivos de referencia do Figma: nao fazem parte do site e ficam guardados
+# fora desta pasta (e fora do historico do repositorio).
 referencias/
 *.zip
 
@@ -12,5 +13,5 @@ desktop.ini
 .idea/
 *.swp
 
-# Node (caso use algum tool futuro de build)
+# Node (as ferramentas em tools/ nao usam dependencias, mas fica o registro)
 node_modules/

@@ -1,0 +1,657 @@
+/* =============================================================================
+   galeria.css — Galeria de Titulos
+   -----------------------------------------------------------------------------
+   Hero, faixa de totais, abas do acervo, dossie de taca, acervo
+   fotografico e bloco de beneficio exclusivo.
+   ============================================================================= */
+/* ============================================================
+   GALERIA DE GLORIAS - componentes das referencias
+   ============================================================ */
+
+.gl-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 40px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(760px 320px at 88% -10%, rgba(227, 6, 19, 0.16), transparent 62%),
+    linear-gradient(140deg, #26211c, #1e1a16 58%, #1a1613);
+}
+
+.gl-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+  gap: 34px;
+  align-items: center;
+}
+
+.gl-kicker {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 12px;
+  color: var(--red-bright);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.gl-kicker::before {
+  width: 22px;
+  height: 2px;
+  background: var(--red);
+  content: "";
+}
+
+.gl-hero h1 {
+  max-width: 18ch;
+  margin: 0 0 14px;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.gl-hero-copy {
+  max-width: 56ch;
+  margin: 0 0 22px;
+  color: var(--text-2);
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.gl-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.gl-hero-side {
+  display: grid;
+  gap: 12px;
+}
+
+.gl-ticket {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(13, 14, 18, 0.62);
+}
+
+.gl-ticket-label {
+  margin: 0 0 4px;
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.gl-ticket-value {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.gl-ticket-value strong {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.gl-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(65, 209, 140, 0.12);
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.gl-live::before {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  content: "";
+}
+
+/* faixa de totais */
+.gl-totals {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--line);
+}
+
+.gl-total {
+  padding: 20px 18px;
+  background: #1e1a16;
+}
+
+.gl-total span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.gl-total strong {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.gl-total em {
+  display: block;
+  margin-top: 3px;
+  color: var(--text-3);
+  font-size: 12px;
+  font-style: normal;
+}
+
+/* abas do acervo */
+.gl-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.gl-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #16161a;
+}
+
+.gl-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 17px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-2);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.gl-tab b {
+  color: var(--text-3);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.gl-tab:hover {
+  color: var(--text);
+}
+
+.gl-tab[aria-selected="true"] {
+  background: var(--red);
+  color: #fff;
+}
+
+.gl-tab[aria-selected="true"] b {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.gl-viewmode {
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.gl-viewmode b {
+  color: var(--text-2);
+}
+
+/* dossie de taca */
+.gl-dossier {
+  overflow: hidden;
+  margin-bottom: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, #26211c, #1e1a16);
+}
+
+.gl-dossier[hidden] {
+  display: none;
+}
+
+.gl-dossier-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(13, 14, 18, 0.5);
+}
+
+.gl-dossier-id {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.gl-ribbon {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--red);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.gl-registry {
+  color: var(--text-3);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.gl-dossier-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+  gap: 26px;
+  padding: 24px;
+}
+
+.gl-dossier h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.gl-dossier-tagline {
+  margin: 0 0 14px;
+  color: var(--red-bright);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.gl-dossier-copy {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.gl-stats {
+  display: grid;
+  gap: 1px;
+  align-self: start;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--line);
+}
+
+.gl-stat {
+  display: grid;
+  grid-template-columns: 116px minmax(0, 1fr);
+  gap: 12px;
+  padding: 11px 14px;
+  background: #191a1e;
+  font-size: 12px;
+}
+
+.gl-stat > span {
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.gl-stat > strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.gl-stat > strong b {
+  display: block;
+  margin-top: 2px;
+  color: var(--text-3);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.gl-dossier-foot {
+  padding: 12px 24px;
+  border-top: 1px solid var(--line);
+  background: rgba(13, 14, 18, 0.5);
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* acervo fotografico */
+.gl-photos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.gl-photo {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #1e1a16;
+}
+
+.gl-photo-frame {
+  position: relative;
+  display: grid;
+  aspect-ratio: 4 / 3;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 90% at 30% 20%, rgba(227, 6, 19, 0.22), transparent 60%),
+    linear-gradient(150deg, #26272b, #14151a);
+}
+
+.gl-photo-frame::after {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.02) 0 2px, transparent 2px 7px);
+  content: "";
+}
+
+.gl-photo-mark {
+  position: relative;
+  z-index: 1;
+  color: rgba(227, 6, 19, 0.8);
+}
+
+.gl-photo figcaption {
+  padding: 13px 15px 15px;
+}
+
+.gl-photo figcaption b {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--red-bright);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.gl-photo figcaption span {
+  display: block;
+  color: var(--text-2);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* beneficio exclusivo / agendamento */
+.gl-visit {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.86fr);
+  gap: 28px;
+  padding: 28px;
+  border: 1px solid rgba(227, 6, 19, 0.34);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(620px 280px at 0% 0%, rgba(227, 6, 19, 0.14), transparent 60%),
+    linear-gradient(150deg, #26211c, #1e1a16);
+}
+
+.gl-visit h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.gl-visit-copy {
+  margin: 0 0 18px;
+  color: var(--text-2);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.gl-perks {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gl-perks li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: var(--text-2);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.gl-perks svg {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+  margin-top: 1px;
+  color: var(--green);
+}
+
+.gl-booking {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(13, 14, 18, 0.66);
+}
+
+.gl-booking > h3 {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.gl-booking > p {
+  margin: 0 0 16px;
+  color: var(--text-3);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.gl-field {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.gl-field label {
+  color: var(--text-3);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.gl-field input,
+.gl-field select {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: #16161a;
+  color: var(--text);
+  font: inherit;
+  font-size: 11px;
+}
+
+.gl-field input:focus-visible,
+.gl-field select:focus-visible {
+  border-color: var(--red);
+  outline: 2px solid rgba(227, 6, 19, 0.3);
+  outline-offset: 1px;
+}
+
+.gl-choice {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  color: var(--text-2);
+  font-size: 12px;
+  line-height: 1.55;
+  cursor: pointer;
+}
+
+.gl-choice input {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+  margin: 1px 0 0;
+  accent-color: var(--red);
+}
+
+.gl-field-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.gl-field input,
+.gl-field select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: #131317;
+  color: var(--text);
+  font: inherit;
+  font-size: 11px;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.gl-field input:focus,
+.gl-field select:focus {
+  border-color: var(--red);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--red-soft);
+}
+
+.gl-field input::placeholder {
+  color: var(--text-3);
+}
+
+.gl-field input:user-invalid,
+.gl-field select:user-invalid {
+  border-color: #ff6b6b;
+}
+
+@media (max-width: 560px) {
+  .gl-field-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.gl-booking .primary-button {
+  width: 100%;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.gl-seat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  color: var(--text-3);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.gl-seat b {
+  color: var(--red-bright);
+}
+
+@media (max-width: 1180px) {
+  .gl-hero-inner,
+  .gl-dossier-body,
+  .gl-visit {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .gl-totals {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gl-photos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .gl-hero {
+    padding: 24px 20px;
+  }
+
+  .gl-hero h1 {
+    font-size: 30px;
+  }
+
+  .gl-totals,
+  .gl-photos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .gl-stat {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 3px;
+  }
+
+  .gl-visit {
+    padding: 20px 18px;
+  }
+}
